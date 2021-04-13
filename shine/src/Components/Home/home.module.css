@@ -19,7 +19,7 @@
     text-align: left;
     border: 0 none;
     background-color: #fff;
-    
+    padding-top: 15px;
     
 }
 .ah1{
@@ -96,4 +96,31 @@
     border: 0 none;
     margin-top: 15px;
     margin-left:15px;
+}
+.searchInput>input:focus, .searchInput>select:focus{
+    outline: none;
+}
+button:focus{
+    outline: none;
+}
+
+/*--------------cool places to work--------------*/
+
+
+.coolBox{
+  
+    box-shadow: 0px 0px 21px rgb(74 77 78 / 34%);
+    width: 200px;
+    height: 132px;
+    margin: auto;
+    border-radius: 4px;
+   
+}
+.coolSmallBox{
+    width: 160px;
+    height: 56px;
+    border-radius: 4px;
+    margin: auto;
+    margin-top: -20px;
+
 }

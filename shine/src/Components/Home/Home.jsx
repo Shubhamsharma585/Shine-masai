@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import AdvanceSearch from './AdvanceSearch';
+import CoolPlaces from './CoolPlaces';
 import styles from "./home.module.css";
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
                 </div></>)}
                 
             </div>
+            <CoolPlaces/>
 
             
         </div>
