@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
-import Login from "../Pages/Login"
-import Register from "../Pages/Register"
+import Login from "../Pages/LogIn/Login"
+import Register from "../Pages/Register/Register"
 
 
 
@@ -15,7 +15,7 @@ function Routes()
 
     return(
         <div>
-     
+      
      <Switch>
             <Route path="/myshine/login" exact>
                <Login/>
