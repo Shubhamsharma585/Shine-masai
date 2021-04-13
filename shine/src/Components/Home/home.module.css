@@ -121,6 +121,41 @@ button:focus{
     height: 56px;
     border-radius: 4px;
     margin: auto;
-    margin-top: -20px;
+    margin-top: -30px;
+    box-shadow: 0px 0px 21px rgb(74 77 78 / 34%);
 
+}
+
+/*-------------Top companies hiring now---------------*/
+
+.topBox{
+    float:left;
+    width: 270px;
+}
+
+.topBox>img{
+    width: 160px;
+    height: 56px;
+    margin: 25px;
+    
+
+}
+
+/*---why shine---*/
+
+.why{
+    flex:33%;
+    font-size:18px;
+    color: #6d7883;
+
+}
+.why>img{
+    width:129px;
+    height: 72px;
+}
+.why>strong{
+ font-size: 22px;
+ color:#505e6b ;
+ margin-top: -150px;
+ 
 }
