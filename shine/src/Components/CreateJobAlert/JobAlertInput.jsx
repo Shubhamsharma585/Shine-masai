@@ -8,7 +8,7 @@ function JobAlertInput() {
                 <p>Create a Free Job Alert 2021</p>
                 <p>You can create upto 5 alerts</p>
             </div>
-            <div>
+            <div className={Styles.input}>
                 <h4>Let us know what kind of job you are looking for and we'll send them to your Inbox.</h4>
                 <div style={{display:'flex',}}>
                 <div style={{display:'flex', flexDirection:"column",justifyContent:"space-around", alignItems:"left"}}>
@@ -20,7 +20,7 @@ function JobAlertInput() {
             <label>Email ID</label>
             <label >Name of the Alert</label>
             </div>
-            <div className={Styles.input} style={{width:"100%",display:'flex', flexDirection:"column",justifyContent:"space-around", alignItems:"left"}}>  
+            <div  style={{width:"100%",display:'flex', flexDirection:"column",justifyContent:"space-around", alignItems:"left"}}>  
             <input placeholder="Enter Keywords" 
             type="text"/>
             <select>
