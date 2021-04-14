@@ -1,18 +1,28 @@
 import React from 'react'
+import Styles from "./JobAlert.module.css"
 
 function JobAlertInput() {
     return (
-        <div>
+        <div className={Styles.sub1}>
              <div>
                 <p>Create a Free Job Alert 2021</p>
                 <p>You can create upto 5 alerts</p>
             </div>
             <div>
                 <h4>Let us know what kind of job you are looking for and we'll send them to your Inbox.</h4>
-                <label >Keywods</label>
-            <input placeholder="Enter Keywords" 
-            type="text"/><br/>
+                <div style={{display:'flex',}}>
+                <div style={{display:'flex', flexDirection:"column",justifyContent:"space-around", alignItems:"left"}}>
+            <label >Keywods</label>
             <label >Salary</label>
+            <label >Experience</label>
+            <label >Department</label>
+            <label >Location</label>
+            <label>Email ID</label>
+            <label >Name of the Alert</label>
+            </div>
+            <div className={Styles.input} style={{width:"100%",display:'flex', flexDirection:"column",justifyContent:"space-around", alignItems:"left"}}>  
+            <input placeholder="Enter Keywords" 
+            type="text"/>
             <select>
                 <option value="Any">-Any-</option>
                 <option value="50k">50,000rs/Yr</option>
@@ -35,8 +45,8 @@ function JobAlertInput() {
                 <option value="16M">Rs 14-16Lakh/Yr</option>
                 <option value="18M">Rs 16-18Lakh/Yr</option>
 
-            </select><br/>
-            <label >Department</label>
+            </select>
+            
             <select name="Department" id="Department">
              <option value="Audit">Audit</option>
              <option value="Equity Research">Equity Research</option>
@@ -56,8 +66,8 @@ function JobAlertInput() {
              <option value="Networking">Networking</option>
              <option value="Telecom Software">Telecom Software</option>
              <option value="Pre-Sales">Pre-Sales</option>
-            </select><br/>
-            <label >Location</label>
+            </select>
+            
             <select name="Department" id="Department">
              <option value="Bangalore">Bangalore</option>
              <option value="Chennai">Chennai</option>
@@ -79,37 +89,38 @@ function JobAlertInput() {
              <option value="Hydrabad">Hydrabad</option>
              <option value="Punjab">Punjab</option>
              <option value="Assam">Assam</option>
-            </select><br/>
+            </select>
 
-            <label >Experience</label>
+            
             <select>
                 <option value="Any">-Any-</option>
-                <option value="00Y">0</option>
-                <option value="01Y">1</option>
-                <option value="02Y">2</option>
-                <option value="03Y">3</option>
-                <option value="04Y">4</option>
-                <option value="05Y">5</option>
-                <option value="06Y">6</option>
-                <option value="07Y">7</option>
-                <option value="08Y">8</option>
-                <option value="09Y">9</option>
-                <option value="10Y">10</option>
-                <option value="11Y">11</option>
-                <option value="12Y">12</option>
-                <option value="13Y">13</option>
-                <option value="14Y">14</option>
-                <option value="15Y">15</option>
-            </select><br/>
-            <label>Email ID</label>
-            <input placeholder="Your Email Id" type="Email"/><br/>
-            <label >Name of the Alert</label>
-            <input placeholder="Alert Name" type="text"/>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+            </select>
             
+            <input placeholder="Your Email Id" type="Email"/>
+           
+            <input placeholder="Alert Name" type="text"/>
+                </div>
+            </div>
             <div>
                 <button>Create job Alert</button>
             </div>
-                
+
             
             </div>
             

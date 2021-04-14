@@ -1,13 +1,18 @@
 import React from 'react'
 import JobAlertFAQ from './JobAlertFAQ'
 import JobAlertInput from './JobAlertInput'
+import Styles from "./JobAlert.module.css"
 
 function JobAlert() {
     return (
-        <div>
-            
+        <div className={Styles.main_div}>
+           <div>
            <JobAlertInput/>
-           <JobAlertFAQ/>
+               </div> 
+          <div className={Styles.main_input}>
+          <JobAlertFAQ/>
+          </div>
+          
         </div>
     )
 }
