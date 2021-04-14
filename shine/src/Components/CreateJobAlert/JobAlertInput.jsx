@@ -1,22 +1,35 @@
 import React from 'react'
 import Styles from "./JobAlert.module.css"
+const paload={
+    title:"",
+    salary:"",
+    department:"",
+    location:"",
+    experience:"",
+    email:"",
+    alert:""
+}
 
 function JobAlertInput() {
+    const [data, setData]=React.useState(payload)
+
+
+
     return (
         <div className={Styles.sub1}>
-             <div>
-                <p>Create a Free Job Alert 2021</p>
-                <p>You can create upto 5 alerts</p>
+             <div style={{textAlign:"left"}}>
+                <p style={{fontSize:"42px"}}>Create a Free Job Alert 2021</p>
+                <p style={{fontSize:"24px"}}>You can create upto 5 alerts</p>
             </div>
             <div className={Styles.input}>
-                <h4>Let us know what kind of job you are looking for and we'll send them to your Inbox.</h4>
+                <h4 style={{fontSize:'20px'}}>Let us know what kind of job you are looking for and we'll send them to your Inbox.</h4>
                 <div style={{display:'flex',}}>
                 <div style={{display:'flex', flexDirection:"column",justifyContent:"space-around", alignItems:"left"}}>
             <label >Keywods</label>
             <label >Salary</label>
-            <label >Experience</label>
             <label >Department</label>
             <label >Location</label>
+            <label >Experience</label>
             <label>Email ID</label>
             <label >Name of the Alert</label>
             </div>
@@ -115,12 +128,23 @@ function JobAlertInput() {
             <input placeholder="Your Email Id" type="Email"/>
            
             <input placeholder="Alert Name" type="text"/>
-                </div>
             </div>
-            <div>
+            </div>
+            <div className={Styles.Register}>
                 <button>Create job Alert</button>
             </div>
-
+            or
+            <div className={Styles.registerbtn}>
+                 <div>
+                     <h3>Get calls from Recruiters</h3>
+                     <p>Show them your education, experience and skills</p>
+                </div>
+                <div>
+                    <button>Register</button>
+                </div>
+                   
+                
+            </div>
             
             </div>
             
