@@ -24,12 +24,12 @@ function Login()
            <div className="top">
                <img src={logo1} />
            </div>
-
+ 
            <div className="top1">          
            </div>
 
            <div className="cont">
-             <div className="cont1">
+             <div className="cont1login">
                <h2>Login</h2>
                <input type="text" placeholder="Email"/><br/><br/>
                <input type="text" placeholder="Password"/><br/><br/>
