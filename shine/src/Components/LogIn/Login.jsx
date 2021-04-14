@@ -8,7 +8,7 @@ import google from "../../Images/google.png"
 import ld from "../../Images/ld.png"
 import fb from "../../Images/fb.png"
 
- 
+  
 
 
 
