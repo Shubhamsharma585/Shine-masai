@@ -239,10 +239,31 @@ button:focus{
     background-position: -1px -125px;
     width: 44px;
     height: 41px;
-   
     display: flex;
     margin: 6px 3px;
 
+}
+.tick{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de") no-repeat -214px -253px;
+    width: 14px;
+    height: 15px;
+    float: left;
+    margin-top: 5px;
+
+}
+.PremiumButton{
+    background-image: linear-gradient(136deg,#c87857 0%,#e8b383 100%);
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 21%);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 10px 0;
+    width: 190px;
+    text-align: center;
+    margin: 25px 0 0 0;
+    cursor: pointer;
+    justify-content: center;
 }
 
 
