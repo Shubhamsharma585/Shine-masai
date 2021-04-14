@@ -1,0 +1,161 @@
+.home{
+    font-family:"PT Sans",sans-serif ;
+}
+.a1background{
+    background-image: url("https://static1.shine.com/c/s1/images/candidate/new/home_base_new.jpg?6740b54474de");
+    padding: 45px;
+    padding-left:70px;
+    justify-content: space-around;
+    padding-bottom: 70px;
+    background-size: cover;
+    display: flex;
+    text-align: left;
+}
+.searchButton{
+    width:600px;
+    height: 50px;
+    border-radius: 4px;
+    line-height: 1.2;
+    text-align: left;
+    border: 0 none;
+    background-color: #fff;
+    padding-top: 15px;
+    
+}
+.ah1{
+    font-size: 45px;
+    margin-top: -15px;
+    color:#ffffffff;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom:0px;
+    
+    
+    
+}
+.ah2{
+    font-size: 20px;
+    color:#fff;
+    font-weight: 400;
+    opacity: 0.6;
+    margin-top: 0px;
+}
+.a2background{
+    background-image: url("https://static1.shine.com/c/s1/images/candidate/new/home_reg.png?6740b54474de");
+    flex-basis: 430px;
+    height: 167px;
+    background-size: cover;
+    color: #fff;
+    margin-right: -25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 5px;
+   
+   
+}
+.regButton{
+    font-size: 18px;
+    width: 185px;
+    padding: 0.375rem 0.75rem;
+    border-radius: 5px;
+    background: #f7a400;
+    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 20%) ;
+    color: #fff;
+    font-weight: 400;
+    border: 0 none;
+    text-align: center;
+    margin-top: 55px;
+    margin-left: 40px;
+    margin-bottom:0;
+
+}
+.signinp{
+    margin:auto;
+    font-size: 17px;
+    margin-left: 25%;
+    color: #fff;
+    margin-top: 0;
+
+}
+.signinp>p{
+    margin-top: 0;
+}
+.searchInput{
+    width:300px;
+    height: 50px;
+    border-radius: 4px;
+    line-height: 1.2;
+    text-align: left;
+    border: 0 none;
+    background-color: #fff;
+
+}
+.searchInput>input{
+    width: 280px;
+    border: 0 none;
+    margin-top: 15px;
+    margin-left:15px;
+}
+.searchInput>input:focus, .searchInput>select:focus{
+    outline: none;
+}
+button:focus{
+    outline: none;
+}
+
+/*--------------cool places to work--------------*/
+
+
+.coolBox{
+  
+    box-shadow: 0px 0px 21px rgb(74 77 78 / 34%);
+    width: 200px;
+    height: 132px;
+    margin: auto;
+    border-radius: 4px;
+   
+}
+.coolSmallBox{
+    width: 160px;
+    height: 56px;
+    border-radius: 4px;
+    margin: auto;
+    margin-top: -30px;
+    box-shadow: 0px 0px 21px rgb(74 77 78 / 34%);
+
+}
+
+/*-------------Top companies hiring now---------------*/
+
+.topBox{
+    float:left;
+    width: 270px;
+}
+
+.topBox>img{
+    width: 160px;
+    height: 56px;
+    margin: 25px;
+    
+
+}
+
+/*---why shine---*/
+
+.why{
+    flex:33%;
+    font-size:18px;
+    color: #6d7883;
+
+}
+.why>img{
+    width:129px;
+    height: 72px;
+}
+.why>strong{
+ font-size: 22px;
+ color:#505e6b ;
+ margin-top: -150px;
+ 
+}
