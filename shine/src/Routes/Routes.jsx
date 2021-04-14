@@ -1,9 +1,8 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
-
+import Login from "../Components/LogIn/Login"
+import Register from "../Components/Register/Register";
 import Home from "../Components/Home/Home"
-import Login from "../Pages/Login"
-import Register from "../Pages/Register"
 
 
 
@@ -15,7 +14,7 @@ function Routes()
 
 
 
-
+ 
     return(
         <div>
       
