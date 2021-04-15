@@ -412,6 +412,18 @@ button:focus{
     transform: scale(1.3);
     
 }
+/*-----course-----*/
+
+.course{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/purple_base_new.png?af2426e6d054") left top repeat-x #f5f9fb;
+    margin-top: -61px;
+
+}
+.courselearning{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de") -240px -15px repeat-x;
+    width: 182px;
+    height: 54px;
+}
 
 
 
