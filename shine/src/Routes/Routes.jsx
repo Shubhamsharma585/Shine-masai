@@ -6,6 +6,7 @@ import Home from "../Components/Home/Home"
 import { JobDescription } from "../Components/JobDescription/JobDescription";
 import NavBar from "../Components/Navbar/NavBar";
 import JobAlert from "../Components/CreateJobAlert/JobAlert";
+import JobPost from "../Components/JobPost/JobPost";
 
 
 
@@ -36,6 +37,9 @@ function Routes()
             </Route>
             <Route path="/jobdescription" exact>
                <JobDescription />
+            </Route>
+            <Route path="/jobpost">
+               <JobPost/>
             </Route>
        </Switch>
 
