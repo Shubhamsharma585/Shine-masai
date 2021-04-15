@@ -12,9 +12,6 @@ const payload={
 
 function JobAlertInput() {
     const [data, setData]=React.useState(payload)
-
-
-
     return (
         <div className={Styles.sub1}>
              <div style={{textAlign:"left"}}>
