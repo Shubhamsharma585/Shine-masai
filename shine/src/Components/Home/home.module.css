@@ -305,6 +305,47 @@ button:focus{
 .Mobile>input:focus{
     outline: none;
 }
+.rate{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: -1px -112px;
+    width: 17px;
+    height: 14px;
+    float: left;
+
+}
+.halfrate{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: -21px -112px;
+    width: 17px;
+    height: 14px;
+    float: left;
+
+}
+.play{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: 13px -142px;
+    width: 35px;
+    height: 41px;
+
+
+}
+.store{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: -19px -142px;
+    width: 35px;
+    height: 41px;
+
+}
+.storeButton{
+    border-radius: 4px;
+    background-color: #fbfbfb;
+    box-shadow: 1px 1px 2px 0px rgb(188 188 188 / 40%);
+    width: 157px;
+    height: 39px;
+    font-size: 16px;
+    color: #5566c3;
+    text-align: center;
+}
 
 
 
