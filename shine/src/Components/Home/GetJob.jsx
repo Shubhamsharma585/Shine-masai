@@ -9,7 +9,7 @@ function GetJob() {
 
             <div>
                 <div className={styles.GetJob1}></div>
-                <div style={{float:"right",width:"700px",height:"306px",marginRight:"95px"}} >
+                <div style={{float:"right",width:"700px",height:"402px",marginRight:"95px"}} >
                     <div style={{float:"left",marginTop:"65px"}}>
                         <div className={styles.Mobile}>91<input type="text"placeholder="Mobile"/></div>
                         <div style={{float:"left",marginLeft:"15px"}}><button style={{width:"109px",height:"45px",borderRadius: "5px",background: "#f7a400",boxShadow:" 0px 4px 4px 0px rgb(0 0 0 / 20%)",color:" #fff",fontWeight:" 400",border: "0 none",fontSize: "16px"}}>Get App</button></div>
