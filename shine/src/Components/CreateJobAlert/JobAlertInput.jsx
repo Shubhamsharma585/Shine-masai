@@ -1,6 +1,6 @@
 import React from 'react'
 import Styles from "./JobAlert.module.css"
-const paload={
+const payload={
     title:"",
     salary:"",
     department:"",
