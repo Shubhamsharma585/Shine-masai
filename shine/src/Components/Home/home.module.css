@@ -326,6 +326,8 @@ button:focus{
     background-position: 13px -142px;
     width: 35px;
     height: 41px;
+    float: left;
+    margin-top: -12px;
 
 
 }
@@ -334,6 +336,9 @@ button:focus{
     background-position: -19px -142px;
     width: 35px;
     height: 41px;
+    float: left;
+    margin-top: -12px;
+    margin-left: 5px;
 
 }
 .storeButton{
@@ -345,6 +350,9 @@ button:focus{
     font-size: 16px;
     color: #5566c3;
     text-align: center;
+    padding: 5px;
+    padding-top: 10px;
+    border: none;
 }
 
 
