@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom"
 import Login from "../Components/LogIn/Login"
 import Register from "../Components/Register/Register";
 import Home from "../Components/Home/Home"
+import { JobDescription } from "../Components/JobDescription/JobDescription";
 
 
 
@@ -30,6 +31,10 @@ function Routes()
             <Route path="/registration/parser/" exact>
                <Register/>
             </Route>
+            <Route path="/jobdiscription" exact>
+               <JobDescription/>
+            </Route>
+
 
        </Switch>
 
