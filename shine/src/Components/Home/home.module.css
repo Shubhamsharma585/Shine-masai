@@ -1,6 +1,8 @@
 .home{
     font-family:"PT Sans",sans-serif ;
+    text-align: center;
 }
+
 .a1background{
     background-image: url("https://static1.shine.com/c/s1/images/candidate/new/home_base_new.jpg?6740b54474de");
     padding: 45px;
