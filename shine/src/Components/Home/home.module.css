@@ -423,6 +423,19 @@ button:focus{
     background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de") -240px -15px repeat-x;
     width: 182px;
     height: 54px;
+    margin-left: -45px;
+}
+.learnbutton{
+    border: solid 1px #a3a3eb;
+    font-size: 16px;
+    border-radius: 4px;
+    color: #fff;
+    background: transparent;
+    font-size: 16px;
+    width: 142px;
+    height: 42px;
+    text-align: center;
+
 }
 
 
