@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AdvanceSearch from './AdvanceSearch';
 import CoolPlaces from './CoolPlaces';
+import GetJob from './GetJob';
 import styles from "./home.module.css";
 import Premium from './Premium';
 import TotalCompany from './TotalCompany';
@@ -33,6 +34,8 @@ function Home() {
             <Why/>
 
             <Premium/>
+
+            <GetJob/>
         </div>
     )
 }
