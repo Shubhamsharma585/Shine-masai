@@ -2,6 +2,7 @@
   
     "recruiter": [
       {
+        "id": 1,
         "title": "Network Support Analyst",
         "subtitle": "NTT Global Delivery Services Limited",
         "experience": [0, 5], 
@@ -12,18 +13,19 @@
             "job Description":"EFI is looking for a Senior IT Engineer in our Bangalore office. As a successful candidate you will get an opportunity to work in a dynamic environment where your responsibilities range from solution designing, implementing, supporting Engineering / Enterprise Applications",
             "responsibilities":"You will provide hands-on technical and functional input to design, maintenance, build, integration and testing of complex software components according to functional and technical design specifications. You will provide input to the software engineering manager for estimates, resource needs, milestones and risks; ensure effective delegation, monitoring tasks, identifying risks and handling mitigation and escalations",
             "requirements":"Must possess solid English written and verbal communication skills and have an aptitude for thriving in complex situations. Maintain and provide support for the existing in-house Atlassian infrastructure on Linux platform. Act as the Atlassian Stack expert in troubleshooting of critical production problems as required.Review and optimize existing workflows and workflow automations. Excellent debugging, problem solving, & process implementation skills.",
-            "skills":"Proficient in Linux Operating System. 4+ years of experience in the administration of Atlassian stack applications. Preferred additional hands on knowledge in JQL, Regular Expressions, Velocity script, XML and open source technologies. Database exposure & administration experience (MySQL, SQL, PostgreSQL). 3+ years of experience working in CI/CD tools such as Bitbucket, Bamboo, Jenkins. Proficient in Confluence, Bitbucket and Bamboo administration."
+            "skills":["Proficient in Linux Operating System.", "4+ years of experience in the administration of Atlassian stack applications.", "Preferred additional hands on knowledge in JQL, Regular Expressions, Velocity script, XML and open source technologies.", "Database exposure & administration experience (MySQL, SQL, PostgreSQL).", "3+ years of experience working in CI/CD tools such as Bitbucket, Bamboo, Jenkins. Proficient in Confluence, Bitbucket and Bamboo administration."]
         },
-        "otherdetails": {
-            "Department": "Network / System Administration",
-            "Industry": "IT - Software", 
-            "Skills": "incident management,asap, basic, controllers,routing protocols like rip, network monitoring tools, it services, data services,network support, customer service, business process,monitoring tools, daily operations, network architecture",
-            "OtherSkills": "cisco",
-            "Education": "B.Tech/B.E (Other)Other (Architecture)" },
 
-        "Recruiter details": {
-            "CompanyName": "NTT Global Delivery Services Limited",
-            "CompanyDescription": "NTT Global Delivery Services Limited"
+        "otherdetails": {
+            "department": "Network / System Administration",
+            "industry": "IT - Software", 
+            "skills": ["Proficient in Linux Operating System.", "4+ years of experience in the administration of Atlassian stack applications.", "Preferred additional hands on knowledge in JQL, Regular Expressions, Velocity script, XML and open source technologies.", "Database exposure & administration experience (MySQL, SQL, PostgreSQL).", "3+ years of experience working in CI/CD tools such as Bitbucket, Bamboo, Jenkins. Proficient in Confluence, Bitbucket and Bamboo administration."],
+            "otherSkills": "cisco",
+            "education": "B.Tech/B.E (Other)Other (Architecture)" },
+
+        "recruiter details": {
+            "companyName": "NTT Global Delivery Services Limited",
+            "companyDescription": "NTT Global Delivery Services Limited"
         }   
 
       },
@@ -31,6 +33,7 @@
 
 
       {
+        "id": 2,  
         "title": "Cloud Solutions Engineer in TEST",
         "subtitle": "Intel Technology India Pvt Ltd",
         "experience": [0, 1],
@@ -41,14 +44,14 @@
             "job Description":"You will be part of the Data Center Security Architecture and Development team in the Intel's Data Center Group. This team is responsible for enabling hardware and firmware security features from silicon all the way up to the application space, providing hardware-assured security for data and applications. This trust is the basis for the team's development of security solutions, which include workload integrity, boundary control, end-to-end data encryption for cloud domains.",
             "responsibilities":"",
             "requirements":"BS in CS with 4+ years or MS with 2+ years of systems integration and validation/QA experience. 1+ years of experience in Cloud computing, virtualization and Security technologies. Skilled in Development/Scripting - Java, C, Python or Bash. Experience in Container Technologies (Docker, Kubernetes, CRIO), OpenStack, RHEL, VMware vSphere, Windows Server, Experience in using development/testing tools to become part of end-end product testing lifecycle like - TeamCity, JIRA, Ansible, ReadyAPI, Postman, REST API, GitHub",
-            "skills":"Development/Scripting - Java, C, Python or Bash. Experience in Container Technologies (Docker, Kubernetes, CRIO), OpenStack, RHEL, VMware vSphere, Windows Server"
+            "skills":["Development/Scripting - Java, C, Python or Bash.", "Experience in Container Technologies (Docker, Kubernetes, CRIO), OpenStack, RHEL, VMware vSphere, Windows Server"]
         },
         "otherdetails": {
-            "Department": "General / Other Software, Testing",
-            "Industry": "IT - Software", 
-            "Skills": "automated testing, artificial intelligence, test automation, functional testing, operating systems, cloud computing, data center, unit testing, product testing, test scenarios, code analysis, load testing, stress testing, test strategy",
-            "OtherSkills": "",
-            "Education": "other" },
+            "department": "General / Other Software, Testing",
+            "industry": "IT - Software", 
+            "skills": ["automated testing", "artificial intelligence", "test automation"],
+            "otherSkills": "",
+            "education": "other" },
         "recruiter details": {
             "companyName": "Intel Technology India Pvt Ltd",
             "companyDescription": "You may know us for our processors. But we do so much more. Intel invents at the boundaries of technology to make amazing experiences possible for business and society, and for every person on Earth. Harnessing the capability of the cloud, the ubiquity of the Internet of Things, the latest advances in memory and programmable solutions, and the promise of always-on 5G connectivity, Intel is disrupting industries and solving global challenges."
@@ -59,7 +62,9 @@
   
 
     "applicant": 
-    [ {"name": "Shubham sharma",
+    [ {
+        "id":1,
+       "name": "Shubham sharma",
        "title":"Cloud Solutions Engineer in TEST",
        "email":"shubhamsharma585@gmail.com",
        "mobile":"8619941188",
@@ -87,12 +92,12 @@
            "industry": "Engineering / Construction",
            "functionalarea": "Mechanical Engineering"  
        },
-       "education":{
+       "education":[{
            "title":"M.Tech",
            "branch":"Automobile Engineering",
            "college": "National Institute of Technology, Warangal (NITW)"
-       },
-       "skills": "Statistics,  ANSYS, MATLAB, CREO,  gate qualified, bussiness research",
+       }],
+       "skills": ["Statistics",  "ANSYS", "MATLAB", "CREO",  "gate qualified", "bussiness research"],
        "desired":{
            "role":"Not mentioned",
            "location":"Bangalore | All India",
@@ -106,6 +111,7 @@
         }, 
          
       {
+        "id":2,
         "name": "Deepak",
         "title":"Cloud Solutions Engineer in TEST",
         "email":"deepakH@gmail.com",
@@ -138,7 +144,7 @@
             "branch":"Electronics Engineering",
             "college": "ACEIT"
         },
-        "skills": "Statistics,  ANSYS, MATLAB, CREO,  gate qualified, bussiness research",
+        "skills": ["Statistics",  "ANSYS", "MATLAB", "CREO",  "gate qualified", "bussiness research"],
         "desired":{
             "role":"Not mentioned",
             "location":"Bangalore | All India",
