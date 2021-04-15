@@ -2185,9 +2185,15 @@
   "version" "14.14.31"
 
 "@types/node@^13.7.0":
+<<<<<<< HEAD
   "integrity" "sha512-z8wvSsgWQzkr4sVuMEEOvwMdOQjiRY2Y/ZW4fDfjfe3+TfQrZqFKOthBgk2RnVEmtOKrkwdZ7uTvsxTBLjKGDQ=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-13.13.48.tgz"
   "version" "13.13.48"
+=======
+  "integrity" "sha512-v5fPzKjPAZ33/G4X8EXvGlbHFKQClfKAz1bKF/+cKaWss9lAIqrOETfcFNL3xG+DG2VCEev+dK4/lCa+YZaxBA=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-13.13.49.tgz"
+  "version" "13.13.49"
+>>>>>>> 52ab4eb1f6ee4e4865e9c92233ecf30138ffb846
 
 "@types/normalize-package-data@^2.4.0":
   "integrity" "sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA=="
