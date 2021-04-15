@@ -3,10 +3,12 @@ import { applyMiddleware, combineReducers, createStore } from "redux"
 import { compose } from "redux"
 import thunk from "redux-thunk"
 import regireducer from  "./Register/regireducer"
+import {RecruiterDashReducer} from "./RecruiterDash/RecruiterDasReducer"
 
 const rootreducer = combineReducers({
     regi: regireducer,
-    auth: ""
+    auth: "",
+    RecruiterDash: RecruiterDashReducer
 })
 
 

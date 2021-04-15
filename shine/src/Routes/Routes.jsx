@@ -6,22 +6,17 @@ import Home from "../Components/Home/Home"
 import { JobDescription } from "../Components/JobDescription/JobDescription";
 import NavBar from "../Components/Navbar/NavBar";
 import JobAlert from "../Components/CreateJobAlert/JobAlert";
+import { RecruiterDashboard } from "../Components/RecruiterDash/RecruiterDashboard";
 
 
 
 
 function Routes()
 {
-
-
-
-
-
- 
-    return(
-        <div>
-      <NavBar />
-     <Switch>
+   return(
+      <div>
+         <NavBar />
+         <Switch>
             <Route path="/" exact>
                <Home/>
             </Route>
@@ -37,11 +32,12 @@ function Routes()
             <Route path="/jobdescription" exact>
                <JobDescription />
             </Route>
-       </Switch>
-
-
-        </div>
-    )
+            <Route path="/recruiter/dashboard" exact>
+               <RecruiterDashboard />
+            </Route>
+         </Switch>
+      </div>
+   )
 }
 
 export default Routes;
