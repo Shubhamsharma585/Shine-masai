@@ -1,0 +1,41 @@
+.main_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.main_input{
+    width: 40%;
+}
+.sub1{
+    width: 100%;
+    margin: 100px;
+}
+.sub2{
+    width:99%;
+}
+.sub1 label{
+    align-items: left;
+    width: 100%;
+    margin: 30px;
+    margin-left: 0px;
+}
+
+.sub_div1{
+    width: 70%;
+    margin-left: 100px;
+   border: 1px solid black;
+   border-radius: 5px;
+   background-color: whitesmoke;
+   padding: 25px;
+}
+.input input{
+    width: 80%;
+    height: 2.5vh;
+    margin:50px;
+}
+.input select{
+    width: 80%;
+    height: 3vh;
+    margin:50px;
+}
