@@ -6,7 +6,7 @@
     text-align: left;
     padding-left: 10%;
 }
-
+ 
 .top1
 {
     height: 90px;
@@ -26,8 +26,9 @@
 
 }
 
-.cont1
+.cont1login
 {
+    border: black solid 0px;
     width: 550px;
     height: 450px;
     margin-left: 10%;
@@ -36,11 +37,11 @@
     box-shadow: 0px 0px 10px 5px rgb(213, 213, 213);
 }
 
-.cont1 > input
+.cont1login > input
 {
     width: 400px;
-    border: black solid 0px;
-    border-bottom: black solid 1px;
+    border: rgb(55, 55, 55) solid 0px;
+    border-bottom: rgb(125, 125, 125) solid 1px;
 }
 
 .Register
@@ -109,9 +110,10 @@
     height: 450px;
     margin-left: 35px;
     margin-right: 10%;
+    margin-top: 3%;
     color: #505e6b;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     font-family: Roboto,Arial,Times,serif;
 }
 
