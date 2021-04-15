@@ -2,8 +2,6 @@ import React from 'react'
 import styles from "../RecruiterDash/Dashboard.module.css"
 import {getUserData, singleUserData} from '../../Redux/RecruiterDash/action'
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios"
-
 
 const initValue = {
     comments: "",
