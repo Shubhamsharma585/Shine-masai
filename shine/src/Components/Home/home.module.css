@@ -19,8 +19,18 @@
     text-align: left;
     border: 0 none;
     background-color: #fff;
-    padding-top: 15px;
+    padding-top: 18px;
     
+    
+}
+.searchButton>div{
+    width: 35px;
+    height: 35px;
+    margin-top: -25px;
+    
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: -10px -70px;
+
 }
 .ah1{
     font-size: 45px;
@@ -75,11 +85,14 @@
     font-size: 17px;
     margin-left: 25%;
     color: #fff;
-    margin-top: 0;
+    margin-top: 15px;
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: -51px -76px;
 
 }
 .signinp>p{
     margin-top: 0;
+    margin-left: 17px;
 }
 .searchInput{
     width:300px;
@@ -121,6 +134,136 @@ button:focus{
     height: 56px;
     border-radius: 4px;
     margin: auto;
-    margin-top: -20px;
+    margin-top: -30px;
+    box-shadow: 0px 0px 21px rgb(74 77 78 / 34%);
 
 }
+
+/*-------------Top companies hiring now---------------*/
+
+.topBox{
+    float:left;
+    width: 270px;
+}
+
+.topBox>img{
+    width: 160px;
+    height: 56px;
+    margin: 25px;
+    
+
+}
+
+/*---why shine---*/
+
+.why{
+    flex:33%;
+    font-size:18px;
+    color: #6d7883;
+    text-align: left;
+    padding: 25px;
+    padding-left: 135px;
+    
+
+}
+.whydiv1{
+    width: 129px;
+    height: 72px;
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: -103px -9px;
+    float: left;
+
+}
+.whydiv2{
+    width: 93px;
+    height: 72px;
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: -93px -99px;
+    float: left;
+
+}
+.whydiv3{
+    width: 120px;
+    height: 86px;
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: -183px -84px;
+    float: left;
+
+}
+
+.why>strong{
+ font-size: 22px;
+ color:#505e6b ;
+ float: left;
+ margin-bottom: 0;
+ 
+}
+.why>p{
+    font-size: 18px;
+}
+
+/*------Premium----*/
+
+.Premium{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/premium_base.png?af2426e6d054") #7f4089 repeat-y;
+    padding: 45px;
+    padding-left:70px;
+    height: 300px;
+    
+    color: #fff;
+    
+
+}
+
+.PremiumRight{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/premiumgraph.png?af2426e6d054") top right no-repeat;
+    width: 400px;
+    height: 293px;
+    float: right;
+
+
+}
+.crown{
+    float: left;
+    background: #674691;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 10px 0 0;
+    padding: 0;
+    
+
+}
+.crown>div{
+    background: url("https://static1.shine.com/c/s1/images/mobile/new/sprite_resume_score.svg?60f9426d2076") ;
+    background-position: -1px -125px;
+    width: 44px;
+    height: 41px;
+    display: flex;
+    margin: 6px 3px;
+
+}
+.tick{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de") no-repeat -214px -253px;
+    width: 14px;
+    height: 15px;
+    float: left;
+    margin-top: 5px;
+
+}
+.PremiumButton{
+    background-image: linear-gradient(136deg,#c87857 0%,#e8b383 100%);
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 21%);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 10px 0;
+    width: 190px;
+    text-align: center;
+    margin: 25px 0 0 0;
+    cursor: pointer;
+    justify-content: center;
+}
+
+

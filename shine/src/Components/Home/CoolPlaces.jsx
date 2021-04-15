@@ -16,8 +16,8 @@ function CoolPlaces() {
             <div style={{display:"flex"}}>
                 {work.map((el)=>
                 <div className={styles.coolBox}>
-                    <div><img src={el.img} alt="company"/></div>
-                    <div className={styles.coolSmallBox}> <img className={styles.coolSmallBox}  src={el.nam} alt="company name"/></div>
+                    <div><img className={styles.coolBox} src={el.img} alt="company"/></div>
+                    <div > <img className={styles.coolSmallBox}   src={el.nam} alt="company name"/></div>
                 </div>)}
             </div>
             
