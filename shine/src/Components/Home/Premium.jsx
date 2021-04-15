@@ -11,7 +11,7 @@ function Premium() {
                 </div>
                 <div style={{clear:"both"}}></div>
                
-                <div style={{fontSize:"28px",fontWeight:"600",padding:"10px 0 20px 0"}}>Fastrack your jon search with our premium services</div>
+                <div style={{fontSize:"28px",fontWeight:"600",padding:"10px 0 20px 0",textAlign:"left"}}>Fastrack your jon search with our premium services</div>
                 <div style={{clear:"both"}}></div>
                 <div>
                     <div style={{float:"left",fontsize:"14px",marginRight:"10px"}}><div className={styles.tick}></div><span>Enhanced Profile</span></div>
