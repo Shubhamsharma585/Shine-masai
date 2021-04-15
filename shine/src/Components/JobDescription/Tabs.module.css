@@ -1,0 +1,20 @@
+.tabs{
+    width: 90%;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.tabsList{
+    display: flex;
+    border-bottom: 1px solid;
+}
+
+.tab{
+    margin-right: 4%;
+    list-style: none;
+    cursor: pointer;
+}
+
+.tab:hover{
+    color: blue;
+}

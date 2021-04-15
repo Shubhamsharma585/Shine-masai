@@ -5,29 +5,8 @@
     height: 60px;
     text-align: left;
     padding-left: 10%;
-    display: flex;
-    flex-direction: row;
 }
-
-.top > div
-{
-    height: 30px;
-    width: 80px;
-    margin-left: 62%;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    padding-left: 35px;
-    margin-top: 10px;
-    border-radius: 5px;
-    
-}
-
-.top > img
-{
-    height: 50px;
-}
-
+ 
 .top1
 {
     height: 90px;
@@ -35,64 +14,34 @@
     box-shadow: 0px 0px 2px 2px rgb(201, 201, 201);
 }
 
-
 .cont
 {
     border: rgb(215, 215, 215) solid 1px; 
     height: 550px;
     display: flex;
-    margin: auto;
     flex-direction: row;
     background-color: #fbfbfb;
     padding: 80px 30px 80px 30px;
+    justify-content:space-between
 
 }
 
-.mid
+.cont1login
 {
-    margin: auto;
-    display: flex;
-    width: 900px;
-    box-shadow: rgb(169, 169, 169) 0px 0px 10px 5px;
-}
-
-.cont-img 
-{
-  margin-top: 5%;
-}
-.cont1
-{
+    border: black solid 0px;
+    width: 430px;
     height: 450px;
-    width: 500px;
-    margin: auto;
+    margin-left: 10%;
     padding-left: 30px;
     text-align: left;
-    box-shadow: 0px 0px 2px 2px rgb(252, 248, 248);
+    box-shadow: 0px 0px 10px 5px rgb(213, 213, 213);
 }
 
-.cont1 > input
+.cont1login > input
 {
     width: 400px;
-    border: rgb(143, 141, 141) solid 1px;
-    border-radius: 5px;
-    height: 40px;
-   
-}
-
-
-.conti
-{
-    width: 150px;
-    background-image: linear-gradient( 135deg, rgb(162, 150, 217) 0%, rgb(127, 174, 224) 100%);
-    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 21%);
-    border-radius: 5px;
-    font-weight: 600;
-    margin-left: 55%;
-    padding-top: 10px;
-    text-align: center;
-    height: 35px;
-    width: 130px;
-    color: white;
+    border: rgb(55, 55, 55) solid 0px;
+    border-bottom: rgb(125, 125, 125) solid 1px;
 }
 
 .Register
@@ -132,7 +81,7 @@
     padding-top: -5px;
     padding-bottom: 5px;
     height: 40px;
-    box-shadow: rgb(231, 230, 230) 0px 0px 2px 2px;
+    box-shadow: rgb(201, 201, 201) 0px 0px 5px 5px;
     color: rgb(50, 49, 49);
     display: flex;
     
@@ -154,6 +103,46 @@
     color: rgb(79, 78, 78);
 }
 
+
+.cont2
+{
+    width: 550px;
+    height: 450px;
+    margin-left: 35px;
+    margin-right: 10%;
+    margin-top: 3%;
+    color: #505e6b;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: Roboto,Arial,Times,serif;
+}
+
+.cont2 > ul
+{
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    list-style: none;
+    font-style: normal;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: left;
+}
+
+
+.cont2 > ul > li
+{
+    font-size: 14px;
+    padding: 10px 0;
+    display: flex;
+    width: 97%;
+
+}
+
+.cont2 > ul > li > div
+{
+   margin: 10px;
+}
 
 
 
@@ -187,7 +176,7 @@
     
 }
 
-.btm-left
+.btm_left
 {
    
     width: 60%;
@@ -204,7 +193,7 @@
 }
 
 
-.btm-left > ul > li
+.btm_left > ul > li
 {
     display: inline-block;
     font-size: 12px;
@@ -216,7 +205,7 @@
     text-align: left;
 }
 
-.btm-right
+.btm_right
 {
     border: black solid 1px;
     width: 40%;
@@ -269,7 +258,7 @@ div {
     display: block;
 }
 
-.btm-right
+.btm_right
 {
     font-size: 12px;
 }
