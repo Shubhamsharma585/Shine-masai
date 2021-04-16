@@ -1,7 +1,35 @@
 import React from 'react'
 import Styles from "./JobPost.module.css"
 
+const payload={
+    title:"",
+    salary:"any",
+    companyname:"",
+    department: "Audit",
+    location:"Bangalore",
+    experience:"any",
+    email:"",
+    description:"",
+    skills:[]
+}
+
 function JobPostInput() {
+    const [data, setData]=React.useState(payload)
+    const [skillData, setSkillData]= React.useState("")
+    const {title,salary,companyname,department,location,experience,email,description,skills}=data
+
+    const handleChange=(e)=>{
+        const {value,name}=e.target;
+        if(name != 'skills'){
+            setData({...data,[name]:value})
+        }
+    }
+    const handlearr=(skillData)=>{
+       ( data.skills).push(skillData)
+    }
+    const handleSubmit=()=>{
+        console.log(data)
+    }
     return (
         <div>
               <div className={Styles.sub1}>
@@ -14,41 +42,34 @@ function JobPostInput() {
                 <div style={{display:'flex',}}>
                 <div style={{display:'flex', flexDirection:"column",justifyContent:"space-around", alignItems:"left"}}>
             <label >Job Title</label>
+            <label> Company Name</label>
             <label >Salary</label>
             <label >Department</label>
             <label >Location</label>
             <label >Experience</label>
             <label>Email ID</label>
-            <label >Name of the Alert</label>
+            <label >Description</label>
+            <label >Skills</label>
             </div>
             <div  style={{width:"100%",display:'flex', flexDirection:"column",justifyContent:"space-around", alignItems:"left"}}>  
-            <input placeholder="Enter Keywords" 
-            type="text"/>
-            <select>
-                <option value="Any">-Any-</option>
-                <option value="50k">50,000rs/Yr</option>
-                <option value="100k">Rs 50,000 - 1Lakh/YR</option>
-                <option value="150k">Rs 1.0-1.5 Lakh/Yr</option>
-                <option value="200k">Rs 1.5-2.0 Lakh/Yr</option>
-                <option value="250k">Rs 2.0-2.5 Lakh/Yr</option>
-                <option value="300k">Rs 2.5-3.0 Lakh/Yr</option>
-                <option value="350k">Rs 3.0-3.5 Lakh/Yr</option>
-                <option value="400k">Rs 3.5-4.0 Lakh/Yr</option>
-                <option value="450k">Rs 4.0-4.5 Lakh/Yr</option>
-                <option value="500k">Rs 4.5-5.0 Lakh/Yr</option>
-                <option value="600k">Rs 5-6 Lakh/Yr</option>
-                <option value="700k">Rs 6-7Lakh/Yr</option>
-                <option value="800k">Rs 7-8Lakh/Yr</option>
-                <option value="900k">Rs 8-9Lakh/Yr</option>
-                <option value="10M">Rs 9-10Lakh/Yr</option>
-                <option value="12M">Rs 10-12Lakh/Yr</option>
-                <option value="14M">Rs 12-14Lakh/Yr</option>
-                <option value="16M">Rs 14-16Lakh/Yr</option>
-                <option value="18M">Rs 16-18Lakh/Yr</option>
-
+            <input placeholder="Enter Title " name="title" value={title} onChange={handleChange} type="text"/>
+            <input placeholder="Add Company Name" name="companyname" value={companyname} onChange={handleChange} type="text"/>
+            <select onChange={handleChange} name='salary'value={salary}>
+                <option value="any">-Any-</option>
+                <option value="0">Rs 50,000</option>
+                <option value="1">Rs 1 Lakh/Yr</option>
+                <option value="2">Rs 2 Lakh/Yr</option>
+                <option value="3">Rs 3 Lakh/Yr</option>
+                <option value="4">Rs 4 Lakh/Yr</option>
+                <option value="5">Rs 5 Lakh/Yr</option>
+                <option value="6">Rs 6 Lakh/Yr</option>
+                <option value="7">Rs 7 Lakh/Yr</option>
+                <option value="8">Rs 8 Lakh/Yr</option>
+                <option value="9">Rs 9 Lakh/Yr</option>
+                <option value="10">Rs 10Lakh/Yr</option>
             </select>
             
-            <select name="Department" id="Department">
+            <select name="department" id="Department" value={department} onChange={handleChange}>
              <option value="Audit">Audit</option>
              <option value="Equity Research">Equity Research</option>
              <option value="Finance/Account/Tax">Finance/Account/Tax</option>
@@ -69,7 +90,7 @@ function JobPostInput() {
              <option value="Pre-Sales">Pre-Sales</option>
             </select>
             
-            <select name="Department" id="Department">
+            <select name="location" id="location" onChange={handleChange} value={location}>
              <option value="Bangalore">Bangalore</option>
              <option value="Chennai">Chennai</option>
              <option value="Delhi">Delhi</option>
@@ -93,8 +114,8 @@ function JobPostInput() {
             </select>
 
             
-            <select>
-                <option value="Any">-Any-</option>
+            <select name="experience" value={experience} onChange={handleChange} >
+                <option value="any">-Any-</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -112,14 +133,18 @@ function JobPostInput() {
                 <option value="14">14</option>
                 <option value="15">15</option>
             </select>
+            <input value={email} onChange={handleChange} name="email" placeholder="Your Email Id" type="Email"/>
+            <input value={description} onChange={handleChange} name="description" placeholder="Descriotion about job" type="text"/>
+            <div style={{display:'flex'}}>
+            <input value={skillData} onChange={(e)=>setSkillData(e.target.value)} name="skills" placeholder="Skills" type="text"/> 
+            <button className={Styles.addbtn} onClick={()=>handlearr(skillData)}>Add</button>
+
+            </div>
             
-            <input placeholder="Your Email Id" type="Email"/>
-           
-            <input placeholder="Alert Name" type="text"/>
             </div>
             </div>
             <div className={Styles.Register}>
-                <button>Create job Alert</button>
+                <button onClick={()=>handleSubmit(title,companyname,)}>Create job Alert</button>
             </div>
             </div> 
             </div>
