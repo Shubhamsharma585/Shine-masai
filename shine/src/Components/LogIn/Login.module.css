@@ -63,6 +63,7 @@
     background-image: linear-gradient( 135deg, rgb(162, 150, 217) 0%, rgb(127, 174, 224) 100%);
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 21%);
     padding-top: 10px;
+    cursor: pointer;
     text-align: center;
     height: 35px;
     width: 400px;
@@ -79,6 +80,7 @@
     margin-right: 10px;
     width: 126px;
     padding-top: -5px;
+    cursor: pointer;
     padding-bottom: 5px;
     height: 40px;
     box-shadow: rgb(201, 201, 201) 0px 0px 5px 5px;

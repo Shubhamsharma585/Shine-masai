@@ -48,7 +48,7 @@ const NavBar = () => {
                     <LinkContainer>
                     <div>Search Jobs</div>
                     <LinkItems>
-                        <Navtitle>Jobs in Top Cities</Navtitle>
+                        <Navtitle><Link to="/jobdiscription" style={{textDecoration:"none",color:""}}>Jobs in Top Cities</Link></Navtitle>
                         <Navtitle>Jobs by Skills</Navtitle>
                         <Navtitle>Jobs by Courses</Navtitle>
                         <Navtitle>Jobs by Education</Navtitle>

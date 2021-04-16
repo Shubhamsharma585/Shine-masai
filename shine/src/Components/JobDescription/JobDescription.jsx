@@ -215,20 +215,21 @@ const TEXT_COLLAPSE_OPTIONS = {
     }
 }
 
-const JobDescription = () => {
+const JobDescription = ({dis}) => {
+
     return (
         <MainContainer>
             <CompanyCard>
                 <JobTitle>
-                    Lead Data Engineer Lead Big Data Developer Spark hive Java
+                    {dis.title}
                 </JobTitle>
                 <CompanyName>
-                    Quess Corp(Magna Infotech)
+                    {dis.subTitle}
                 </CompanyName>
                 <JobInfo>
                     <ExperienceYr>
                         <FontAwesomeIcon style={{color:"white", marginRight: 10}} icon={faBriefcase} />
-                        <span>6 to 7 yrs</span>
+                        <span>0 to {dis.Experience} yrs</span>
                     </ExperienceYr>
                     <SalaryPerYr>
                         <FontAwesomeIcon style={{color:"white", marginRight: 10}} icon={faWallet} />
@@ -236,8 +237,7 @@ const JobDescription = () => {
                     </SalaryPerYr>
                     <FontAwesomeIcon style={{color:"white",marginLeft: 10, marginRight: 10}} icon={faMapMarkerAlt} />
                     <JobLocation>
-                        <span>Pune, Nagpur, Mumbai, Banglore, Noida, Hyderabad, Kolkata
-                            , Mumbai, Banglore, Noida, Hyderabad
+                        <span>{dis.location}
                         </span>
                     </JobLocation>
                 </JobInfo>
@@ -253,7 +253,7 @@ const JobDescription = () => {
             <Skills>
                 <SkillsBody>
                     <h4>Key skills</h4>
-                    <SkillsDiv>dacac</SkillsDiv>
+                    <SkillsDiv>{dis.skills}</SkillsDiv>
                     <TakeAsses>
                         <FontAwesomeIcon style={{color:"purple",marginLeft: 10, marginRight: 10}} icon={faClipboard} />
                         Take Assessments to stand out to recruiters
@@ -287,7 +287,7 @@ Vestibulum facilisis massa rutrum libero ornare pretium. Ut dui tortor, elementu
                                 <strong>Company Name</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>Quess Corp (Magna Infotech)</span>
+                                <span>{dis.subTitle}</span>
                             </TabItemsInfo>
                         </TabItems>
                         <TabItems>
@@ -295,7 +295,7 @@ Vestibulum facilisis massa rutrum libero ornare pretium. Ut dui tortor, elementu
                                 <strong>Company Description</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>saghir.ahmed@quesscorp.com  - Magna</span>
+                                <span>{dis.jobDescription}</span>
                             </TabItemsInfo>
                         </TabItems>
                         <TabItems>
@@ -303,7 +303,7 @@ Vestibulum facilisis massa rutrum libero ornare pretium. Ut dui tortor, elementu
                                 <strong>Email</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>saghir.ahmed@quesscorp.com</span>
+                                <span>{dis.email}</span>
                             </TabItemsInfo>
                         </TabItems>
                         <TabItems>
@@ -311,7 +311,7 @@ Vestibulum facilisis massa rutrum libero ornare pretium. Ut dui tortor, elementu
                                 <strong>Telephone</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>8240428903</span>
+                                <span>{dis.Telephone}</span>
                             </TabItemsInfo>
                         </TabItems>
                         </CompanyShortInfo>
