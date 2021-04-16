@@ -119,7 +119,7 @@ function Register()
     const [gologin, setGologin] = useState(false)
     function logintab()
     {
-      console.log("SA");
+      console.log("Gologin");
       setGologin((pre) => !pre)
     }
 
