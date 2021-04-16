@@ -1,25 +1,59 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "../LogIn/Login.module.css"
 import logo1 from "../../Images/logo1.png"
 import man from "../../Images/man.png"
 import doc from "../../Images/doc.png"
 import search from "../../Images/search.png"
-import google from "../../Images/google.png"
+import google1 from "../../Images/google1.png"
 import ld from "../../Images/ld.png"
 import fb from "../../Images/fb.png"
-
-  
+import {auth, google} from "../FireAuth/auth"  
+import { useDispatch, useSelector } from "react-redux"
+import { logingin } from "../../Redux/Login/action"
+import { Link, Redirect } from "react-router-dom"
 
 
 
 function Login()
 {
  
+  const dispatch = useDispatch()
+  const isauth = useSelector(state => state.logi.isauth)
+  console.log(isauth)
 
 
 
-    return(
+
+
+
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+
+
+
+  function handlelogin()
+  {
+    auth.signInWithPopup(google)
+        .then(resp => 
+          {return  console.log(resp),
+          setEmail(resp.user.email),
+          dispatch(logingin(resp.user.email))
+
+          } )
+        .catch((err) => console.log(err)); 
+  }
+
+
+
+
+
+    return isauth?(<Redirect to={"/"} push/>):(
         <div>
+
+         
+
+
+
 
            <div className={styles.top}>
                <img src={logo1} />
@@ -31,8 +65,8 @@ function Login()
            <div className={styles.cont}>
              <div className={styles.cont1login}>
                <h2>Login</h2>
-               <input type="text" placeholder="Email"/><br/><br/>
-               <input type="text" placeholder="Password"/><br/><br/>
+               <input type="text" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} /><br/><br/>
+               <input type="text" value={pass}  placeholder="Password" onChange={(e) => setPass(e.target.value)}/><br/><br/>
 
                 <div className={styles.login}>Login</div>
 
@@ -40,14 +74,14 @@ function Login()
             <p style={{display:"flex", flexDirection:"row"}}><span><hr width="185px"/></span><span style={{width:"10px"}}></span> <span style={{color:"gray"}}>or</span> <span style={{width:"10px"}}></span> <span><hr width="185px"/></span></p>    
           
             <div className={styles.social}>
-              <div><img src={google} alt=""/> <p>Google</p></div>
+              <div onClick={() => handlelogin()}><img src={google1} alt=""/> <p>Google</p></div>
               <div><img src={ld} alt=""/> <p>Linkedin</p></div>
               <div><img src={fb} alt=""/> <p>Facebook</p></div>
 
             </div>
             <p style={{fontSize:"10px", color:"rgb(112, 82, 82)"}}>By syncing your social media account, you agree to shine <span style={{color:"blue"}}>terms and conditions</span></p>
 
-            <div className={styles.Register}>Don't have Shine account? <span>Register Now</span> </div>
+            <div className={styles.Register}>Don't have Shine account? <span><Link to={"/Registration"}>Register Now</Link></span></div>
            </div>
  
 
@@ -125,7 +159,7 @@ function Login()
            <li><a target="_blank" href="/myshine/termsandconditions/" id="id_termsandcondition">Terms &amp; Conditions</a></li>
            <li><a target="_blank" href="/myshine/disclaimer/" id="id_disclaimer">Disclaimer</a></li><li><a target="_blank" href="/myshine/contactus/?type=reportJobPosting" id="id_reportjob">Report a Job Posting</a></li>
            </ul>
-             </div>      
+             </div>)   
 
 
         </div>

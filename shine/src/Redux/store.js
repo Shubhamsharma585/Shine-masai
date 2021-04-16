@@ -2,13 +2,14 @@ import React from "react"
 import { applyMiddleware, combineReducers, createStore } from "redux"
 import { compose } from "redux"
 import thunk from "redux-thunk"
+import loginreducer from "./Login/loginreducer"
 import regireducer from  "./Register/regireducer"
 import {RecruiterDashReducer} from "./RecruiterDash/RecruiterDasReducer"
 
 const rootreducer = combineReducers({
     regi: regireducer,
-    auth: "",
-    RecruiterDash: RecruiterDashReducer
+    RecruiterDash: RecruiterDashReducer,
+    logi: loginreducer
 })
 
 

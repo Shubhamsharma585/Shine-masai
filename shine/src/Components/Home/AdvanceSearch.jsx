@@ -19,7 +19,7 @@ function AdvanceSearch({setIsAuth}) {
     return (
  
             <div>
-                <h1 className={styles.ah1 }>Growth on your mind? <button  style={{float:"right"}} onClick={()=>{setIsAuth(false);}} >X <img src="" alt=""/></button></h1>
+                <h1 className={styles.ah1 }>Growth on your mind? <button  style={{float:"right",backgroundColor:"transparent",border:"none"}} onClick={()=>{setIsAuth(false);}} ><div className={styles.cross}></div></button></h1>
 
                 
                 <div style={{display:'flex',marginTop:"25px"}}>
