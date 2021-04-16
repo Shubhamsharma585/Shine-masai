@@ -254,6 +254,7 @@ const JobDescription = ({dis}) => {
             <Skills>
                 <SkillsBody>
                     <h4>Key skills</h4>
+                    
                     <SkillsDiv>{dis.skills}</SkillsDiv>
                     <TakeAsses>
                         <FontAwesomeIcon style={{color:"purple",marginLeft: 10, marginRight: 10}} icon={faClipboard} />
