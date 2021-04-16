@@ -218,7 +218,8 @@ const TEXT_COLLAPSE_OPTIONS = {
 const JobDescription = ({dis}) => {
 
     return (
-        <MainContainer>
+        <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
+        <MainContainer >
             <CompanyCard>
                 <JobTitle>
                     {dis.title}
@@ -320,6 +321,7 @@ Vestibulum facilisis massa rutrum libero ornare pretium. Ut dui tortor, elementu
             </SelectTabs>
 
         </MainContainer>
+        </div>
     )
 }
 
