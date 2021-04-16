@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS } from "./actiontype"
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from "./actiontype"
 import Axios from "axios"
 
 
@@ -15,12 +15,21 @@ export const logingin = (payload) => dispatch => {
          email: payload
        }
    
-    }
+    } 
 
     )
     .then((res) => {
         console.log(res.data)
-        dispatch(loginsuccess(res.data))
+        //console.log(res.data.length)
+        if(res.data.length == 0)
+        {
+            dispatch(loginfailure(res.data))
+        }
+        else
+        {
+            const payload = res.data[0]
+            dispatch(loginsuccess(payload))
+        }
     })
 
 }  
@@ -37,6 +46,13 @@ const loginrequest = (payload) => {
 const loginsuccess = (payload) => {
     return {
         type: LOGIN_SUCCESS,
+        payload
+    }
+}
+
+const loginfailure = (payload) => {
+    return {
+        type: LOGIN_FAILURE,
         payload
     }
 }
