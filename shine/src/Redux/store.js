@@ -4,9 +4,11 @@ import { compose } from "redux"
 import thunk from "redux-thunk"
 import loginreducer from "./Login/loginreducer"
 import regireducer from  "./Register/regireducer"
+import {RecruiterDashReducer} from "./RecruiterDash/RecruiterDasReducer"
 
 const rootreducer = combineReducers({
     regi: regireducer,
+    RecruiterDash: RecruiterDashReducer,
     logi: loginreducer
 })
 
