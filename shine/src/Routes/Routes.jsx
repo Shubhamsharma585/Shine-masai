@@ -6,8 +6,12 @@ import Home from "../Components/Home/Home"
 
 import NavBar from "../Components/Navbar/NavBar";
 import JobAlert from "../Components/CreateJobAlert/JobAlert";
+
 import JobDescriptionSidebar from "../Components/JobDescription/JobDescriptionSidebar";
 import JobSearch from "../Components/JobSearch/JobSearch";
+
+
+import JobPost from "../Components/JobPost/JobPost";
 
 
 
@@ -34,7 +38,7 @@ function Routes()
             <Route path="/jobalert" exact>
                <JobAlert />
             </Route>
-            <Route path="/registration/parser/" exact>
+            <Route path="/registration" exact>
                <Register/>
             </Route>
             <Route path="/jobdiscription" exact>
@@ -46,7 +50,9 @@ function Routes()
                <JobDescriptionSidebar/>
             </Route>
 
-
+            <Route path="/jobpost">
+               <JobPost/>
+            </Route>
 
        </Switch>
 

@@ -9,6 +9,9 @@ const FireLogin = () => {
         .catch((err) => console.log(err));
     }
 
+
+    
+
     return (
         <div>
             <button onClick={handleLogin}>Login With Google</button>

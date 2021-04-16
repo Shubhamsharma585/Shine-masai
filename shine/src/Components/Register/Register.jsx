@@ -3,11 +3,13 @@ import styles from "../Register/Register.module.css"
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import logo1 from "../../Images/logo1.png"
-import google from "../../Images/google.png"
+import google1 from "../../Images/google1.png"
 import ld from "../../Images/ld.png"
 import fb from "../../Images/fb.png"
 import regi from "../../Images/regi.png"
 import Regifooter from "./Regifooter"
+import {auth, google} from "../FireAuth/auth"
+import { registering } from "../../Redux/Register/action"
 
 
 
@@ -15,6 +17,9 @@ import Regifooter from "./Regifooter"
 function Register()
 {
  
+      const dispatch = useDispatch();
+      const isauth = useSelector(state => state.regi.isauth)
+
 
       const [page1, setPage1] = useState(true)
       const [page2, setPage2] = useState(true)
@@ -26,6 +31,12 @@ function Register()
 
       const [iscollege, setIscollege] = useState(false)
       const [isyear, setIsyear] = useState(false)
+      const [isworked, setIsworked] = useState(false)
+
+      const [ iscompany ,setIscompany] = useState(false)
+      const [ istitle ,setIstitle] = useState(false)
+      const [ isindustry , setIsindustry] = useState(false)
+      const [ isfunctionalarea ,setIsfunctionalarea] = useState(false)
 
       const [name, setName] = useState("");
       const [email, setEmail] = useState("");
@@ -38,6 +49,13 @@ function Register()
       const [college, setCollege] = useState("");
       const [year, setYear] = useState("");
       const [course, setCourse] = useState("");
+
+      const [title, setTitle] = useState("");
+      const [company, setCompany] = useState("");
+      const [industry, setIndustry] = useState("");
+      const [functionalarea, setFunctionalarea] = useState("");
+
+
       
       const[skills, setSkills] = useState([]);
       const[ oneskill, setOneskill] = useState();
@@ -74,25 +92,24 @@ function Register()
 
      function regi4()
      {
-      console.log("continue clicked")
+     
       setPage4(false)
      }
 
      function regi5()
      {
-      console.log("continue clicked")
+     
       setPage5(false)
      }
 
      function regi6()
      {
-      console.log("continue clicked")
+     
       setPage6(false)
      }
 
      function regi7()
      {
-      console.log("continue clicked7");
       return(
         <Redirect to="/" push />
       )
@@ -110,6 +127,31 @@ function Register()
     if(gologin)
     {
        return <Redirect to="/myshine/login"/>
+     }
+
+     function handlesignup()
+     {
+      auth.signInWithPopup(google)
+      .then(resp => 
+      {return  console.log(resp.user.displayName),
+        setName(resp.user.displayName),
+        setEmail(resp.user.email)
+      }
+        )
+      .catch((err) => console.log(err)); 
+     }
+
+
+     function sendpayload()
+     {
+         console.log("all")
+         const payload = {name, email, mobile, pass, gender, location, degree,
+        college, year, course, skills, title, company, industry, functionalarea }
+         dispatch(registering(payload))
+
+         return(
+             <Redirect  to={"/"}/>
+         )  
      }
 
 
@@ -134,7 +176,7 @@ function Register()
                <div className={styles.contimg}>
                   <img src={regi} alt=""/>
                </div>
-
+     
              <div className={styles.cont1}>
                  <br/>
                <h2></h2>
@@ -154,7 +196,7 @@ function Register()
             <p style={{display:"flex", flexDirection:"row"}}><span><hr width="185px"/></span><span style={{width:"10px"}}></span> <span style={{color:"gray"}}>or</span> <span style={{width:"10px"}}></span> <span><hr width="185px"/></span></p>    
           
             <div className={styles.social}>
-              <div><img src={google} alt=""/> <p>Google</p></div>
+              <div onClick={() => handlesignup()}><img src={google1} alt=""/> <p>Google</p></div>
               <div><img src={ld} alt=""/> <p>Linkedin</p></div>
               <div><img src={fb} alt=""/> <p>Facebook</p></div>
 
@@ -174,7 +216,7 @@ function Register()
         </div>
     ):page2?(
         <div>
-          <h1>This is second Page</h1>
+          {/* <h1>This is second Page</h1> */}
 
           
 
@@ -214,7 +256,7 @@ function Register()
         </div>
     ):page3?(
       <div>
-         <h1>This is third Page</h1>
+         {/* <h1>This is third Page</h1> */}
 
           
          <div className={styles.cont}>
@@ -257,7 +299,7 @@ function Register()
       </div>
     ):page4?(
       <div>
-         <h1>This is four Page</h1>
+         {/* <h1>This is four Page</h1> */}
 
 
    
@@ -265,13 +307,99 @@ function Register()
      <div className={styles.commoncont}>
               
 
+
+
+    
+
+
+          
+
+           {isworked?(
+           <div>
+              <div className={styles.commoncont2}>
+                  <h4 style={{fontSize:"22px", fontWeight:"800",marginRight:"0",marginTop:"3px", color:"rgb(75, 75, 75)", margin:"auto", textAlign:"center"}}>In which company you have worked?</h4>  
+             </div>
+
+             <div className={styles.commoncont2} style={{marginTop:"30px"}}> 
+               <input 
+               style={{marginRight:"", height:"40px", width:"500px", borderRadius:"5px", border:"gray 1px solid" }}
+               type="text" 
+               placeholder="Enter Company Name"
+               value={company}
+               onChange={(e) => setCompany(e.target.value)}
+               />
+               <button 
+               style={{height:"42px", width:"42px",marginRight:"60px", cursor:"pointer"}}
+               onClick={() => setIstitle(true)}
+               >→</button>
+             </div> 
+
+             {istitle?(
+                 <div className={styles.commoncont2} style={{marginTop:"30px"}}> 
+                 <p style={{marginRight:"350px"}}> What was your Job Title?</p>  
+                   <input 
+                style={{marginRight:"", height:"40px", width:"500px", borderRadius:"5px", border:"gray 1px solid" }}
+               type="text" 
+               placeholder="Enter Title"
+               value={title}
+               onChange={(e) => setTitle(e.target.value)}
+               />
+               <button
+               style={{height:"42px", width:"42px",marginRight:"60px",cursor:"pointer"}}
+               onClick={() => setIsindustry(true)}
+               >→</button>
+             </div>
+
+             ):("")}
+
+{  isindustry?(
+        <div className={styles.commoncont2} style={{marginTop:"30px"}}> 
+                  <p style={{marginRight:"350px"}}> What was Industry?</p>  
+                    <input 
+                 style={{marginRight:"", height:"40px", width:"500px", borderRadius:"5px", border:"gray 1px solid" }}
+                type="text" 
+                placeholder="Enter Industry"
+                value={industry}
+                onChange={(e) => setIndustry(e.target.value)}
+                />
+                <button
+                style={{height:"42px", width:"42px",marginRight:"60px",cursor:"pointer"}}
+                onClick={() => setIsfunctionalarea(true)}
+                >→</button>
+              </div>
+
+            ):("")}
+    {  isfunctionalarea?(
+         <div className={styles.commoncont2} style={{marginTop:"30px"}}> 
+         <p style={{marginRight:"350px"}}> What was Functional Area?</p>  
+           <input 
+        style={{marginRight:"", height:"40px", width:"500px", borderRadius:"5px", border:"gray 1px solid" }}
+       type="text" 
+       placeholder="Enter Industry"
+       value={functionalarea}
+       onChange={(e) => setFunctionalarea(e.target.value)}
+       />
+       <button
+       style={{height:"42px", width:"92px",marginRight:"20px",cursor:"pointer", backgroundImage:"linear-gradient( 135deg, rgb(162, 150, 217) 0%, rgb(127, 174, 224) 100%)", color:"white", fontWeight:"800", border:"0px"}}
+       onClick={() => regi4()}
+       >Continue</button>
+
+     </div>
+            ):("")}      
+      
+
+           </div>
+           
+           ):(
+<div>
+
+
              <div className={styles.commoncont2}>
              <h4 style={{fontSize:"28px", fontWeight:"800",marginRight:"20%",marginTop:"3px"}}>Have you ever worked?</h4>  
              </div>
 
-
-             <div className={styles.commoncont1}> 
-             <button className={styles.identity_second}><div className={styles.identity11} width="50px"  style={{marginLeft:"10px",marginTop:"10px",}}></div> <h4 style={{marginLeft:"5px",marginTop:"25px", width:"170px",  fontSize:"15px", color:"grey"}}>Yes, I have worked</h4></button>
+<div className={styles.commoncont1}> 
+             <button className={styles.identity_second} onClick={() => setIsworked(true)} ><div className={styles.identity11} width="50px"  style={{marginLeft:"10px",marginTop:"10px",}}></div> <h4 style={{marginLeft:"5px",marginTop:"25px", width:"170px",  fontSize:"15px", color:"grey"}}>Yes, I have worked</h4></button>
              <button className={styles.identity_second}><div className={styles.identity12} width="55px"  style={{marginLeft:"20px",marginTop:"15px",}}></div> <h4 style={{marginLeft:"20px",marginTop:"25px", width:"170px", color:"grey"}}>No, I don't have any work experience/ I am a fresher</h4> </button>
              </div>
 
@@ -283,6 +411,13 @@ function Register()
                          Continue →  
             </div>
             </div>        
+</div>)
+
+           }
+
+
+
+
 
 
 
@@ -296,7 +431,7 @@ function Register()
       </div>
     ):page5?(
       <div>
-         <h1>This is five Page</h1>
+         {/* <h1>This is five Page</h1> */}
 
 
 
@@ -342,7 +477,7 @@ function Register()
       </div>
     ):page6?(
       <div>
-         <h1>This is six Page</h1>
+         {/* <h1>This is six Page</h1> */}
 
 
 
@@ -431,7 +566,7 @@ function Register()
       </div>
     ):(
       <div>
-         <h1>This is seven Page</h1>
+         {/* <h1>This is seven Page</h1> */}
 
 
 
@@ -440,44 +575,132 @@ function Register()
          <div className={styles.cont}>
      <div className={styles.commoncont}>
 
+
      <div className={styles.commoncont2}>
        <h4 style={{fontSize:"22px", fontWeight:"800",marginRight:"50%",marginTop:"3px", color:"rgb(75, 75, 75)"}}>Skills</h4>  
      </div>
-                    
-      <div className={styles.commoncont2}>
-       <div className={styles.quali}>
-        <button className={styles.identity_third} onClick={() => setSkills([...skills, "English" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>English &#43;</h4> </button>
-        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Hindi" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Hindi  &#43;</h4> </button>
-        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Bussiness" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Bussiness  &#43;</h4> </button>
-        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Excel" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Excel  &#43;</h4> </button>
-        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Creo" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Creo  &#43;</h4> </button>
-
-        </div>
-
-     </div> 
-        <div className={styles.commoncont2} style={{marginTop:"0px"}}>
-        <div className={styles.quali}>
-        <button className={styles.identity_third}  onClick={() => setSkills([...skills, "Autocad" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Autocad  &#43;</h4> </button>
-         <button className={styles.identity_third} onClick={() => setSkills([...skills, "Ansys" ])}><h4 style={{marginLeft:"5px",marginTop:"8px", width:"",  fontSize:"15px", color:"grey"}}>Ansys  &#43;</h4></button>
-         <button className={styles.identity_third} onClick={() => setSkills([...skills, "ProE" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>ProE  &#43;</h4> </button>
-        <button className={styles.identity_third}  onClick={() => setSkills([...skills, "Matlab" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Matlab  &#43;</h4> </button>     
-        </div>
-      </div>
 
 
-      <div className={styles.commoncont2}> 
-               <input 
-               style={{marginRight:"", height:"40px", width:"500px", borderRadius:"5px", border:"gray 1px solid" }}
+
+     <div className={styles.skillcont}>
+     <div className={styles.skillcont21}> 
+     <input 
+               style={{marginLeft:"0px", height:"40px", width:"200px", borderRadius:"5px", border:"gray 1px solid" }}
                type="text" 
                placeholder="Enter Skills"
                value={oneskill}
                onChange={(e) => setOneskill(e.target.value)}
                />
                 <button
-               style={{height:"42px", width:"42px",marginRight:"60px",cursor:"pointer"}}
+               style={{height:"42px", width:"42px",marginRight:"0px",cursor:"pointer"}}
                onClick={() => addskills()}
                >→</button>
+
+
+    <div>      
+       {skills.map((itm) => {return  <button className={styles.identity_third}> 
+             <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>{itm}</h4> </button>})
+             }
+     </div>        
+
+          
+
+      
+     
+     
+     
+     </div>
+     <hr/>
+     <div className={styles.skillcont22} style={{paddingTop:"50px"}}> 
+     <div className={styles.commoncont2}>
+       <div className={styles.skills}>
+        <button className={styles.identity_third} onClick={() => setSkills([...skills, "English" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>English &#43;</h4> </button>
+        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Bussiness" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Bussiness  &#43;</h4> </button>
+        </div>
+     </div> 
+
+     <div className={styles.commoncont2} style={{marginTop:"0px"}}>
+        <div className={styles.skills}>
+        <button className={styles.identity_third}  onClick={() => setSkills([...skills, "Autocad" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Autocad  &#43;</h4> </button>
+         <button className={styles.identity_third} onClick={() => setSkills([...skills, "Ansys" ])}><h4 style={{marginLeft:"5px",marginTop:"8px", width:"",  fontSize:"15px", color:"grey"}}>Ansys  &#43;</h4></button>  
+        </div>
       </div>
+
+     <div className={styles.commoncont2}>
+       <div className={styles.skills}>
+        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Excel" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Excel  &#43;</h4> </button>
+        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Creo" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Creo  &#43;</h4> </button>
+        </div>
+     </div> 
+
+     <div className={styles.commoncont2} style={{marginTop:"0px"}}>
+        <div className={styles.skills}>
+         <button className={styles.identity_third} onClick={() => setSkills([...skills, "ProE" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>ProE  &#43;</h4> </button>
+        <button className={styles.identity_third}  onClick={() => setSkills([...skills, "Matlab" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Matlab  &#43;</h4> </button>     
+        </div>
+      </div>
+      
+     
+     
+     
+     
+     </div>
+
+
+
+     </div>
+
+
+
+
+
+
+
+
+ {/* 
+      <div className={styles.commoncont2}>
+       <div className={styles.skills}>
+        <button className={styles.identity_third} onClick={() => setSkills([...skills, "English" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>English &#43;</h4> </button>
+        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Bussiness" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Bussiness  &#43;</h4> </button>
+        </div>
+     </div> 
+
+     <div className={styles.commoncont2} style={{marginTop:"0px"}}>
+        <div className={styles.skills}>
+        <button className={styles.identity_third}  onClick={() => setSkills([...skills, "Autocad" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Autocad  &#43;</h4> </button>
+         <button className={styles.identity_third} onClick={() => setSkills([...skills, "Ansys" ])}><h4 style={{marginLeft:"5px",marginTop:"8px", width:"",  fontSize:"15px", color:"grey"}}>Ansys  &#43;</h4></button>  
+        </div>
+      </div>
+
+     <div className={styles.commoncont2}>
+       <div className={styles.skills}>
+        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Excel" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Excel  &#43;</h4> </button>
+        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Creo" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Creo  &#43;</h4> </button>
+        </div>
+     </div> 
+
+     <div className={styles.commoncont2} style={{marginTop:"0px"}}>
+        <div className={styles.skills}>
+         <button className={styles.identity_third} onClick={() => setSkills([...skills, "ProE" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>ProE  &#43;</h4> </button>
+        <button className={styles.identity_third}  onClick={() => setSkills([...skills, "Matlab" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Matlab  &#43;</h4> </button>     
+        </div>
+      </div>
+ 
+       </div>
+     
+  </div>
+</div> */}
+  
+
+
+
+
+        
+
+
+
+
+
 
 
 
@@ -486,9 +709,9 @@ function Register()
 
 
             <div className={styles.commoncont2}>
-            <Link className={styles.commoncontconti} path={"/"}>
-                         Continue →  
-            </Link>
+            <div className={styles.commoncontconti} onClick={() => sendpayload()}>
+                         Submit 
+            </div>
             </div>        
     </div>
            </div>
