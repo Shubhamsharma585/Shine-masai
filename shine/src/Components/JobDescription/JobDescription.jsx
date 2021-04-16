@@ -13,7 +13,7 @@ import axios from "axios"
 
 
 const MainContainer = styled.div`
-    width: 99%;
+    min-width: 1050px;
     height: auto;
     padding: 5px;
     /* border: 1px solid black; */
@@ -219,24 +219,33 @@ const TEXT_COLLAPSE_OPTIONS = {
 }
 
 const JobDescription = ({dis}) => {
-    // const [skill, setSkill] = React.useState([])
-    const skill = dis.skills
-    // const makeSkills = (id) => {
-    //     axios.get(`https://json-heroku-shubham.herokuapp.com/jobDetails/${id}`)
-    //     .then(resp => setSkill(resp.data.skills))
-    // }
-    // console.log(skill)
-
-    // React.useEffect(()=>{
-    //     makeSkills(dis.id)
-    // }, [dis])
-
+    const userData = useSelector((state) => state.logi.payload)
     const isAuth = useSelector((state)=> state.logi.isauth)
-
+    let payload = []
     const handleGetUser = () => {
-        !isAuth ? alert("Login") : console.log("data")
+        !isAuth ? alert("Login") : postUser()
     }
-    // console.log(department)
+    
+    const postUser = () => {
+        axios.post("https://fathomless-plains-83957.herokuapp.com/posts",{
+            name: userData.name,
+            call: false,
+            interview_status: "Not_Submitted",
+            gender: userData.personal.gender,
+            dob: userData.personal.dob,
+            email: userData.personal.email,
+            phone: userData.personal.mobile,
+            applied_company: dis.subtitle,
+            applied_position: dis.title,
+            location: userData.personal.location,
+            experience: userData.worksummary.experience,
+            qualification: userData.education.title,
+            skills: userData.skills,
+            comments: []
+        }).then(resp => console.log(resp))
+    }
+   
+
     return (
         <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
         <MainContainer >
@@ -245,21 +254,20 @@ const JobDescription = ({dis}) => {
                     {dis.title}
                 </JobTitle>
                 <CompanyName>
-                    {dis.subTitle}
+                    {dis.subtitle}
                 </CompanyName>
                 <JobInfo>
                     <ExperienceYr>
                         <FontAwesomeIcon style={{color:"white", marginRight: 10}} icon={faBriefcase} />
-                        <span>0 to {dis.experience} yrs</span>
+                        <span style={{color:"white"}}>0 to {dis.experience} yrs</span>
                     </ExperienceYr>
                     <SalaryPerYr>
                         <FontAwesomeIcon style={{color:"white", marginRight: 10}} icon={faWallet} />
-                        <span>Rs {dis.salary} Lakhs/Yr</span>
+                        <span style={{color:"white"}}>Rs {dis.salary} Lakhs/Yr</span>
                     </SalaryPerYr>
                     <FontAwesomeIcon style={{color:"white",marginLeft: 10, marginRight: 10}} icon={faMapMarkerAlt} />
                     <JobLocation>
-                        <span>{dis.location}
-                        </span>
+                        <span style={{color:"white"}}>{dis.location}</span>
                     </JobLocation>
                 </JobInfo>
                 <ButtonBox>
@@ -274,7 +282,7 @@ const JobDescription = ({dis}) => {
             <Skills>
                 <SkillsBody>
                     <h4>Key skills</h4>
-                    <div>{skill}</div>
+                    {/* <div>{skill}</div> */}
                     <TakeAsses>
                         <FontAwesomeIcon style={{color:"purple",marginLeft: 10, marginRight: 10}} icon={faClipboard} />
                         Take Assessments to stand out to recruiters
@@ -300,15 +308,15 @@ const JobDescription = ({dis}) => {
                                 <strong>Company Name</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>{dis.subTitle}</span>
+                                <span>{dis.subtitle}</span>
                             </TabItemsInfo>
                         </TabItems>
                         <TabItems>
                             <TabItemsTitle>
-                                <strong>Company Description</strong>
+                                <strong>Position Description</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>{dis.jobDescription}</span>
+                                <span>{dis.title}</span>
                             </TabItemsInfo>
                         </TabItems>
                         <TabItems>
@@ -324,7 +332,7 @@ const JobDescription = ({dis}) => {
                                 <strong>Telephone</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>{dis.Telephone}</span>
+                                <span>{dis.telephone}</span>
                             </TabItemsInfo>
                         </TabItems>
                         </CompanyShortInfo>

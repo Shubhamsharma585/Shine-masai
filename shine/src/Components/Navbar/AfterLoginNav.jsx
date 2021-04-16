@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from "../Navbar/NavBar.module.css"
 import styled from "styled-components"
+import { useSelector } from "react-redux";
 
 const LinkItems = styled.div`
     display: none;
@@ -39,6 +40,7 @@ const Navtitle = styled.p`
 `
 
 const AfterLoginNav = () => {
+    const UserName = useSelector((state) => state.logi.payload.name)
 
     return (
         <div className={styles.navAfterContainer}>
@@ -99,7 +101,7 @@ const AfterLoginNav = () => {
             <Link to="">
                 <LinkContainer>
                 <button className={styles.userName}>
-                    {`Hi, ${"name"}`}
+                    {`Hi, ${UserName}`}
                 </button>
                     <LinkItems> 
                         <Navtitle>Account Settings</Navtitle>

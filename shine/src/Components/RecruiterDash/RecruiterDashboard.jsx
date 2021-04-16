@@ -60,7 +60,7 @@ const RecruiterDashboard = () => {
                             <div>{el.name}</div>
                             <div>{el.title}</div>
                             <div>{el.email}</div>
-                            <div>{el.personal.location}</div>
+                            {/* <div>{el.personal.location}</div> */}
                         </div>
                     </div>    
                 )}
@@ -149,7 +149,7 @@ const RecruiterDashboard = () => {
                             <strong>Location: </strong>
                         </div>
                         <div>
-                            <span>{CandiPersonal.location}</span>
+                            {/* <span>{CandiPersonal.location}</span> */}
                         </div>
                     </div>
                     <div className={styles.mainContainer_Exp}>  

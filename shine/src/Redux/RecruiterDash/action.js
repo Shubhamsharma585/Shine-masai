@@ -12,10 +12,12 @@ const getUserData = () => (dispatch) => {
     const dashRequest = recruiter_dash_request()
     dispatch(dashRequest)
 
-    return axios.get("https://json-heroku-shubham.herokuapp.com/applicant")
+    return axios.get("https://fathomless-plains-83957.herokuapp.com/posts")
     .then(resp => {
-        const dashSuccess = recruiter_dash_success(resp.data)
-        dispatch(dashSuccess)
+        // const dashSuccess = recruiter_dash_success(resp.data)
+        // console.log(resp.data[0].payload)
+
+        // dispatch(dashSuccess)
     })
     .catch(err => {
         const dashFailure = recruiter_dash_failure()
@@ -26,8 +28,7 @@ const getUserData = () => (dispatch) => {
 const singleUserData = (id) => (dispatch) => {
     const singleRequest = dashboard_candidate_request()
     dispatch(singleRequest)
-
-    return axios.get(`https://json-heroku-shubham.herokuapp.com/applicant/${id}`)
+    return axios.get(`https://fathomless-plains-83957.herokuapp.com/posts/${id}`)
     .then(resp => {
         const singleSuccess = dashboard_candidate_success(resp.data)
         dispatch(singleSuccess)

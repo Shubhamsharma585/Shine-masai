@@ -51,7 +51,8 @@ function JobDescriptionSidebar() {
             {isLoading ? <div className={styles.loadingBox}>
                 <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt=""/>
             </div>
-            :<div>
+            :
+            <div>
                 <div>
                     {data.map((el)=>(
                     <div key={el.id} onClick={()=>getData(el.id)} className={styles.box} style={{width:"300px", height:"100px",padding:"5px"}}>

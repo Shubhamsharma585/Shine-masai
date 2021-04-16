@@ -99,14 +99,14 @@ const NavBar = () => {
                 </Link>
             </div>
             <button className={styles.navContainer_Jalert}>
-                <Link to="/jobalert">Create job alert</Link>
+                <Link style={{textDecoration: "none", color: "white"}} to="/jobalert">Create job alert</Link>
             </button>
             <button className={styles.navContainer_Jalert}>
                 Post a job
             </button>
             <div className={styles.navContainer_Contact}>
                 <div>080-47105555</div>
-                <div>9am - 6pm, Mon to Sat</div>
+                <div style={{color: "white"}}>9am - 6pm, Mon to Sat</div>
             </div>
         </div>
     )
