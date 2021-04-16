@@ -4,19 +4,20 @@ import Styles from "./JobPost.module.css"
 const payload={
     title:"",
     salary:"any",
-    companyname:"",
+    subtitle:"",
     department: "Audit",
     location:"Bangalore",
     experience:"any",
     email:"",
     description:"",
+    telephone:"",
     skills:[]
 }
 
 function JobPostInput() {
     const [data, setData]=React.useState(payload)
     const [skillData, setSkillData]= React.useState("")
-    const {title,salary,companyname,department,location,experience,email,description,skills}=data
+    const {title,salary,subtitle,department,location,experience,email,description,telephone}=data
 
     const handleChange=(e)=>{
         const {value,name}=e.target;
@@ -25,7 +26,7 @@ function JobPostInput() {
         }
     }
     const handlearr=(skillData)=>{
-       ( data.skills).push(skillData)
+       ( data.skills).push(skillData+" ")
     }
     const handleSubmit=()=>{
         console.log(data)
@@ -48,15 +49,16 @@ function JobPostInput() {
             <label >Location</label>
             <label >Experience</label>
             <label>Email ID</label>
+            <label>TelePhone</label>
             <label >Description</label>
             <label >Skills</label>
             </div>
             <div  style={{width:"100%",display:'flex', flexDirection:"column",justifyContent:"space-around", alignItems:"left"}}>  
             <input placeholder="Enter Title " name="title" value={title} onChange={handleChange} type="text"/>
-            <input placeholder="Add Company Name" name="companyname" value={companyname} onChange={handleChange} type="text"/>
+            <input placeholder="Add Company Name" name="subtitle" value={subtitle} onChange={handleChange} type="text"/>
             <select onChange={handleChange} name='salary'value={salary}>
                 <option value="any">-Any-</option>
-                <option value="0">Rs 50,000</option>
+                <option value="50000">Rs 50,000</option>
                 <option value="1">Rs 1 Lakh/Yr</option>
                 <option value="2">Rs 2 Lakh/Yr</option>
                 <option value="3">Rs 3 Lakh/Yr</option>
@@ -134,6 +136,7 @@ function JobPostInput() {
                 <option value="15">15</option>
             </select>
             <input value={email} onChange={handleChange} name="email" placeholder="Your Email Id" type="Email"/>
+            <input value={telephone} onChange={handleChange} name="telephone" placeholder="Add Telephone" type="text"/>
             <input value={description} onChange={handleChange} name="description" placeholder="Descriotion about job" type="text"/>
             <div style={{display:'flex'}}>
             <input value={skillData} onChange={(e)=>setSkillData(e.target.value)} name="skills" placeholder="Skills" type="text"/> 
@@ -144,7 +147,7 @@ function JobPostInput() {
             </div>
             </div>
             <div className={Styles.Register}>
-                <button onClick={()=>handleSubmit(title,companyname,)}>Create job Alert</button>
+                <button onClick={()=>handleSubmit(title,subtitle,)}>Create job Alert</button>
             </div>
             </div> 
             </div>
