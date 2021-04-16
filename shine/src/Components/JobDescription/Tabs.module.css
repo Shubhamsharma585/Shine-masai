@@ -18,3 +18,32 @@
 .tab:hover{
     color: blue;
 }
+
+/*----------sidebar--------*/
+
+.box{
+    background: #f6faff;
+    cursor: pointer;
+    box-shadow: 0 1px 0 0 #99a6eb, 0 0 10px 0 rgb(0 0 0 / 10%);
+
+}
+.pre{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
+    background-position: -1px -183px;
+    background-repeat: no-repeat;
+    float: left;
+    width: 18px;
+    height: 20px;
+    margin-top: 12px;
+}
+.point{
+    background-color: #d3e3ec;
+    width: 5px;
+    height: 5px;
+    float: left;
+    margin-top: 8px;
+    margin-right: 4px;
+
+    
+   
+}
