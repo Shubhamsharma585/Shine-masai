@@ -204,7 +204,7 @@
 .social
 {
     display: flex;
-}
+} 
 
 .social > div
 {
@@ -212,6 +212,7 @@
     width: 126px;
     padding-top: -5px;
     padding-bottom: 5px;
+    cursor: pointer;
     height: 40px;
     box-shadow: rgb(231, 230, 230) 0px 0px 2px 2px;
     color: rgb(50, 49, 49);
@@ -333,6 +334,15 @@
     display: flex;
     flex-direction: row;
 }
+
+.skills
+{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+}
+
+
 
 li
 {
@@ -531,4 +541,33 @@ div {
     background-color: rgb(145, 186, 220);
 }
 
+
+.skillcont
+{
+    border: black 0px solid;
+    width: 650px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+
+}
+
+.skillcont21
+{
+    border: black 0px solid;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+
+}
+
+.skillcont22
+{
+    border: black 0px solid;
+    width: 300px;
+    height: 250px;
+    margin: auto;
+ 
+}
 
