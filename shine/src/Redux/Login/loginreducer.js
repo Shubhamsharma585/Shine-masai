@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS } from "./actiontype"
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from "./actiontype"
 
 
 
@@ -7,8 +7,9 @@ const initstate =
     isauth: false,
     isloading: false,
     iserror: false,
-    data: []
-   
+    payload: {
+        name: ""
+    }
  
 }
 
@@ -31,7 +32,7 @@ function loginreducer(state = initstate, { type, payload})
                 ...state,
                 isauth: true,
                 isloading: false,
-                data: payload 
+                payload 
                   }
                 } 
          case LOGIN_REQUEST:
@@ -41,6 +42,16 @@ function loginreducer(state = initstate, { type, payload})
                  isauth: false, 
                 }
            }
+
+       case LOGIN_FAILURE:
+            {
+            return {                            
+                 ...state,
+                 isauth: false,
+                }
+           }   
+
+
 
         default: {
             return {
