@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import AdvanceSearch from './AdvanceSearch';
 import CoolPlaces from './CoolPlaces';
 import Course from './Course';
@@ -21,8 +22,8 @@ function Home() {
 
                 </div>
                 <div className={styles.a2background}>
-                    <button className={styles.regButton}>Register for free</button>
-                    <div className={styles.signinp}><p>Sign in</p></div>
+                    <button className={styles.regButton}><Link to="/registration">Register for free</Link></button>
+                    <div className={styles.signinp}><p><Link to="/myshine/login">Sign in</Link></p></div>
 
                 </div></>)}
                 
