@@ -8,7 +8,55 @@ const initstate =
     isloading: false,
     iserror: false,
     payload: {
-        name: ""
+        id: "",
+    name: "",
+    title: "",
+    email: "",
+    mobile: "",
+    resume: "",
+    personal: {
+      name: "",
+      email: "",
+      mobile: "",
+      dob: "",
+      location: "",
+      gender: ""
+    },
+    worksummary: {
+      title: "",
+      summary: "",
+      experience: [
+        1,
+        4
+      ],
+      largestteam: "",
+      anualsalary: "",
+      notice: ""
+    },
+    employment: {
+      title: "",
+      company: "",
+      duration: "",
+      industry: "",
+      functionalarea: ""
+    },
+    education: {
+      title: "",
+      branch: "",
+      college: ""
+    },
+    skills: [
+  
+    ],
+    desired: {
+      role: "",
+      location: "",
+      department: "",
+      industry: "",
+      jobtype: "",
+      shifttype: "",
+      salary: ""
+    }
     }
  
 }

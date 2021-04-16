@@ -22,7 +22,6 @@ function Login()
   console.log(isauth)
 
   const data = useSelector(state => state.logi)
-  console.log("loginn")
   console.log(data)
   console.log(data.payload)
   console.log(data.payload.name)
