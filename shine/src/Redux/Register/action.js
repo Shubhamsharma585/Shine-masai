@@ -42,13 +42,13 @@ export const registering = (payload) => dispatch => {
       "industry": industry,
       "functionalarea": functionalarea
     },
-    "education": [
+    "education": 
       {
         "title": degree,
         "branch": course,
         "college": college
       }
-    ],
+    ,
     "skills": skills,
     "desired": {
       "role": "",
