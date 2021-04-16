@@ -3,9 +3,11 @@ import { Route, Switch } from "react-router-dom"
 import Login from "../Components/LogIn/Login"
 import Register from "../Components/Register/Register";
 import Home from "../Components/Home/Home"
-import { JobDescription } from "../Components/JobDescription/JobDescription";
+
 import NavBar from "../Components/Navbar/NavBar";
 import JobAlert from "../Components/CreateJobAlert/JobAlert";
+import JobDescriptionSidebar from "../Components/JobDescription/JobDescriptionSidebar";
+import JobSearch from "../Components/JobSearch/JobSearch";
 
 
 
@@ -35,9 +37,13 @@ function Routes()
             <Route path="/registration/parser/" exact>
                <Register/>
             </Route>
-
             <Route path="/jobdiscription" exact>
-               <JobDescription/>
+               <JobSearch/>
+            </Route>
+
+
+            <Route path="/jobdiscription/:location" >
+               <JobDescriptionSidebar/>
             </Route>
 
 

@@ -215,12 +215,13 @@ const TEXT_COLLAPSE_OPTIONS = {
     }
 }
 
-const JobDescription = () => {
+const JobDescription = ({dis}) => {
+
     return (
         <MainContainer>
             <CompanyCard>
                 <JobTitle>
-                    Lead Data Engineer Lead Big Data Developer Spark hive Java
+                    {dis.title}
                 </JobTitle>
                 <CompanyName>
                     Quess Corp(Magna Infotech)
