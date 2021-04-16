@@ -9,10 +9,12 @@ function JobDescriptionSidebar() {
     const [page, setPage] = React.useState(1);
     const [limit, setLimit]=useState(5);
     const [dis, setDis]=useState([]);
+    const [isLoading, setIsloading] = React.useState(false)
 
     const {location} =useParams(); 
     
     const handleSearch = () => {
+        setIsloading(true)
         const requestParam = {
           method: "get",
           url: `https://json-heroku-shubham.herokuapp.com/jobDetails?location=${location}`,
@@ -27,8 +29,7 @@ function JobDescriptionSidebar() {
         axios(requestParam)
           .then((res) =>{
             setData(res.data);
-            
-            
+            setIsloading(false)
         })
         
           .catch((err) => console.log("err"));
@@ -52,7 +53,10 @@ function JobDescriptionSidebar() {
 
     return (
         <div style={{display:"flex"}}>
-            <div>
+            {isLoading ? <div className={styles.loadingBox}>
+                <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt=""/>
+            </div>
+            :<div>
                 <div>
                     {data.map((el)=>(
                     <div key={el.id} onClick={()=>getData(el.id)} className={styles.box} style={{width:"300px", height:"100px",padding:"5px"}}>
@@ -82,7 +86,7 @@ function JobDescriptionSidebar() {
 
                 </div>
 
-            </div>
+            </div>}
                 
             <div>
                 <JobDescription dis={dis}/>

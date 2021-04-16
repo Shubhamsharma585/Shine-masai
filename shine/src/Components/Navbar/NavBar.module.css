@@ -1,15 +1,19 @@
-.navContainer{
+.navContainer, .navAfterContainer{
     width: 100%;
-    height: 70px;
+    height: 60px;
     /* border-bottom: 1px solid;
     border-top: 1px solid; */
     display: flex;
-    background-color: #525BBD;
+    background: linear-gradient(135deg,#5a3ea5 0%,#4b30bd 50%,#4b30bd 100%);
     position: sticky;
     top: 0;
 }
 
-.navContainer_Links{
+.navAfterContainer{
+    background: white;
+}
+
+.navContainer_Links, .navAfterContainer_Links{
     display: flex;
     text-decoration: none;
     color: black;
@@ -21,7 +25,7 @@
     margin-top: 0.8%;
 }
 
-.navContainer_Links>a{
+.navContainer_Links>a, .navAfterContainer_Links>a{
     text-decoration: none;
     color: black;
     padding: 5px;
@@ -32,6 +36,14 @@
     margin-top: 1%;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+}
+
+.navAfterContainer_Links>a{
+    color: black;
+}
+
+.navAfterContainer_Links>a:hover{
+    color: blue;
 }
 
 .navContainer_Links>a:hover, .navContainer_Jalert:hover{
@@ -97,4 +109,19 @@
     height: auto;
     padding: 5px;
     border: 1px solid black;
+}
+
+.userName{
+    width: auto;
+    height: 35px;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    margin-top: 1%;
+    cursor: pointer;
+    background: inherit;
+}
+
+.userButton{
+    margin-top: 1%;
+    margin-left: 25%;
 }

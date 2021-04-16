@@ -7,12 +7,15 @@ import ReactTextCollapse from 'react-text-collapse'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboard, faStar, faUser } from '@fortawesome/free-regular-svg-icons'
 import { faBriefcase, faMapMarkerAlt, faUsers, faWallet } from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from "react-redux";
+import { Link, Redirect } from "react-router-dom"
+
 
 const MainContainer = styled.div`
     width: 99%;
     height: auto;
     padding: 5px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     margin: auto;
 `
 
@@ -45,10 +48,9 @@ const CompanyName = styled.p`
 `
 
 const JobInfo = styled.div`
-    width: 60%;
+    width: auto;
     height: auto;
     padding-left: 2%;
-
     /* border: 1px solid; */
     display: flex;
 `
@@ -153,7 +155,7 @@ const SkillsDiv = styled.div`
 `
 
 const TakeAsses = styled.button`
-    width: 30%;
+    width: auto;
     height: 40px;
     border: 1px solid #a8ceff;
     margin-bottom: 1%;
@@ -217,6 +219,12 @@ const TEXT_COLLAPSE_OPTIONS = {
 
 const JobDescription = ({dis}) => {
 
+    const isAuth = useSelector((state)=> state.logi.isauth)
+
+    const handleGetUser = () => {
+        isAuth ? alert("continue") : alert("login")
+    }
+
     return (
         <MainContainer>
             <CompanyCard>
@@ -242,7 +250,7 @@ const JobDescription = ({dis}) => {
                     </JobLocation>
                 </JobInfo>
                 <ButtonBox>
-                    <ApplyBtn>Apply</ApplyBtn>
+                    <ApplyBtn onClick={handleGetUser}>Apply</ApplyBtn>
                     <StarBtn><FontAwesomeIcon icon={faStar} /></StarBtn>      
                 </ButtonBox>
                 <GetNoticed>
@@ -264,8 +272,8 @@ const JobDescription = ({dis}) => {
             <SelectTabs>
                 <Tabs className={styles.tabs}>
                     <TabList>
-                        <Tab>Title 1</Tab>
-                        <Tab>Title 2</Tab>
+                        <Tab>Job detail</Tab>
+                        <Tab>About company</Tab>
                     </TabList>
                     <TabPanel>
                         <ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS}>

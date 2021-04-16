@@ -18,6 +18,8 @@ const RecruiterDashboard = () => {
     const CandiData = useSelector((state) => state.RecruiterDash.CandiData)
     const CandiPersonal = useSelector((state) => state.RecruiterDash.CandiPersonal)
     const CandiEducation = useSelector((state) => state.RecruiterDash.education)
+    const isLoading = useSelector((state) => state.RecruiterDash.isLoading)
+
 
 
 
@@ -48,6 +50,9 @@ const RecruiterDashboard = () => {
 
     return (
         <div className={styles.dash_MainContainer}>
+            {isLoading ? <div className={styles.dash_MainContainer_Loading}>
+                <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt="loding-gif"/>
+            </div>:
             <div className={styles.mainContainer_CandidateCard_Container}>
                 {data.map(el=> 
                     <div key={el.id} onClick={()=> handleShow(el.id)} className={styles.mainContainer_CandidateCard}>
@@ -59,8 +64,7 @@ const RecruiterDashboard = () => {
                         </div>
                     </div>    
                 )}
-
-            </div>
+            </div>}
             
             <div className={styles.mainContainer_CandidateInfo_Container}>
                 <div className={styles.mainContainer_Name}>  

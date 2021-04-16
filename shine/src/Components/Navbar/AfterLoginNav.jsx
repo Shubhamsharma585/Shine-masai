@@ -38,12 +38,12 @@ const Navtitle = styled.p`
     }
 `
 
-const NavBar = () => {
+const AfterLoginNav = () => {
 
     return (
-        <div className={styles.navContainer}>
+        <div className={styles.navAfterContainer}>
             <div className={styles.navContainer_Img}></div>
-            <div className={styles.navContainer_Links}>
+            <div className={styles.navAfterContainer_Links}>
                 <Link to="">
                     <LinkContainer>
                     <div>Search Jobs</div>
@@ -57,6 +57,22 @@ const NavBar = () => {
                     </LinkItems>
                     </LinkContainer>
                 </Link>
+                <Link to="">
+                    <div>Jobs for You</div>
+                </Link>
+                <Link to="">
+                    <div>Mailbox</div>
+                </Link>
+                <Link to="">
+                    <LinkContainer>
+                    <div>Profile</div>
+                    <LinkItems>
+                        <Navtitle>Jobs by Skills</Navtitle>
+                        <Navtitle>Jobs by Courses</Navtitle>
+                    </LinkItems>
+                    </LinkContainer>
+                </Link>
+
                 <Link to="">
                     <LinkContainer>
                     <div>Services</div>
@@ -78,38 +94,22 @@ const NavBar = () => {
                         </div>
                     </LinkContainer>
                 </Link>
-                <Link to="">
-                    <LinkContainer>
-                        <div>Resources</div>
-                        <LinkItems>
-                        <Navtitle>Blog</Navtitle>
-                        <Navtitle>Resume Tips</Navtitle>
-                        <Navtitle>Career Help</Navtitle>
-                        <Navtitle>Career Prospects</Navtitle>
-                        <Navtitle>Jobs Search Guidance</Navtitle>
-                        <Navtitle>Interview Tips</Navtitle>
-                    </LinkItems>
-                    </LinkContainer>
-                </Link>
-                <Link to="/recruiter/dashboard">
-                    <div>Recruiter</div>
-                </Link>
-                <Link to="">
-                    <div>Walk-ins</div>
-                </Link>
             </div>
-            <button className={styles.navContainer_Jalert}>
-                <Link to="/jobalert">Create job alert</Link>
-            </button>
-            <button className={styles.navContainer_Jalert}>
-                Post a job
-            </button>
-            <div className={styles.navContainer_Contact}>
-                <div>080-47105555</div>
-                <div>9am - 6pm, Mon to Sat</div>
+            <div className={styles.userButton}>
+            <Link to="">
+                <LinkContainer>
+                <button className={styles.userName}>
+                    {`Hi, ${"name"}`}
+                </button>
+                    <LinkItems> 
+                        <Navtitle>Account Settings</Navtitle>
+                        <Navtitle>Sign out</Navtitle>
+                    </LinkItems>
+                </LinkContainer>
+            </Link>
             </div>
         </div>
     )
 }
 
-export default NavBar
+export {AfterLoginNav}

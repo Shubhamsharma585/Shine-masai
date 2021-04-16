@@ -3,26 +3,21 @@ import { Route, Switch } from "react-router-dom"
 import Login from "../Components/LogIn/Login"
 import Register from "../Components/Register/Register";
 import Home from "../Components/Home/Home"
-
 import NavBar from "../Components/Navbar/NavBar";
 import JobAlert from "../Components/CreateJobAlert/JobAlert";
 import { RecruiterDashboard } from "../Components/RecruiterDash/RecruiterDashboard";
-
 import JobDescriptionSidebar from "../Components/JobDescription/JobDescriptionSidebar";
 import JobSearch from "../Components/JobSearch/JobSearch";
-
-
 import JobPost from "../Components/JobPost/JobPost";
-
-
-
-
+import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
+import { useSelector } from "react-redux";
 
 function Routes()
 {
+   const isAuth = useSelector((state) => state.logi.isauth)
    return(
       <div>
-         <NavBar />
+         {isAuth ? <AfterLoginNav /> : <NavBar />}
          <Switch>
             <Route path="/" exact>
                <Home/>
@@ -50,7 +45,7 @@ function Routes()
             </Route>
          </Switch>
       </div>
-
+   )
 }
 
 export default Routes;
