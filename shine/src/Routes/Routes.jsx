@@ -34,14 +34,14 @@ function Routes()
             <Route path="/jobdiscription" exact>
                <JobSearch/>
             </Route>
-               <Route path="/recruiter/dashboard" exact>
-               <RecruiterDashboard />
-            </Route>
-               <Route path="/jobdiscription/:location" >
+            <Route path="/jobdiscription/:location" >
                <JobDescriptionSidebar/>
             </Route>
             <Route path="/jobpost">
                <JobPost/>
+            </Route>
+            <Route to="/recruiterdashboard">
+               <RecruiterDashboard />
             </Route>
          </Switch>
       </div>

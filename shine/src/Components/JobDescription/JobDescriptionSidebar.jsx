@@ -20,7 +20,7 @@ function JobDescriptionSidebar() {
           url: `https://json-heroku-shubham.herokuapp.com/jobDetails?location=${location}`,
           params: {
             
-            per_page : limit,
+            limit : limit,
             page :page
             
             
@@ -68,10 +68,7 @@ function JobDescriptionSidebar() {
                             <div style={{clear:"both"}}></div>
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> 0 to {el.Experience}Yrs</span>
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> {el.location}</span>
-
                         </div>
-                        
-
                     </div>))}
                     {<div>
                     <button style={{backgroundColor:"transparent",color:"#5364C4",marginTop:"15px",border:"0"}} disabled={page === 1} onClick={() => setPage(page - 1)}>

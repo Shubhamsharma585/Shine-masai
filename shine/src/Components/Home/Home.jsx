@@ -22,8 +22,8 @@ function Home() {
 
                 </div>
                 <div className={styles.a2background}>
-                    <button className={styles.regButton}><Link to="/registration">Register for free</Link></button>
-                    <div className={styles.signinp}><p><Link to="/myshine/login">Sign in</Link></p></div>
+                    <Link style={{textDecoration:"none"}} to="/registration"><button className={styles.regButton}>Register for free</button></Link>
+                    <Link style={{textDecoration:"none"}} to="/myshine/login"> <div className={styles.signinp}><p>Sign in</p></div></Link>
 
                 </div></>)}
                 

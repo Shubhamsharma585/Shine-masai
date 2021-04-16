@@ -1,9 +1,13 @@
 import React from 'react'
 import Styles from "./JobPost.module.css"
+import {v4 as uuid} from "uuid"
+import axios from 'axios'
 
 const payload={
+    id:uuid(),
     title:"",
     salary:"any",
+    qulification:"",
     subtitle:"",
     department: "Audit",
     location:"Bangalore",
@@ -17,7 +21,7 @@ const payload={
 function JobPostInput() {
     const [data, setData]=React.useState(payload)
     const [skillData, setSkillData]= React.useState("")
-    const {title,salary,subtitle,department,location,experience,email,description,telephone}=data
+    const {title,salary,subtitle,department,location,experience,email,description,telephone,qualification}=data
 
     const handleChange=(e)=>{
         const {value,name}=e.target;
@@ -27,9 +31,18 @@ function JobPostInput() {
     }
     const handlearr=(skillData)=>{
        ( data.skills).push(skillData+" ")
+       setSkillData("")
     }
     const handleSubmit=()=>{
-        console.log(data)
+       axios({
+           method:"post",
+           url:"https://json-heroku-shubham.herokuapp.com/jobDetails",
+           data:payload
+       }).then(res=>{
+           console.log(res)
+       }).catch(err => {
+           alert("Sorry... Somthing Went Wrong")
+       })
     }
     return (
         <div>
@@ -47,6 +60,7 @@ function JobPostInput() {
             <label >Salary</label>
             <label >Department</label>
             <label >Location</label>
+            <label >Qualification</label>
             <label >Experience</label>
             <label>Email ID</label>
             <label>TelePhone</label>
@@ -97,24 +111,34 @@ function JobPostInput() {
              <option value="Chennai">Chennai</option>
              <option value="Delhi">Delhi</option>
              <option value="Mumbai">Mumbai</option>
-             <option value="Gurgao">Gurgao</option>
              <option value="Kolkatta">Kolkatta</option>
-             <option value="Gujarat">Gujarat</option>
-             <option value="Mysore">Mysore</option>
-             <option value="Jharkhand">Jharkhand</option>
-             <option value="Noida">Noida</option>
              <option value="Pune">Pune</option>
+             <option value="Lucknow">Lucknow</option>
+             <option value="Jharkhand">Jharkand</option>
+             <option value="Ahmadabad">Ahmadabad</option>
+             <option value="Kocchi">Kocchi</option>
+             <option value="Chandigar">chandigarh</option>
              <option value="Mysore">Mysore</option>
-             <option value="Rajastan">Rajastan</option>
-             <option value="Jammu/Kashmir">Jammu/Kashmir</option>
-             <option value="Hridwar">Hridwar</option>
-             <option value="MadyaPradesh">MadyaPradesh</option>
-             <option value="Kerala">Kerala</option>
+             <option value="Jaipur">Jaipur</option>
+             <option value="Noida">Noida</option>
              <option value="Hydrabad">Hydrabad</option>
-             <option value="Punjab">Punjab</option>
+             <option value="Sikkim">Sikkim</option>
              <option value="Assam">Assam</option>
             </select>
 
+            <select name="quqlification" id="qualification" onChange={handleChange} value={qualification}>
+             <option value="BA">BA</option>
+             <option value="B.com">B.com</option>
+             <option value="Bsc">Bsc</option>
+             <option value="MA">MA</option>
+             <option value="M.com">M.com</option>
+             <option value="Msc">Kolkatta</option>
+             <option value="MBA">MBA</option>
+             <option value="B.E">B.E</option>
+             <option value="B.Tech">B.Tech</option>
+             <option value="M.Tech">M.Tech</option>
+             <option value="Diploma">Diploma</option>
+            </select>
             
             <select name="experience" value={experience} onChange={handleChange} >
                 <option value="any">-Any-</option>

@@ -37,6 +37,10 @@
 .box{
     background: #f6faff;
     cursor: pointer;
+    margin-top: 5px;
+
+}
+.box:hover{
     box-shadow: 0 1px 0 0 #99a6eb, 0 0 10px 0 rgb(0 0 0 / 10%);
 
 }
@@ -59,4 +63,7 @@
 
     
    
+}
+.right::-webkit-scrollbar{
+    visibility: hidden;
 }
