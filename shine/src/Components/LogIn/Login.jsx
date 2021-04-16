@@ -20,7 +20,9 @@ function Login()
   const dispatch = useDispatch()
   const isauth = useSelector(state => state.logi.isauth)
   console.log(isauth)
- 
+
+
+
 
 
 
@@ -45,8 +47,13 @@ function Login()
 
 
 
-    return(
+    return isauth?(<Redirect to={"/"} push/>):(
         <div>
+
+         
+
+
+
 
            <div className={styles.top}>
                <img src={logo1} />
@@ -152,7 +159,7 @@ function Login()
            <li><a target="_blank" href="/myshine/termsandconditions/" id="id_termsandcondition">Terms &amp; Conditions</a></li>
            <li><a target="_blank" href="/myshine/disclaimer/" id="id_disclaimer">Disclaimer</a></li><li><a target="_blank" href="/myshine/contactus/?type=reportJobPosting" id="id_reportjob">Report a Job Posting</a></li>
            </ul>
-             </div>      
+             </div>)   
 
 
         </div>
