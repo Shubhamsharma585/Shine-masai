@@ -16,6 +16,10 @@ const RecruiterDashboard = () => {
     const dispatch = useDispatch()
     const data = useSelector((state) => state.RecruiterDash.data)
     const CandiData = useSelector((state) => state.RecruiterDash.CandiData)
+    const CandiPersonal = useSelector((state) => state.RecruiterDash.CandiPersonal)
+    const CandiEducation = useSelector((state) => state.RecruiterDash.education)
+
+
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -40,7 +44,7 @@ const RecruiterDashboard = () => {
         dispatch(singleUserData(id))
     }
 
-    console.log(CandiData.personal)
+    console.log(CandiEducation)
 
     return (
         <div className={styles.dash_MainContainer}>
@@ -86,9 +90,7 @@ const RecruiterDashboard = () => {
                             <strong>Candidate Gender: </strong>
                         </div>
                         <div>
-                            {CandiData == [] && 
-                                <span>{CandiData.personal.gender}</span>
-                            }
+                            <span>{CandiPersonal.gender}</span>
                         </div>
                     </div>
                     <div className={styles.mainContainer_DOB}>  
@@ -96,7 +98,7 @@ const RecruiterDashboard = () => {
                             <strong>DOB: </strong>
                         </div>
                         <div>
-                            <span>{}</span>
+                            <span>{CandiPersonal.dob}</span>
                         </div>
                     </div>
                 </div>
@@ -143,7 +145,7 @@ const RecruiterDashboard = () => {
                             <strong>Location: </strong>
                         </div>
                         <div>
-                            <span>{}</span>
+                            <span>{CandiPersonal.location}</span>
                         </div>
                     </div>
                     <div className={styles.mainContainer_Exp}>  
@@ -161,7 +163,10 @@ const RecruiterDashboard = () => {
                         <strong>Highest Qualification: </strong>
                     </div>
                     <div>
-                        <span>{}</span>
+                        {/* {CandiEducation.map(el => {
+                            <p>{`${el.title}`}</p>  
+                            console.log(el.title) 
+                        })} */}
                     </div>
                 </div>
 

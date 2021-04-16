@@ -10,6 +10,12 @@ import {
 const initState = {
     data: [],
     CandiData: [],
+    CandiPersonal: {
+        dob: "",
+        gender: "",
+        location: "",
+    },
+    education: [],
     isLoading: false,
     isError: false, 
 }
@@ -52,6 +58,12 @@ export const RecruiterDashReducer = (state=initState, action) => {
             return{
                 ...state,
                 CandiData: action.payload,
+                CandiPersonal: {
+                    dob: action.payload.personal.dob,
+                    gender: action.payload.personal.gender,
+                    location: action.payload.personal.location,
+                },
+                education: action.payload.education,
                 isLoading: false,
             }
         }
