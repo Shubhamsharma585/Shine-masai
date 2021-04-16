@@ -18,7 +18,7 @@ function JobDescriptionSidebar() {
           url: `https://json-heroku-shubham.herokuapp.com/jobDetails?location=${location}`,
           params: {
             
-            per_page : limit,
+            limit : limit,
             page :page
             
             
@@ -51,9 +51,9 @@ function JobDescriptionSidebar() {
 
 
     return (
-        <div style={{display:"flex"}}>
-            <div>
-                <div style={{width:"320px",overflowY:"auto",overflow:"scroll",padding:"10px",backgroundColor:"#f8f8f8"}}>
+        <div style={{display:"flex",height:"80vh"}}>
+            <div >
+                <div className={styles.right} style={{width:"320px",overflowY:"auto",overflow:"scroll",padding:"10px",backgroundColor:"#f8f8f8",height:"80vh",position:"sticky",top:"0"}}>
                     <h1 style={{color:"#303e4b",fontWeight:"400",fontSize:"16px"}}>Customer Focus Jobs</h1>
                     {data.map((el)=>(
                     <div key={el.id} onClick={()=>getData(el.id)} className={styles.box} style={{width:"300px", height:"100px",padding:"5px"}}>

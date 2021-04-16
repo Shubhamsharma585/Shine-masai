@@ -51,3 +51,6 @@
     
    
 }
+.right::-webkit-scrollbar{
+    visibility: hidden;
+}
