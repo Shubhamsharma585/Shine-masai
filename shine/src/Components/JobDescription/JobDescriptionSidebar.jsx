@@ -35,8 +35,6 @@ function JobDescriptionSidebar() {
           .catch((err) => console.log("err"));
       };
 
-      
-
 
       const getData =(id)=>{
           axios.get(`https://json-heroku-shubham.herokuapp.com/jobDetails/${id}`)
@@ -47,9 +45,6 @@ function JobDescriptionSidebar() {
       }
     
       React.useEffect(handleSearch, [page]);
-
-
-
 
     return (
         <div style={{display:"flex"}}>
@@ -79,8 +74,6 @@ function JobDescriptionSidebar() {
                     {"next>>"}
                     </button>
                     </div>}
-                        
-
                 </div>
 
             </div>}
