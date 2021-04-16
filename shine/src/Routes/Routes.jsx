@@ -32,7 +32,7 @@ function Routes()
             <Route path="/jobalert" exact>
                <JobAlert />
             </Route>
-            <Route path="/registration/parser/" exact>
+            <Route path="/registration" exact>
                <Register/>
             </Route>
             <Route path="/jobdescription" exact>
