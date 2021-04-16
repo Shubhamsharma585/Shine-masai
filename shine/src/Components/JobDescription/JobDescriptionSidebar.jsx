@@ -53,7 +53,8 @@ function JobDescriptionSidebar() {
     return (
         <div style={{display:"flex"}}>
             <div>
-                <div>
+                <div style={{width:"320px",overflowY:"auto",overflow:"scroll",padding:"10px",backgroundColor:"#f8f8f8"}}>
+                    <h1 style={{color:"#303e4b",fontWeight:"400",fontSize:"16px"}}>Customer Focus Jobs</h1>
                     {data.map((el)=>(
                     <div key={el.id} onClick={()=>getData(el.id)} className={styles.box} style={{width:"300px", height:"100px",padding:"5px"}}>
                         <div>
