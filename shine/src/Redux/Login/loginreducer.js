@@ -53,10 +53,6 @@ const initstate =
     //     shifttype:"",
     //     salary:""
     // }
-
-
-
-    
 }
 
 

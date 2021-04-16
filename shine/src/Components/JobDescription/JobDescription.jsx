@@ -15,7 +15,7 @@ const MainContainer = styled.div`
     width: 99%;
     height: auto;
     padding: 5px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: auto;
 `
 
@@ -222,7 +222,7 @@ const JobDescription = ({dis}) => {
     const isAuth = useSelector((state)=> state.logi.isauth)
 
     const handleGetUser = () => {
-        isAuth ? alert("continue") : alert("login")
+        !isAuth ? alert("Login") : console.log("data")
     }
 
     return (
