@@ -99,10 +99,10 @@ const NavBar = () => {
                 </Link>
             </div>
             <button className={styles.navContainer_Jalert}>
-                Create job alert
+                <Link to="">Create job alert</Link>
             </button>
             <button className={styles.navContainer_Jalert}>
-                Create job alert
+                Post a job
             </button>
             <div className={styles.navContainer_Contact}>
                 <div>080-47105555</div>
