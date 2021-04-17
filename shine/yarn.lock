@@ -1270,12 +1270,12 @@
     "@firebase/util" "1.0.0"
     "tslib" "^2.1.0"
 
-"@firebase/app-types@0.6.2", "@firebase/app-types@0.x":
+"@firebase/app-types@0.6.2":
   "integrity" "sha512-2VXvq/K+n8XMdM4L2xy5bYp2ZXMawJXluUIDzUBvMthVR+lhxK4pfFiqr1mmDbv9ydXvEAuFsD+6DpcZuJcSSw=="
   "resolved" "https://registry.npmjs.org/@firebase/app-types/-/app-types-0.6.2.tgz"
   "version" "0.6.2"
 
-"@firebase/app@0.6.20", "@firebase/app@0.x":
+"@firebase/app@0.6.20":
   "integrity" "sha512-5zstJ3Cxw9H5cxfdaAhCH7WHVaRLPhCcgVNwKp6dWeTx2QkIdNvHainX8Vr2RaZchw4MxRjkPfwNVOaq2oFStQ=="
   "resolved" "https://registry.npmjs.org/@firebase/app/-/app-0.6.20.tgz"
   "version" "0.6.20"
@@ -1465,7 +1465,7 @@
     "@firebase/util" "1.0.0"
     "tslib" "^2.1.0"
 
-"@firebase/util@0.x", "@firebase/util@1.0.0", "@firebase/util@1.x":
+"@firebase/util@1.0.0":
   "integrity" "sha512-KIEyuyrYKKtit+lAl66c2GVvooM1Pb+Yw/9yuSga1HKYMxNZwSsIMXU8X97sLZf7WJaanV1XNJEMkZTw3xKEoA=="
   "resolved" "https://registry.npmjs.org/@firebase/util/-/util-1.0.0.tgz"
   "version" "1.0.0"
@@ -1482,7 +1482,7 @@
   "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.35.tgz"
   "version" "0.2.35"
 
-"@fortawesome/fontawesome-svg-core@^1.2.32", "@fortawesome/fontawesome-svg-core@^1.2.35":
+"@fortawesome/fontawesome-svg-core@^1.2.35":
   "integrity" "sha512-uLEXifXIL7hnh2sNZQrIJWNol7cTVIzwI+4qcBIq9QWaZqUblm0IDrtSqbNg+3SQf8SMGHkiSigD++rHmCHjBg=="
   "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.35.tgz"
   "version" "1.2.35"
@@ -2185,15 +2185,9 @@
   "version" "14.14.31"
 
 "@types/node@^13.7.0":
-<<<<<<< HEAD
-  "integrity" "sha512-z8wvSsgWQzkr4sVuMEEOvwMdOQjiRY2Y/ZW4fDfjfe3+TfQrZqFKOthBgk2RnVEmtOKrkwdZ7uTvsxTBLjKGDQ=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-13.13.48.tgz"
-  "version" "13.13.48"
-=======
   "integrity" "sha512-v5fPzKjPAZ33/G4X8EXvGlbHFKQClfKAz1bKF/+cKaWss9lAIqrOETfcFNL3xG+DG2VCEev+dK4/lCa+YZaxBA=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-13.13.49.tgz"
   "version" "13.13.49"
->>>>>>> 52ab4eb1f6ee4e4865e9c92233ecf30138ffb846
 
 "@types/normalize-package-data@^2.4.0":
   "integrity" "sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA=="
@@ -10002,7 +9996,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@^17.0.2", "react-dom@>= 16.8.0":
+"react-dom@^17.0.2":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -10016,7 +10010,7 @@
   "resolved" "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.9.tgz"
   "version" "6.0.9"
 
-"react-is@^16.13.1", "react-is@^16.6.0", "react-is@^16.7.0", "react-is@^16.8.1", "react-is@>= 16.8.0":
+"react-is@^16.13.1", "react-is@^16.6.0", "react-is@^16.7.0", "react-is@^16.8.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
@@ -10026,7 +10020,7 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.1.tgz"
   "version" "17.0.1"
 
-"react-motion@^0.4 || ^0.5":
+"react-motion@^0.5.2":
   "integrity" "sha512-9q3YAvHoUiWlP3cK0v+w1N5Z23HXMj4IF4YuvjvWegWqNPfLXsOBE/V7UvQGpXxHFKRQQcNcVQE31g9SB/6qgQ=="
   "resolved" "https://registry.npmjs.org/react-motion/-/react-motion-0.5.2.tgz"
   "version" "0.5.2"
@@ -10162,7 +10156,7 @@
   dependencies:
     "prop-types" "^15.5.10"
 
-"react@^0.14.9 || ^15.3.0 || ^16.0.0", "react@^16.3.0 || ^17.0.0-0", "react@^17.0.2", "react@>= 16.8.0", "react@>=0.14", "react@>=16.x":
+"react@^17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -11509,7 +11503,7 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^2.7.0"
 
-"styled-components@^5.2.3", "styled-components@>= 2":
+"styled-components@^5.2.3":
   "integrity" "sha512-BlR+KrLW3NL1yhvEB+9Nu9Dt51CuOnHoxd+Hj+rYPdtyR8X11uIW9rvhpy3Dk4dXXBsiW1u5U78f00Lf/afGoA=="
   "resolved" "https://registry.npmjs.org/styled-components/-/styled-components-5.2.3.tgz"
   "version" "5.2.3"

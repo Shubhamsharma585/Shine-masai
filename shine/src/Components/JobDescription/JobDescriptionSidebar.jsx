@@ -9,14 +9,16 @@ function JobDescriptionSidebar() {
     const [page, setPage] = React.useState(1);
     const [limit, setLimit]=useState(5);
 
+
    
     const [isLoading, setIsloading] = React.useState(false)
 
     const [dis, setDis]=useState({});
 
 
+
     const {location} =useParams(); 
-    
+     
     const handleSearch = () => {
         setIsloading(true)
         const requestParam = {
