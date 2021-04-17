@@ -14,7 +14,7 @@ function ChatBot() {
         setHide("")
     }
     return (
-        <div>
+        <div style={{backgroundColor:"white"}} >
             <div className={!status ? Styles.conv:Styles.conv2}>
                 <div className={Styles.chatbothead}>
                    <p>Alisha</p> <button onClick={()=>{setReply(!reply);setChat([])}}>X</button>

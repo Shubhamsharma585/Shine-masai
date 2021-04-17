@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "../RecruiterDash/Dashboard.module.css"
 import {getUserData, singleUserData} from '../../Redux/RecruiterDash/action'
 import { useDispatch, useSelector } from "react-redux";
+import ChatBot from '../ChatBot/ChatBot';
 
 const initValue = {
     comments: "",
@@ -199,6 +200,7 @@ const RecruiterDashboard = () => {
                     </div>
                 </div>
             </div>
+            <ChatBot />
         </div>
     )
 }
