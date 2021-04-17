@@ -53,14 +53,6 @@ function Login()
 
     return isauth?(<Redirect to={"/"} push/>):(
         <div>
-
-         
-
-
-
-
-        
- 
            <div className={styles.top1}>          
            </div>
 
