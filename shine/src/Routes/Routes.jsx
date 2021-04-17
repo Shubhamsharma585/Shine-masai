@@ -12,6 +12,7 @@ import JobSearch from "../Components/JobSearch/JobSearch";
 import JobPost from "../Components/JobPost/JobPost";
 import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
 import { useSelector } from "react-redux";
+import Popouts from "../Components/Popouts/LoginFail"
 
 import { TransitionsModal } from "../Components/Modal/Modal";
 
@@ -46,6 +47,10 @@ function Routes()
                <JobSearch/>
             </Route>
 
+            <Route path="/loginfailure" exact>
+               <Popouts/>
+            </Route>
+
             <Route path="/jobdescription/:location" >
                <JobDescriptionSidebar/>
             </Route>
@@ -58,11 +63,12 @@ function Routes()
 
             <Route path="/modal">
                <TransitionsModal />
+            </Route> 
 
             <Route path="/loginfail">
                <LoginFail/>
-
             </Route>
+
          </Switch>
       </div>
    )
