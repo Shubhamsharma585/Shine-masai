@@ -16,8 +16,10 @@ const RecruiterDashboard = () => {
     const dispatch = useDispatch()
     const data = useSelector((state) => state.RecruiterDash.data)
     const CandiData = useSelector((state) => state.RecruiterDash.CandiData)
-    const CandiPersonal = useSelector((state) => state.RecruiterDash.CandiPersonal)
-    const CandiEducation = useSelector((state) => state.RecruiterDash.education)
+    const isLoading = useSelector((state) => state.RecruiterDash.isLoading)
+
+
+    console.log(data, CandiData)
 
 
 
@@ -29,7 +31,7 @@ const RecruiterDashboard = () => {
     }
 
     const handleAdd = () => {
-        console.log(CandiData)
+        console.log(data)
     }
 
     React.useEffect(()=>{
@@ -44,10 +46,11 @@ const RecruiterDashboard = () => {
         dispatch(singleUserData(id))
     }
 
-    console.log(CandiEducation)
-
     return (
         <div className={styles.dash_MainContainer}>
+            {isLoading ? <div className={styles.dash_MainContainer_Loading}>
+                <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt="loding-gif"/>
+            </div>:
             <div className={styles.mainContainer_CandidateCard_Container}>
                 {data.map(el=> 
                     <div key={el.id} onClick={()=> handleShow(el.id)} className={styles.mainContainer_CandidateCard}>
@@ -55,20 +58,19 @@ const RecruiterDashboard = () => {
                             <div>{el.name}</div>
                             <div>{el.title}</div>
                             <div>{el.email}</div>
-                            <div>{el.personal.location}</div>
+                            <div>{el.location}</div>
                         </div>
                     </div>    
                 )}
+            </div>}
 
-            </div>
-            
             <div className={styles.mainContainer_CandidateInfo_Container}>
                 <div className={styles.mainContainer_Name}>  
                     <div>
                         <strong>Candidate Name: </strong>
                     </div>
                     <div>
-                        <span>{CandiData.name}</span>
+                        <span>{CandiData.userName}</span>
                     </div>
                     <div>
                         <label>
@@ -90,7 +92,7 @@ const RecruiterDashboard = () => {
                             <strong>Candidate Gender: </strong>
                         </div>
                         <div>
-                            <span>{CandiPersonal.gender}</span>
+                            <span>{CandiData.gender}</span>
                         </div>
                     </div>
                     <div className={styles.mainContainer_DOB}>  
@@ -98,7 +100,7 @@ const RecruiterDashboard = () => {
                             <strong>DOB: </strong>
                         </div>
                         <div>
-                            <span>{CandiPersonal.dob}</span>
+                            <span>{CandiData.dob}</span>
                         </div>
                     </div>
                 </div>
@@ -126,7 +128,7 @@ const RecruiterDashboard = () => {
                         <strong>Applied Company: </strong>
                     </div>
                     <div>
-                        <span>{}</span>
+                        <span>{CandiData.applied_company}</span>
                     </div>
                 </div>
 
@@ -135,7 +137,7 @@ const RecruiterDashboard = () => {
                         <strong>Applied Position: </strong>
                     </div>
                     <div>
-                        <span>{CandiData.title}</span>
+                        <span>{CandiData.applied_position}</span>
                     </div>
                 </div>
 
@@ -145,7 +147,7 @@ const RecruiterDashboard = () => {
                             <strong>Location: </strong>
                         </div>
                         <div>
-                            <span>{CandiPersonal.location}</span>
+                            <span>{CandiData.location}</span>
                         </div>
                     </div>
                     <div className={styles.mainContainer_Exp}>  
@@ -153,7 +155,9 @@ const RecruiterDashboard = () => {
                             <strong>Total Experience: </strong>
                         </div>
                         <div>
-                            <span>{}</span>
+                            {
+                                CandiData.experience.length === 0 ? <span>0 yrs</span> : <span>{CandiData.experience} yrs</span>
+                            }
                         </div>
                     </div>
                 </div>
@@ -163,10 +167,7 @@ const RecruiterDashboard = () => {
                         <strong>Highest Qualification: </strong>
                     </div>
                     <div>
-                        {/* {CandiEducation.map(el => {
-                            <p>{`${el.title}`}</p>  
-                            console.log(el.title) 
-                        })} */}
+                        {CandiData.qualification}
                     </div>
                 </div>
 
@@ -174,11 +175,9 @@ const RecruiterDashboard = () => {
                     <div>
                         <strong>Skills: </strong>
                     </div>
-                    <div>
-                        {
-
-                        }
-                    </div>
+                    {CandiData.skills.map(el => <div>{el}</div>)}
+                    {/* <div>
+                    </div> */}
                 </div>
 
                 <div className={styles.comments_Buttons_Container}>

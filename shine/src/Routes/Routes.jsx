@@ -6,12 +6,15 @@ import Home from "../Components/Home/Home"
 
 import NavBar from "../Components/Navbar/NavBar";
 import JobAlert from "../Components/CreateJobAlert/JobAlert";
-
+import { RecruiterDashboard } from "../Components/RecruiterDash/RecruiterDashboard";
 import JobDescriptionSidebar from "../Components/JobDescription/JobDescriptionSidebar";
 import JobSearch from "../Components/JobSearch/JobSearch";
-
-
 import JobPost from "../Components/JobPost/JobPost";
+import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
+import { useSelector } from "react-redux";
+
+import { JobDescription } from "../Components/JobDescription/JobDescription";
+
 
 
 
@@ -19,16 +22,11 @@ import JobPost from "../Components/JobPost/JobPost";
 
 function Routes()
 {
-
-
-
-
-
- 
-    return(
-        <div>
-      <NavBar />
-     <Switch>
+   const isAuth = useSelector((state) => state.logi.isauth)
+   return(
+      <div>
+         {isAuth ? <AfterLoginNav /> : <NavBar />}
+         <Switch>
             <Route path="/" exact>
                <Home/>
             </Route>
@@ -41,24 +39,23 @@ function Routes()
             <Route path="/registration" exact>
                <Register/>
             </Route>
-            <Route path="/jobdiscription" exact>
-               <JobSearch/>
+            <Route path="/jobdescription" exact>
+               <JobDescription />
             </Route>
 
-
-            <Route path="/jobdiscription/:location" >
+            <Route path="/jobdescription/:location" >
                <JobDescriptionSidebar/>
             </Route>
-
             <Route path="/jobpost">
                <JobPost/>
             </Route>
+            <Route to="/recruiterdashboard">
+               <RecruiterDashboard />
+            </Route>
+         </Switch>
+      </div>
+   )
 
-       </Switch>
-
-
-        </div>
-    )
 }
 
 export default Routes;

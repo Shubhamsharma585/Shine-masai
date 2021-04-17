@@ -4,7 +4,7 @@ import styles from "./home.module.css";
 const payload = {
     title: "",
     location: "",
-    experience: "Experience (Years)",
+    experience: "Experience (Years)"
     
   };
 
@@ -21,6 +21,7 @@ function AdvanceSearch({setIsAuth}) {
         setUserData({...userData,[name]:value})
        
     }
+    console.log(userData)
     return (
  
             <div>
@@ -35,7 +36,7 @@ function AdvanceSearch({setIsAuth}) {
                     </div>
                     <div className={styles.searchInput} style={{marginLeft:"15px"}}>
                         <label></label>
-                        <input type="text" placeholder="Location" name="location" value={location} onChange={(e)=> setLoc(e.target.value)} />
+                        <input type="text" placeholder="Location" name="location" value={location} onChange={handleUserData} />
                     </div>
                     <div className={styles.searchInput} style={{marginLeft:"15px",paddingLeft:"15px"}}>
                         <select className={styles.searchInput} style={{color:"gray"}} name="experience" value={experience} onChange={handleUserData}>
@@ -47,7 +48,7 @@ function AdvanceSearch({setIsAuth}) {
                         </select>
                     </div>
     
-                    <Link style={{textDecoration:"none"}} to={`/jobdiscription/${loc}`}><div  style={{width:"109px",fontSize:"10px",color:"#fff",marginLeft:"15px", textAlign:"center"}}><button  className={styles.searchInput} style={{marginBottom:"10px",width:"109px",textAlign:"center",backgroundColor:"#f7a400",color:"#fff"}} >Submit</button> Advanced search</div></Link>
+                    <Link style={{textDecoration:"none"}} to={`/jobdiscription/${userData.location}/${userData.experience}`}><div  style={{width:"109px",fontSize:"10px",color:"#fff",marginLeft:"15px", textAlign:"center"}}><button  className={styles.searchInput} style={{marginBottom:"10px",width:"109px",textAlign:"center",backgroundColor:"#f7a400",color:"#fff"}} >Submit</button> Advanced search</div></Link>
 
                 </div>
                
