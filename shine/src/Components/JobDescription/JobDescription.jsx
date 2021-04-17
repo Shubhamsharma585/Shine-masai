@@ -259,8 +259,10 @@ const JobDescription = ({dis}) => {
     const handleGetUser = () => {
         // !isAuth ? alert("Login") && <Redirect to={"/"} push/> : postUser()
         if(!isAuth){
-            alert("login") 
-            return <Redirect to="/" push/>
+            // alert("login") ;
+            
+           return <Redirect to="/myshine/login" push />
+          
         }else{
             postUser()
         }
@@ -287,7 +289,7 @@ const JobDescription = ({dis}) => {
    
 
     return (
-        <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
+        // <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
         <MainContainer >
             <CompanyCard>
                 <JobTitle>
@@ -409,7 +411,7 @@ const JobDescription = ({dis}) => {
                 </Modal>
             </div>
         </MainContainer>
-        </div>
+       // </div>
     )
 }
 

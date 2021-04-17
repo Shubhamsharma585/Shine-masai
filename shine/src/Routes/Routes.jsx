@@ -35,13 +35,13 @@ function Routes()
             <Route path="/" exact>
                <Home/>
             </Route>
-            <Route path="/myshine/login" exact>
+            <Route path="/myshine/login" >
                <Login/>
             </Route>
-            <Route path="/jobalert" exact>
+            <Route path="/jobalert" >
                <JobAlert />
             </Route>
-            <Route path="/registration" exact>
+            <Route path="/registration" >
                <Register/>
             </Route>
             <Route path="/jobdescription" exact>
@@ -58,7 +58,7 @@ function Routes()
                <JobPost/>
             </Route>
 
-            <Route path="/recruiter/dashboard" exact>
+            <Route path="/recruiter/dashboard" >
                <RecruiterDashboard />
             </Route>
 
@@ -70,7 +70,7 @@ function Routes()
                <LoginFail/>
 
                </Route>
-            
+              
             
             <Route>
                <PageNotFound/>
