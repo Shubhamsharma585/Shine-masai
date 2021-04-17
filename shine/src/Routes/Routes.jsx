@@ -13,7 +13,7 @@ import JobPost from "../Components/JobPost/JobPost";
 import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
 import { useSelector } from "react-redux";
 
-import { JobDescription } from "../Components/JobDescription/JobDescription";
+
 
 
 
@@ -40,7 +40,7 @@ function Routes()
                <Register/>
             </Route>
             <Route path="/jobdescription" exact>
-               <JobDescription />
+               <JobSearch />
             </Route>
 
             <Route path="/jobdescription/:location" >
@@ -49,7 +49,7 @@ function Routes()
             <Route path="/jobpost">
                <JobPost/>
             </Route>
-            <Route to="/recruiterdashboard">
+            <Route to="/recruiterdashboard" exact>
                <RecruiterDashboard />
             </Route>
          </Switch>
