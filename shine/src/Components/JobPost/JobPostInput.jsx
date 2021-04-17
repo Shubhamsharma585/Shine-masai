@@ -171,7 +171,7 @@ function JobPostInput() {
             </div>
             </div>
             <div className={Styles.Register}>
-                <button onClick={()=>handleSubmit(title,subtitle,)}>Create job Alert</button>
+                <button onClick={()=>handleSubmit(title,subtitle,)}>Create job Post</button>
             </div>
             </div> 
             </div>
