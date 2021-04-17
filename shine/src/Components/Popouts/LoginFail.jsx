@@ -2,7 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Dog from "./dog.jpg"
 
+
 function LoginFail() {
+
+    
+    function rel()
+    {
+        window.location.reload();
+    }
+
+
+
+
     return (
         <div>
             <div style={{display:'flex', marginTop:'50px'}}>
@@ -11,9 +22,9 @@ function LoginFail() {
               
             </div>
             <div>
-            <p style={{marginLeft:"35%",textDecoration:"none", padding:"25px",fontSize:"22px"}}>Please <Link to="/myshine/login"> Click here</Link> to retry</p>
+            <p style={{marginLeft:"35%",textDecoration:"none", padding:"25px",fontSize:"22px", cursor:"pointer", color:"#0645AD"}} onClick={() => rel()}>Please Click here to retry</p>
             </div>
-            
+             
         </div>
     )
 }
