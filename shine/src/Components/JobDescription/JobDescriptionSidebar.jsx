@@ -8,7 +8,7 @@ function JobDescriptionSidebar() {
     const [data,setData] =useState([]);
     const [page, setPage] = React.useState(1);
     const [limit, setLimit]=useState(5);
-    const [dis, setDis]=useState([]);
+    const [dis, setDis]=useState({});
 
     const {location} =useParams(); 
     
@@ -29,6 +29,7 @@ function JobDescriptionSidebar() {
             setData(res.data);
             
             
+            
         })
         
           .catch((err) => console.log("err"));
@@ -44,8 +45,10 @@ function JobDescriptionSidebar() {
          
 
       }
+      console.log(dis)
     
       React.useEffect(handleSearch, [page]);
+      React.useEffect(()=>{setDis(data[0])}, [data]);
 
 
 
@@ -70,7 +73,7 @@ function JobDescriptionSidebar() {
                         
 
                     </div>))}
-                    {<div>
+                    {<div style={{margin:"auto"}}>
                     <button style={{backgroundColor:"transparent",color:"#5364C4",marginTop:"15px",border:"0"}} disabled={page === 1} onClick={() => setPage(page - 1)}>
                     {"<<prev"}
                     </button>
@@ -86,7 +89,7 @@ function JobDescriptionSidebar() {
             </div>
                 
             <div>
-                <JobDescription dis={dis}/>
+               {dis&&<JobDescription dis={dis}/>}
             </div>
 
             
