@@ -44,7 +44,7 @@
     margin: auto;
     flex-direction: row;
     background-color: #fbfbfb;
-    padding: 80px 30px 80px 30px;
+    padding: 80px 30px 80px 30px; 
 
 }
 
@@ -56,6 +56,7 @@
     height: 600px;
     border: black solid 0px;
     box-shadow: rgb(169, 169, 169) 0px 0px 10px 5px;
+    
 }
 
 .contimg 
@@ -90,8 +91,9 @@
     width: 900px;
     height: 550px;
     border: black solid 0px;
-    box-shadow: rgb(169, 169, 169) 0px 0px 10px 5px;
+    box-shadow: rgb(169, 169, 169) 0px 0px 10px 5px;  
     transition: ease-in-out;
+    transition: 200ms;
 }
 
 .commonmid
@@ -104,6 +106,7 @@
     text-align: left;
     box-shadow: 0px 0px 2px 2px rgb(252, 248, 248);
     transition: ease-in-out;
+    transition: 500ms;
 }
 
 .commoncont1
@@ -115,6 +118,7 @@
     text-align: center;
     display: flex;
     flex-direction: row;
+    transition: ease-in-out 300ms;
 }
 .commoncont2
 {
@@ -124,6 +128,7 @@
     margin: auto;
     text-align: right;
     justify-content: right;
+    transition: ease-in-out 300ms;
 }
 
 .identity_third:hover
@@ -204,6 +209,7 @@
 .social
 {
     display: flex;
+    transition: 1s;
 } 
 
 .social > div
@@ -217,6 +223,7 @@
     box-shadow: rgb(231, 230, 230) 0px 0px 2px 2px;
     color: rgb(50, 49, 49);
     display: flex;
+    transition: 1s;
     
 }
 
@@ -258,7 +265,7 @@
 
 
 
-
+ 
 
 
 
@@ -548,8 +555,9 @@ div {
     width: 650px;
     margin: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     height: 400px;
+    
 
 }
 

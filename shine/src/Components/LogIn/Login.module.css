@@ -56,7 +56,7 @@
     color: rgb(70, 70, 70);
     font-weight: 500;
 }
-
+ 
 
 .login
 {
@@ -209,14 +209,41 @@
 
 .btm_right
 {
-    border: black solid 1px;
-    width: 40%;
+    border: black solid 0px;
+    width: 50%;
+    margin-top: 20px;
     margin-left: 2%;
     height: 80px;
     text-align: left;
 }
+.socialcontainer {
+    background: #eee;
+    padding: 25px 50px;
+  }
 
+a.social {
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
+  }
 
+  a.social:hover {
+    transform: translateY(-2px);
+  }
+
+  .linkedinsocial {
+    color: #0077b5;
+  }
+
+ .facebooksocial {
+    color: #4968ad;
+  }
+  
+  .twittersocial {
+    color: #49a1eb;
+  }
+  
+  
 
 
 .footer

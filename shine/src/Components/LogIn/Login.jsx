@@ -8,10 +8,10 @@ import google1 from "../../Images/google1.png"
 import ld from "../../Images/ld.png"
 import fb from "../../Images/fb.png"
 import {auth, google} from "../FireAuth/auth"  
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux" 
 import { logingin } from "../../Redux/Login/action"
 import { Link, Redirect } from "react-router-dom"
-
+import SocialFollow from "./SocialFollow"
 
 
 function Login()
@@ -26,7 +26,7 @@ function Login()
   console.log(data.payload)
   console.log(data.payload.name)
 
-
+ 
 
 
 
@@ -59,9 +59,7 @@ function Login()
 
 
 
-           <div className={styles.top}>
-               <img src={logo1} />
-           </div>
+        
  
            <div className={styles.top1}>          
            </div>
@@ -132,19 +130,21 @@ function Login()
              </div>
 
              <div className={styles.btm_right}>
-             <div><div ><strong>Contact us-08047105555
-             <p>
-             <a id="id_contactusfooter" href="mailto:contactus@shine.com">contactus@shine.com</a>
-             </p></strong>
-             </div>
-             <div>
-               <ul>
-                
-               </ul>
+                 <div>
+                   <div ><strong>Contact us-08047105555
+                         <p>
+                      <a id="id_contactusfooter" href="mailto:contactus@shine.com">contactus@shine.com</a>
+                         </p></strong>
+                     </div>
+                   <div>
+                     <div style={{display:"flex" ,flexDirection:"row"}}>
+                       <span  style={{fontWeight:"600" , marginRight:"10px"}} >Follow us </span>  <SocialFollow/>
+                     </div>
+            
                </div>
             </div>
                         
-             </div>
+           </div>
 
 
 

@@ -8,10 +8,10 @@ function JobDescriptionSidebar() {
     const [data,setData] =useState([]);
     const [page, setPage] = React.useState(1);
     const [limit, setLimit]=useState(5);
-    const [dis, setDis]=useState([]);
+    const [dis, setDis]=useState([{skills:["",""]}]);
 
     const {location} =useParams(); 
-    
+     
     const handleSearch = () => {
         const requestParam = {
           method: "get",
