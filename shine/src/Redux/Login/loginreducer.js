@@ -7,6 +7,7 @@ const initstate =
     isauth: false,
     isloading: false,
     iserror: false,
+    isfailure: false,
     payload: {
         id: "",
     name: "",
@@ -96,6 +97,7 @@ function loginreducer(state = initstate, { type, payload})
             return {                            
                  ...state,
                  isauth: false,
+                 isfailure: true
                 }
            }   
 

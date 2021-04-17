@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { logingin } from "../../Redux/Login/action"
 import { Link, Redirect } from "react-router-dom"
 import SocialFollow from "./SocialFollow"
+import Popouts from "../Popouts/LoginFail"
 
 
 function Login()
@@ -20,6 +21,8 @@ function Login()
   const dispatch = useDispatch()
   const isauth = useSelector(state => state.logi.isauth)
   console.log(isauth)
+
+  const isfailure = useSelector(state => state.logi.isfailure)
 
   const data = useSelector(state => state.logi)
   console.log(data)
@@ -48,18 +51,24 @@ function Login()
   }
 
 
+  if(isfailure)
+  {
+     return <Popouts/>
+  }
+ 
 
 
 
-    return isauth?(<Redirect to={"/"} push/>):(
+    return isauth?(
+    
+    <Redirect to={"/"} push/>
+    
+    
+    ):(
         <div>
 
          
 
-
-
-
-        
  
            <div className={styles.top1}>          
            </div>
@@ -69,7 +78,6 @@ function Login()
                <h2>Login</h2>
                <input type="text" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} /><br/><br/>
                <input type="text" value={pass}  placeholder="Password" onChange={(e) => setPass(e.target.value)}/><br/><br/>
-
                 <div className={styles.login}>Login</div>
 
            
