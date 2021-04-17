@@ -47,7 +47,7 @@ function Routes()
             <Route path="/jobpost">
                <JobPost/>
             </Route>
-            <Route path="/recruiterdashboard" exact>
+            <Route path="/recruiter/dashboard" exact>
                <RecruiterDashboard />
             </Route>
          </Switch>
