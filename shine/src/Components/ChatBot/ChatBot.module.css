@@ -1,6 +1,6 @@
 .chatbotbutton{
-    width: 80px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     bottom: 50px;
     position: fixed;
     right: 50px;
@@ -11,7 +11,7 @@
 .chatbotimg{
     width: 40px;
     height: 40px;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-top: 15px;
     border-radius: 20px;
 }
@@ -21,6 +21,7 @@
     height: 300px;
     right: 50px;
     bottom: 150px;
+    background-color: rgb(242, 247, 247);
     position: fixed;
     transition: ease-in-out 1s;
     border-radius: 20px;

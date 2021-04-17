@@ -50,7 +50,7 @@ const AfterLoginNav = () => {
                     <LinkContainer>
                     <div>Search Jobs</div>
                     <LinkItems>
-                        <Navtitle><Link to="/jobdiscription" style={{textDecoration:"none",color:""}}>Jobs in Top Cities</Link></Navtitle>
+                        <Navtitle><Link to="/jobdescription" style={{textDecoration:"none",color:""}}>Jobs in Top Cities</Link></Navtitle>
                         <Navtitle>Jobs by Skills</Navtitle>
                         <Navtitle>Jobs by Courses</Navtitle>
                         <Navtitle>Jobs by Education</Navtitle>
