@@ -1,19 +1,40 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom';
 import styles from "./home.module.css";
 const payload = {
     title: "",
     location: "",
-    experience: "Experience (Years)"
+    experience: ""
     
   };
 
 function AdvanceSearch({setIsAuth}) {
     const [userData, setUserData] = React.useState(payload);
     const {title,location,experience}=userData;
-    const [loc,setLoc] = useState("");
     
-    const exp = ["Experience (Years)","0 Yrs","1 Yrs","2 Yrs","3 Yrs","4 Yrs","5 Yrs","6 Yrs","7 Yrs","8 Yrs","9 Yrs","10 Yrs","11 Yrs","12 Yrs","13 Yrs","14 Yrs","15 Yrs","16 Yrs","17 Yrs","18 Yrs","19 Yrs","20 Yrs","21 Yrs","22 Yrs","23 Yrs","24 Yrs","25+ Yrs"];
+    const [loc,setLoc] = useState("");
+    let parm = new URLSearchParams();
+    let history = useHistory();
+
+    const handleSubmit =() =>{
+    history.push("/advancesearch?"+parm.toString());
+    }
+
+
+
+
+    useEffect(()=>{
+        for(let key in userData){
+            if(userData[key]){
+                parm.set(key,userData[key])
+            }
+        }
+        
+    },[userData])
+    
+    
+    const exp = ["Experience","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25+"];
     const handleUserData=(e)=>{
         const {value,name}=e.target;
 
@@ -21,6 +42,12 @@ function AdvanceSearch({setIsAuth}) {
         setUserData({...userData,[name]:value})
        
     }
+
+   
+
+  
+
+
     console.log(userData)
     return (
  
@@ -42,13 +69,13 @@ function AdvanceSearch({setIsAuth}) {
                         <select className={styles.searchInput} style={{color:"gray"}} name="experience" value={experience} onChange={handleUserData}>
                             {exp.map((branch) => (
                             <option key={branch} value={branch}>
-                                {branch}
+                                {branch} yrs
                             </option>
                             ))}
                         </select>
                     </div>
     
-                    <Link style={{textDecoration:"none"}} to={`/jobdiscription/${userData.location}/${userData.experience}`}><div  style={{width:"109px",fontSize:"10px",color:"#fff",marginLeft:"15px", textAlign:"center"}}><button  className={styles.searchInput} style={{marginBottom:"10px",width:"109px",textAlign:"center",backgroundColor:"#f7a400",color:"#fff"}} >Submit</button> Advanced search</div></Link>
+                   <div  style={{width:"109px",fontSize:"10px",color:"#fff",marginLeft:"15px", textAlign:"center"}}><button  className={styles.searchInput} style={{marginBottom:"10px",width:"109px",textAlign:"center",backgroundColor:"#f7a400",color:"#fff"}} onClick={handleSubmit} >Submit</button> Advanced search</div>
 
                 </div>
                

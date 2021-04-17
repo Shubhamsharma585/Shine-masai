@@ -13,6 +13,18 @@
     display: flex;
     text-align: left;
 }
+.found{
+    -webkit-user-select: none;
+    margin: auto;
+    cursor: zoom-in;
+    background-color: hsl(0, 0%, 90%);
+    transition: background-color 300ms;
+    width: 674px;
+    aspect-ratio: auto 674 / 283;
+    height: 283px;
+
+}
+
 .searchButton{
     width:600px;
     height: 50px;
