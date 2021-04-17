@@ -28,7 +28,7 @@ function Register()
       const [page5, setPage5] = useState(true)
       const [page6, setPage6] = useState(true)
       
-
+      const [isregi, setIsregi] = useState(false)
       const [iscollege, setIscollege] = useState(false)
       const [isyear, setIsyear] = useState(false)
       const [isworked, setIsworked] = useState(false)
@@ -108,13 +108,7 @@ function Register()
       setPage6(false)
      }
 
-     function regi7()
-     {
-      return(
-        <Redirect to="/" push />
-      )
-     }
-
+   
 
     const [gologin, setGologin] = useState(false)
     function logintab()
@@ -141,17 +135,21 @@ function Register()
       .catch((err) => console.log(err)); 
      }
 
-
+   
+    
      function sendpayload()
      {
          console.log("all")
          const payload = {name, email, mobile, pass, gender, location, degree,
         college, year, course, skills, title, company, industry, functionalarea }
-         dispatch(registering(payload))
-
-         return(
-             <Redirect  to={"/"}/>
-         )  
+        dispatch(registering(payload))
+         setIsregi(true)
+               
+     }
+ 
+     if(isregi)
+     {
+        return <Redirect  to="/" push/>
      }
 
 
@@ -162,7 +160,7 @@ function Register()
         <div>
             
            <div className={styles.top}>
-               <img src={logo1} />
+               {/* <img src={logo1} /> */}
                <div className={styles.login}
                onClick={() => logintab() }
                >Login</div>
@@ -262,7 +260,7 @@ function Register()
          <div className={styles.cont}>
      <div className={styles.commoncont}>
               
-             <div className={styles.commoncont2}> 
+             <div className={styles.commoncont2}> ``
              <h4 style={{fontSize:"28px", fontWeight:"800",marginRight:"20%",marginTop:"3px"}}>Which city do you live in?</h4> 
              </div>
              
@@ -273,8 +271,8 @@ function Register()
               </div>
              <div className={styles.commoncont1}>
                  <button className={styles.identity} onClick={() => setLocation("Banglore")}><div className={styles.identity8} width="50px"  style={{marginLeft:"20px",marginTop:"10px"}}></div>Banglore</button>
-                 <button className={styles.identity} onClick={() => setLocation("Chennai")}><div className={styles.identity9} width="55px"  style={{marginLeft:"20px",marginTop:"15px"}}></div>Chennai</button>
-                 <button className={styles.identity} onClick={() => setLocation("Hyderabad")}><div className={styles.identity10} width="80px"  style={{marginLeft:"15px",marginTop:"10px"}}></div>Hyderabad</button> 
+                 <button className={styles.identity} onClick={() => setLocation("Chennai")}><div className={styles.identity9} width="55px"  style={{marginLeft:"28px",marginTop:"15px"}}></div>Chennai</button>
+                 <button className={styles.identity} onClick={() => setLocation("Hyderabad")}><div className={styles.identity10} width="80px"  style={{marginLeft:"25px",marginTop:"10px"}}></div>Hyderabad</button> 
               </div>
              <div className={styles.commoncont2}> 
                <input 
@@ -335,7 +333,7 @@ function Register()
              </div> 
 
              {istitle?(
-                 <div className={styles.commoncont2} style={{marginTop:"30px"}}> 
+                 <div className={styles.commoncont2} style={{marginTop:"30px", transition:"ease-in-out",transition:"300ms"}}> 
                  <p style={{marginRight:"350px"}}> What was your Job Title?</p>  
                    <input 
                 style={{marginRight:"", height:"40px", width:"500px", borderRadius:"5px", border:"gray 1px solid" }}
@@ -352,7 +350,7 @@ function Register()
 
              ):("")}
 
-{  isindustry?(
+ { isindustry?(
         <div className={styles.commoncont2} style={{marginTop:"30px"}}> 
                   <p style={{marginRight:"350px"}}> What was Industry?</p>  
                     <input 
@@ -649,58 +647,6 @@ function Register()
 
 
      </div>
-
-
-
-
-
-
-
-
- {/* 
-      <div className={styles.commoncont2}>
-       <div className={styles.skills}>
-        <button className={styles.identity_third} onClick={() => setSkills([...skills, "English" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>English &#43;</h4> </button>
-        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Bussiness" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Bussiness  &#43;</h4> </button>
-        </div>
-     </div> 
-
-     <div className={styles.commoncont2} style={{marginTop:"0px"}}>
-        <div className={styles.skills}>
-        <button className={styles.identity_third}  onClick={() => setSkills([...skills, "Autocad" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Autocad  &#43;</h4> </button>
-         <button className={styles.identity_third} onClick={() => setSkills([...skills, "Ansys" ])}><h4 style={{marginLeft:"5px",marginTop:"8px", width:"",  fontSize:"15px", color:"grey"}}>Ansys  &#43;</h4></button>  
-        </div>
-      </div>
-
-     <div className={styles.commoncont2}>
-       <div className={styles.skills}>
-        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Excel" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Excel  &#43;</h4> </button>
-        <button className={styles.identity_third} onClick={() => setSkills([...skills, "Creo" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Creo  &#43;</h4> </button>
-        </div>
-     </div> 
-
-     <div className={styles.commoncont2} style={{marginTop:"0px"}}>
-        <div className={styles.skills}>
-         <button className={styles.identity_third} onClick={() => setSkills([...skills, "ProE" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>ProE  &#43;</h4> </button>
-        <button className={styles.identity_third}  onClick={() => setSkills([...skills, "Matlab" ])}> <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>Matlab  &#43;</h4> </button>     
-        </div>
-      </div>
- 
-       </div>
-     
-  </div>
-</div> */}
-  
-
-
-
-
-        
-
-
-
-
-
 
 
 
