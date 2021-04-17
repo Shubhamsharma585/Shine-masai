@@ -232,7 +232,7 @@ const JobDescription = ({dis}) => {
         axios.post("https://json-heroku-shubham.herokuapp.com/applications",{
             name: userData.name,
             call: false,
-            interview_status: "Not_Submitted",
+            interview_status: "red",
             gender: userData.personal.gender,
             dob: userData.personal.dob,
             email: userData.personal.email,

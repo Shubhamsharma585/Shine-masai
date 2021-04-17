@@ -3,37 +3,41 @@ import styles from "../RecruiterDash/Dashboard.module.css"
 import {getUserData, singleUserData} from '../../Redux/RecruiterDash/action'
 import { useDispatch, useSelector } from "react-redux";
 import ChatBot from '../ChatBot/ChatBot';
-
-const initValue = {
-    comments: "",
-}
+import axios from "axios"
 
 const RecruiterDashboard = () => {
 
     const [call, setCall] = React.useState(false)
     const [interviewColor, setInterviewColor] = React.useState("")
-    const [comment, setComment] = React.useState(initValue)
-    const {comments} = comment
     const dispatch = useDispatch()
     const data = useSelector((state) => state.RecruiterDash.data)
     const CandiData = useSelector((state) => state.RecruiterDash.CandiData)
     const isLoading = useSelector((state) => state.RecruiterDash.isLoading)
 
-
-    console.log(data, CandiData)
-
-
+    const commentData =  useSelector((state) => state.RecruiterDash.CandiData.comments)
+    const [comments, setComments] = React.useState([])
+    const [text, setText] = React.useState("")
 
     const handleChange = (e) => {
-        const {name, value} = e.target
-        setComment({
-            ...comment, [name]: value
-        })
+        let value = e.target.value
+        setText(value)
     }
 
-    const handleAdd = () => {
-        console.log(data)
+    const handleAdd = (id) => {
+        // setComments([...comments, text])
+        commentData.push(text)
+        handlePatch(id)
     }
+
+    const handlePatch = (id) => {
+        // console.log(id)
+        axios.patch(`https://json-heroku-shubham.herokuapp.com/applications/${id}`,{
+            comments: commentData,
+            call: call,
+            interview_status: interviewColor
+        }).then(()=>handleShow(id))
+    }
+
 
     React.useEffect(()=>{
         onloadFunction()
@@ -46,7 +50,7 @@ const RecruiterDashboard = () => {
     const handleShow = (id) =>{
         dispatch(singleUserData(id))
     }
-
+    console.log(data)
     return (
         <div className={styles.dash_MainContainer}>
             {isLoading ? <div className={styles.dash_MainContainer_Loading}>
@@ -56,10 +60,10 @@ const RecruiterDashboard = () => {
                 {data.map(el=> 
                     <div key={el.id} onClick={()=> handleShow(el.id)} className={styles.mainContainer_CandidateCard}>
                         <div className={styles.mainContainer_CandidateCard_Info}>
-                            <div>{el.name}</div>
-                            <div>{el.title}</div>
-                            <div>{el.email}</div>
-                            <div>{el.location}</div>
+                            <p><strong>Name: </strong>{`${el.name}`}</p>
+                            <p><strong>Email: </strong> {`${el.email}`}</p>
+                            <p><strong>Location: </strong>{`${el.location}`}</p>
+                            <p><strong>Mobile: </strong>{`${el.phone}`}</p>
                         </div>
                     </div>    
                 )}
@@ -79,9 +83,8 @@ const RecruiterDashboard = () => {
                         </label>
                         <label>
                             Interview-Status: <div
-                                style={{backgroundColor: `${interviewColor}`}}
+                                style={{backgroundColor: `${CandiData.interview_status}`}}
                             >
-                                {interviewColor=="" && <span>Not_Submitted</span>}
                             </div>
                         </label>
                     </div>
@@ -176,19 +179,21 @@ const RecruiterDashboard = () => {
                     <div>
                         <strong>Skills: </strong>
                     </div>
-                    {CandiData.skills.map(el => <div>{el}</div>)}
-                    {/* <div>
-                    </div> */}
+                    <div className={styles.mainContainer_Skills_Container}>
+                        {CandiData.skills.map(el => 
+                            <div className={styles.mainContainer_Skills_Container_Item}>{el}</div>
+                        )}
+                    </div>
                 </div>
 
                 <div className={styles.comments_Buttons_Container}>
                     <div className={styles.comments_Container}>
-                        <div className={styles.comments_Box}>
-                            <p>{}</p>
-                        </div>
+                        {isLoading ? <p>...loading</p> :<div className={styles.comments_Box}>
+                            {commentData.map(el => <p>{el}</p>)}
+                        </div>}
                         <div className={styles.input_Box}>
-                            <textarea name="comments" value={comments} onChange={handleChange} rows="4.8" cols="50"></textarea>
-                            <button onClick={handleAdd}>Add</button>
+                            <textarea value={text} onChange={handleChange} rows="4.8" cols="50"></textarea>
+                            <button onClick={() => handleAdd(CandiData.id)}>Add</button>
                         </div>
                     </div>
                     <div className={styles.buttons_Container}>
