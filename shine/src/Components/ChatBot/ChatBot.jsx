@@ -1,7 +1,7 @@
 import React from 'react'
 import Chatbox from "./Chatbox.png"
-import Send from "./send.png"
 import Styles from "./ChatBot.module.css"
+import JobAlert from '../CreateJobAlert/JobAlert'
 function ChatBot() {
     const [status, setStatus]=React.useState(false)
     const [hide, setHide]=React.useState("")
@@ -15,6 +15,7 @@ function ChatBot() {
     }
     return (
         <div>
+            <JobAlert/>
             <div className={!status ? Styles.conv:Styles.conv2}>
                 <div className={Styles.chatbothead}>
                    <p>Alisha</p> <button onClick={()=>{setReply(!reply);setChat([])}}>X</button>

@@ -14,6 +14,7 @@ import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
 import { useSelector } from "react-redux";
 
 import { JobDescription } from "../Components/JobDescription/JobDescription";
+import ChatBot from "../Components/ChatBot/ChatBot";
 
 
 
@@ -40,7 +41,7 @@ function Routes()
                <Register/>
             </Route>
             <Route path="/jobdescription" exact>
-               <JobDescription />
+               <JobSearch/>
             </Route>
 
             <Route path="/jobdescription/:location" >
@@ -49,8 +50,11 @@ function Routes()
             <Route path="/jobpost">
                <JobPost/>
             </Route>
-            <Route to="/recruiterdashboard">
+            <Route path="/recruiterdashboard" exact>
                <RecruiterDashboard />
+            </Route>
+            <Route path="/chatbot" exact>
+               <ChatBot/>
             </Route>
          </Switch>
       </div>
