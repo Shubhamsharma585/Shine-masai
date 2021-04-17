@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom"
 import Login from "../Components/LogIn/Login"
 import Register from "../Components/Register/Register";
 import Home from "../Components/Home/Home"
+
 import NavBar from "../Components/Navbar/NavBar";
 import JobAlert from "../Components/CreateJobAlert/JobAlert";
 import { RecruiterDashboard } from "../Components/RecruiterDash/RecruiterDashboard";
@@ -11,6 +12,13 @@ import JobSearch from "../Components/JobSearch/JobSearch";
 import JobPost from "../Components/JobPost/JobPost";
 import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
 import { useSelector } from "react-redux";
+
+import { JobDescription } from "../Components/JobDescription/JobDescription";
+
+
+
+
+
 
 function Routes()
 {
@@ -31,10 +39,11 @@ function Routes()
             <Route path="/registration" exact>
                <Register/>
             </Route>
-            <Route path="/jobdiscription" exact>
-               <JobSearch/>
+            <Route path="/jobdescription" exact>
+               <JobDescription />
             </Route>
-            <Route path="/jobdiscription/:location" >
+
+            <Route path="/jobdescription/:location" >
                <JobDescriptionSidebar/>
             </Route>
             <Route path="/jobpost">
@@ -46,6 +55,7 @@ function Routes()
          </Switch>
       </div>
    )
+
 }
 
 export default Routes;

@@ -48,8 +48,8 @@ function JobPostInput() {
         <div>
               <div className={Styles.sub1}>
              <div style={{textAlign:"left"}}>
-                <p style={{fontSize:"42px"}}>Create Job Alert 2021</p>
-                <p style={{fontSize:"24px"}}>You can create alerts here</p>
+                <p style={{fontSize:"42px"}}>Create Job Post 2021</p>
+                <p style={{fontSize:"24px"}}>You can create job post here</p>
             </div>
             <div className={Styles.input}>
                 <h4 style={{fontSize:'20px'}}>Let us know what kind of employee you are looking for and we'll send them to your Inbox.</h4>

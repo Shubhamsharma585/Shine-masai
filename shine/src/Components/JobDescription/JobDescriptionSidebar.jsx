@@ -8,8 +8,12 @@ function JobDescriptionSidebar() {
     const [data,setData] =useState([]);
     const [page, setPage] = React.useState(1);
     const [limit, setLimit]=useState(5);
-    const [dis, setDis]=useState([]);
+
+   
     const [isLoading, setIsloading] = React.useState(false)
+
+    const [dis, setDis]=useState({});
+
 
     const {location} =useParams(); 
     
@@ -29,7 +33,12 @@ function JobDescriptionSidebar() {
         axios(requestParam)
           .then((res) =>{
             setData(res.data);
+
             setIsloading(false)
+
+            
+            
+
         })
         
           .catch((err) => console.log("err"));
@@ -43,8 +52,10 @@ function JobDescriptionSidebar() {
          
 
       }
+      console.log(dis)
     
       React.useEffect(handleSearch, [page]);
+      React.useEffect(()=>{setDis(data[0])}, [data]);
 
     return (
         <div style={{display:"flex"}}>
@@ -66,7 +77,7 @@ function JobDescriptionSidebar() {
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> {el.location}</span>
                         </div>
                     </div>))}
-                    {<div>
+                    {<div style={{margin:"auto"}}>
                     <button style={{backgroundColor:"transparent",color:"#5364C4",marginTop:"15px",border:"0"}} disabled={page === 1} onClick={() => setPage(page - 1)}>
                     {"<<prev"}
                     </button>
@@ -80,7 +91,7 @@ function JobDescriptionSidebar() {
             </div>}
                 
             <div>
-                <JobDescription dis={dis}/>
+               {dis&&<JobDescription dis={dis}/>}
             </div>
 
             
