@@ -12,6 +12,8 @@ import JobSearch from "../Components/JobSearch/JobSearch";
 import JobPost from "../Components/JobPost/JobPost";
 import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
 import { useSelector } from "react-redux";
+import AdvancedComponent from "../Components/Home/AdvancedComponent";
+import PageNotFound from "../Components/Home/PageNotFound";
 
 
 
@@ -43,14 +45,20 @@ function Routes()
                <JobSearch />
             </Route>
 
-            <Route path="/jobdescription/:location" >
+            <Route path="/jobdescription/jobsearch/:location" >
                <JobDescriptionSidebar/>
+            </Route>
+            <Route path="/advancesearch"  >
+               <AdvancedComponent/>
             </Route>
             <Route path="/jobpost">
                <JobPost/>
             </Route>
-            <Route to="/recruiterdashboard" exact>
+            <Route path="/recruiterdashboard" exact>
                <RecruiterDashboard />
+            </Route>
+            <Route>
+               <PageNotFound/>
             </Route>
          </Switch>
       </div>

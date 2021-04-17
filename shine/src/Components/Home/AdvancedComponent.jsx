@@ -1,58 +1,48 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import { useParams } from 'react-router'
-import { JobDescription } from './JobDescription';
+import React, { useEffect, useState } from 'react'
+import { useHistory, useParams } from 'react-router'
+import { JobDescription } from '../JobDescription/JobDescription';
+
 import styles from "../JobDescription/Tabs.module.css"
 
-function JobDescriptionSidebar() {
+function AdvancedComponent() {
+    const [datar,setDatar] =useState([]);
+    const [isLoading, setIsloading] = React.useState(false);
+    const [data1,setData1] =useState({});
     const [data,setData] =useState([]);
-    const [page, setPage] = React.useState(1);
-    const [limit, setLimit]=useState(5);
-    
-    const [data1,setData1]=useState({});
-
-
-   
-    const [isLoading, setIsloading] = React.useState(false)
+ 
 
     const [dis, setDis]=useState({});
 
+    const parms= new URLSearchParams(window.location.search)
     
-    
-    
-
-    const {location} =useParams(); 
-   
-
-     
-    const handleSearch = () => {
-        setIsloading(true)
+    const handleSubmit=()=>{
         const requestParam = {
-          method: "get",
-          url: `https://json-heroku-shubham.herokuapp.com/jobDetails?location=${location}`,
-          params: {
-            
-            limit : limit,
-            page :page
-            
-            
-          }
-        };
-        axios(requestParam)
-          .then((res) =>{
-            setData(res.data);
+            method: "get",
+            url: `https://json-heroku-shubham.herokuapp.com/jobDetails`,
+          };
+          axios(requestParam)
+            .then((res) =>{
+              setDatar(res.data);  
+  
+            })
+          
+            .catch((err) => console.log("err"));
 
-            setIsloading(false)
+       
 
             
-            
-
+    };
+    const results =()=>{
+        const filterData = datar.filter((el)=>{
+            return (el.location===data1.location || el.experience===Number(data1.experience) || el.skills.includes(data1.title))
         })
-        
-          .catch((err) => console.log("err"));
-      };
+        setData(filterData)
+    }
 
-
+    console.log(data)
+    
+    
       const getData =(id)=>{
           axios.get(`https://json-heroku-shubham.herokuapp.com/jobDetails/${id}`)
           .then(res=>{setDis(res.data)})
@@ -60,12 +50,23 @@ function JobDescriptionSidebar() {
          
 
       }
-      console.log(dis)
+     
     
-      React.useEffect(handleSearch, [page]);
+      
       React.useEffect(()=>{setDis(data[0])}, [data]);
+      React.useEffect(results,[datar]);
+      useEffect(()=>{
+          let obj={};
+        for(var pair of parms.entries()) {
+        
+            obj[pair[0]]= pair[1]
+         }
+         setData1(obj);
+         handleSubmit();
+
+      },[])
       
-      
+      console.log(data1)
 
     return (
         <div style={{display:"flex"}}>
@@ -73,8 +74,8 @@ function JobDescriptionSidebar() {
                 <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt=""/>
             </div>
             :
-            <div className={styles.right}>
-                <div>
+            <div >
+                <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
                     {data.map((el)=>(
                     <div key={el.id} onClick={()=>getData(el.id)} className={styles.box} style={{width:"300px", height:"100px",padding:"5px"}}>
                         <div>
@@ -87,15 +88,7 @@ function JobDescriptionSidebar() {
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> {el.location}</span>
                         </div>
                     </div>))}
-                    {<div style={{margin:"auto"}}>
-                    <button style={{backgroundColor:"transparent",color:"#5364C4",marginTop:"15px",border:"0"}} disabled={page === 1} onClick={() => setPage(page - 1)}>
-                    {"<<prev"}
-                    </button>
-                    <strong style={{color:"#5364C4",fontSize:"14px"}}> {page}</strong>
-                    <button style={{backgroundColor:"transparent",color:"#5364C4",marginTop:"15px",border:"0"}} disabled={data.length>5} onClick={() => setPage(page + 1)}>
-                    {"next>>"}
-                    </button>
-                    </div>}
+                   
                 </div>
 
             </div>}
@@ -109,4 +102,4 @@ function JobDescriptionSidebar() {
     )
 }
 
-export default JobDescriptionSidebar
+export default AdvancedComponent

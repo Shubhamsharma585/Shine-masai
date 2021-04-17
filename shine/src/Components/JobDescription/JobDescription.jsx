@@ -249,7 +249,7 @@ const JobDescription = ({dis}) => {
    
 
     return (
-        // <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
+        <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
         <MainContainer >
             <CompanyCard>
                 <JobTitle>
@@ -351,7 +351,7 @@ const JobDescription = ({dis}) => {
             </SelectTabs>
 
         </MainContainer>
-        // </div>
+        </div>
     )
 }
 
