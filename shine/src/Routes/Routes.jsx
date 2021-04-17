@@ -3,26 +3,30 @@ import { Route, Switch } from "react-router-dom"
 import Login from "../Components/LogIn/Login"
 import Register from "../Components/Register/Register";
 import Home from "../Components/Home/Home"
-import { JobDescription } from "../Components/JobDescription/JobDescription";
+
 import NavBar from "../Components/Navbar/NavBar";
 import JobAlert from "../Components/CreateJobAlert/JobAlert";
+import { RecruiterDashboard } from "../Components/RecruiterDash/RecruiterDashboard";
+import JobDescriptionSidebar from "../Components/JobDescription/JobDescriptionSidebar";
+import JobSearch from "../Components/JobSearch/JobSearch";
 import JobPost from "../Components/JobPost/JobPost";
+import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
+import { useSelector } from "react-redux";
+
+import { JobDescription } from "../Components/JobDescription/JobDescription";
+
+
 
 
 
 
 function Routes()
 {
-
-
-
-
-
- 
-    return(
-        <div>
-      <NavBar />
-     <Switch>
+   const isAuth = useSelector((state) => state.logi.isauth)
+   return(
+      <div>
+         {isAuth ? <AfterLoginNav /> : <NavBar />}
+         <Switch>
             <Route path="/" exact>
                <Home/>
             </Route>
@@ -32,20 +36,26 @@ function Routes()
             <Route path="/jobalert" exact>
                <JobAlert />
             </Route>
-            <Route path="/registration/parser/" exact>
+            <Route path="/registration" exact>
                <Register/>
             </Route>
             <Route path="/jobdescription" exact>
                <JobDescription />
             </Route>
+
+            <Route path="/jobdescription/:location" >
+               <JobDescriptionSidebar/>
+            </Route>
             <Route path="/jobpost">
                <JobPost/>
             </Route>
-       </Switch>
+            <Route to="/recruiterdashboard">
+               <RecruiterDashboard />
+            </Route>
+         </Switch>
+      </div>
+   )
 
-
-        </div>
-    )
 }
 
 export default Routes;

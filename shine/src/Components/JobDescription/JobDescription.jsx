@@ -7,9 +7,13 @@ import ReactTextCollapse from 'react-text-collapse'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboard, faStar, faUser } from '@fortawesome/free-regular-svg-icons'
 import { faBriefcase, faMapMarkerAlt, faUsers, faWallet } from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from "react-redux";
+import { Link, Redirect } from "react-router-dom"
+import axios from "axios"
+
 
 const MainContainer = styled.div`
-    width: 99%;
+    min-width: 1050px;
     height: auto;
     padding: 5px;
     /* border: 1px solid black; */
@@ -45,10 +49,9 @@ const CompanyName = styled.p`
 `
 
 const JobInfo = styled.div`
-    width: 60%;
+    width: auto;
     height: auto;
     padding-left: 2%;
-
     /* border: 1px solid; */
     display: flex;
 `
@@ -155,7 +158,7 @@ const SkillsDiv = styled.div`
 `
 
 const TakeAsses = styled.button`
-    width: 30%;
+    width: auto;
     height: 40px;
     border: 1px solid #a8ceff;
     margin-bottom: 1%;
@@ -218,34 +221,59 @@ const TEXT_COLLAPSE_OPTIONS = {
 }
 
 const JobDescription = ({dis}) => {
+    const userData = useSelector((state) => state.logi.payload)
+    const isAuth = useSelector((state)=> state.logi.isauth)
+    let payload = []
+    const handleGetUser = () => {
+        !isAuth ? alert("Login") : postUser()
+    }
+    
+    const postUser = () => {
+        axios.post("https://json-heroku-shubham.herokuapp.com/applications",{
+            name: userData.name,
+            call: false,
+            interview_status: "Not_Submitted",
+            gender: userData.personal.gender,
+            dob: userData.personal.dob,
+            email: userData.personal.email,
+            phone: userData.personal.mobile,
+            applied_company: dis.subtitle,
+            applied_position: dis.title,
+            location: userData.personal.location,
+            experience: userData.worksummary.experience,
+            qualification: userData.education.title,
+            skills: userData.skills,
+            comments: []
+        }).then(resp => console.log(resp))
+    }
+   
 
     return (
-        <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
+        // <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
         <MainContainer >
             <CompanyCard>
                 <JobTitle>
                     {dis.title}
                 </JobTitle>
                 <CompanyName>
-                    {dis.subTitle}
+                    {dis.subtitle}
                 </CompanyName>
                 <JobInfo>
                     <ExperienceYr>
                         <FontAwesomeIcon style={{color:"white", marginRight: 10}} icon={faBriefcase} />
-                        <span>0 to {dis.Experience} yrs</span>
+                        <span style={{color:"white"}}>0 to {dis.experience} yrs</span>
                     </ExperienceYr>
                     <SalaryPerYr>
                         <FontAwesomeIcon style={{color:"white", marginRight: 10}} icon={faWallet} />
-                        <span>Rs 10 - 12 Lakhs/Yr</span>
+                        <span style={{color:"white"}}>Rs {dis.salary} Lakhs/Yr</span>
                     </SalaryPerYr>
                     <FontAwesomeIcon style={{color:"white",marginLeft: 10, marginRight: 10}} icon={faMapMarkerAlt} />
                     <JobLocation>
-                        <span>{dis.location}
-                        </span>
+                        <span style={{color:"white"}}>{dis.location}</span>
                     </JobLocation>
                 </JobInfo>
                 <ButtonBox>
-                    <ApplyBtn>Apply</ApplyBtn>
+                    <ApplyBtn onClick={handleGetUser}>Apply</ApplyBtn>
                     <StarBtn><FontAwesomeIcon icon={faStar} /></StarBtn>      
                 </ButtonBox>
                 <GetNoticed>
@@ -256,13 +284,15 @@ const JobDescription = ({dis}) => {
             <Skills>
                 <SkillsBody>
                     <h4>Key skills</h4>
+
                     <div style={{display:"flex",flexDirection:"Wrap"}}>
                     {dis.skills?.map((el)=>(
                         
                              <SkillsDiv>{el}</SkillsDiv>
                     ))}
                     </div>
-                    {/* <SkillsDiv>{dis.skills}</SkillsDiv> */}
+
+
                     <TakeAsses>
                         <FontAwesomeIcon style={{color:"purple",marginLeft: 10, marginRight: 10}} icon={faClipboard} />
                         Take Assessments to stand out to recruiters
@@ -273,20 +303,12 @@ const JobDescription = ({dis}) => {
             <SelectTabs>
                 <Tabs className={styles.tabs}>
                     <TabList>
-                        <Tab>Title 1</Tab>
-                        <Tab>Title 2</Tab>
+                        <Tab>Job detail</Tab>
+                        <Tab>About company</Tab>
                     </TabList>
                     <TabPanel>
                         <ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS}>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a elit volutpat, tristique purus ut, facilisis magna. In sed lorem bibendum, ultrices ipsum id, placerat est. Fusce justo ex, pharetra in faucibus nec, convallis at nunc. Donec non ullamcorper erat. Duis a pulvinar odio, ut commodo magna. Quisque tellus ligula, aliquam id orci sit amet, elementum lacinia lectus. Cras vel sodales magna, et imperdiet ipsum. Morbi venenatis scelerisque feugiat.
-
-Morbi vehicula tempus metus a ullamcorper. Nam venenatis metus vitae neque vestibulum pellentesque. Vivamus in pretium est. Vivamus a pellentesque mi, fringilla finibus urna. Aliquam quam urna, lacinia at lobortis nec, convallis in purus. Curabitur feugiat risus tristique nulla convallis, ac viverra eros vestibulum. Mauris vitae leo vitae augue vehicula sodales a at nulla. Nam id malesuada tellus. Cras nec fermentum leo. Nullam maximus placerat justo, non efficitur urna imperdiet vitae. Aliquam nibh est, consectetur eget dolor at, porta pharetra dolor. Pellentesque ut congue justo, nec venenatis libero. Nunc ac tellus aliquam, volutpat nisi nec, tincidunt sapien. Phasellus pretium orci sit amet purus fringilla, sed viverra nunc porta. Donec eleifend cursus scelerisque. Aenean facilisis leo at mi ornare congue.
-
-In et velit sed dolor vehicula dapibus. Cras nec magna sit amet neque pretium tincidunt non in magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut massa nibh, tempus quis erat in, blandit blandit felis. Cras suscipit urna quis orci pharetra tristique non vel dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tincidunt feugiat mauris, vel auctor eros ultrices sodales.
-
-Phasellus semper eget libero sollicitudin laoreet. Integer sit amet lectus sit amet dolor interdum mattis. Nulla posuere tortor at dictum vestibulum. Nunc semper dui turpis, a pharetra mauris venenatis quis. Aliquam nibh nibh, aliquam efficitur sagittis ac, tristique sit amet odio. Duis rutrum malesuada fringilla. Aenean vitae ante sapien. Quisque eget auctor enim, sit amet mattis dolor. Mauris et dui lacus. Cras tellus ante, volutpat id lobortis eget, sodales in elit.
-
-Vestibulum facilisis massa rutrum libero ornare pretium. Ut dui tortor, elementum eu lacinia eu, tincidunt et dui. Morbi in metus ligula. Praesent quis justo eu leo pellentesque volutpat id nec nibh. Nulla tincidunt est odio, vitae cursus nisi placerat non. Nam quis sem finibus, lacinia est posuere, scelerisque magna. Nam dapibus auctor nulla, at pellentesque sem consequat non. Cras pellentesque magna id ante dictum vehicula id eget ante. Curabitur eget justo a tortor pharetra consequat. Nam molestie tristique mauris, non eleifend nunc hendrerit eu. Suspendisse potenti. Quisque quis metus hendrerit enim maximus semper ut at nisi.</p>
+                            <p>{dis.description}</p>
                         </ReactTextCollapse>
                     </TabPanel>
                     <TabPanel>
@@ -296,15 +318,15 @@ Vestibulum facilisis massa rutrum libero ornare pretium. Ut dui tortor, elementu
                                 <strong>Company Name</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>{dis.subTitle}</span>
+                                <span>{dis.subtitle}</span>
                             </TabItemsInfo>
                         </TabItems>
                         <TabItems>
                             <TabItemsTitle>
-                                <strong>Company Description</strong>
+                                <strong>Position Description</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>{dis.jobDescription}</span>
+                                <span>{dis.title}</span>
                             </TabItemsInfo>
                         </TabItems>
                         <TabItems>
@@ -320,7 +342,7 @@ Vestibulum facilisis massa rutrum libero ornare pretium. Ut dui tortor, elementu
                                 <strong>Telephone</strong>
                             </TabItemsTitle>
                             <TabItemsInfo>
-                                <span>{dis.Telephone}</span>
+                                <span>{dis.telephone}</span>
                             </TabItemsInfo>
                         </TabItems>
                         </CompanyShortInfo>
@@ -329,7 +351,7 @@ Vestibulum facilisis massa rutrum libero ornare pretium. Ut dui tortor, elementu
             </SelectTabs>
 
         </MainContainer>
-        </div>
+        // </div>
     )
 }
 

@@ -8,11 +8,17 @@ function JobDescriptionSidebar() {
     const [data,setData] =useState([]);
     const [page, setPage] = React.useState(1);
     const [limit, setLimit]=useState(5);
+
+   
+    const [isLoading, setIsloading] = React.useState(false)
+
     const [dis, setDis]=useState({});
+
 
     const {location} =useParams(); 
     
     const handleSearch = () => {
+        setIsloading(true)
         const requestParam = {
           method: "get",
           url: `https://json-heroku-shubham.herokuapp.com/jobDetails?location=${location}`,
@@ -27,15 +33,16 @@ function JobDescriptionSidebar() {
         axios(requestParam)
           .then((res) =>{
             setData(res.data);
+
+            setIsloading(false)
+
             
             
-            
+
         })
         
           .catch((err) => console.log("err"));
       };
-
-      
 
 
       const getData =(id)=>{
@@ -50,14 +57,14 @@ function JobDescriptionSidebar() {
       React.useEffect(handleSearch, [page]);
       React.useEffect(()=>{setDis(data[0])}, [data]);
 
-
-
-
     return (
-        <div style={{display:"flex",height:"80vh"}}>
-            <div >
-                <div className={styles.right} style={{width:"320px",overflowY:"auto",overflow:"scroll",padding:"10px",backgroundColor:"#f8f8f8",height:"80vh",position:"sticky",top:"0"}}>
-                    <h1 style={{color:"#303e4b",fontWeight:"400",fontSize:"16px"}}>Customer Focus Jobs</h1>
+        <div style={{display:"flex"}}>
+            {isLoading ? <div className={styles.loadingBox}>
+                <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt=""/>
+            </div>
+            :
+            <div>
+                <div>
                     {data.map((el)=>(
                     <div key={el.id} onClick={()=>getData(el.id)} className={styles.box} style={{width:"300px", height:"100px",padding:"5px"}}>
                         <div>
@@ -68,10 +75,7 @@ function JobDescriptionSidebar() {
                             <div style={{clear:"both"}}></div>
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> 0 to {el.Experience}Yrs</span>
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> {el.location}</span>
-
                         </div>
-                        
-
                     </div>))}
                     {<div style={{margin:"auto"}}>
                     <button style={{backgroundColor:"transparent",color:"#5364C4",marginTop:"15px",border:"0"}} disabled={page === 1} onClick={() => setPage(page - 1)}>
@@ -82,11 +86,9 @@ function JobDescriptionSidebar() {
                     {"next>>"}
                     </button>
                     </div>}
-                        
-
                 </div>
 
-            </div>
+            </div>}
                 
             <div>
                {dis&&<JobDescription dis={dis}/>}
