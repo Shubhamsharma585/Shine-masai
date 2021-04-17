@@ -9,13 +9,22 @@ import {
 
 const initState = {
     data: [],
-    CandiData: [],
-    CandiPersonal: {
-        dob: "",
+    CandiData: {
+        "userName": "",
+        call: false,
+        interview_status: "Not_Submitted",
         gender: "",
+        dob: "",
+        email: "",
+        phone: "",
+        applied_company: "",
+        applied_position: "",
         location: "",
+        experience: "",
+        qualification: "",
+        skills: [],
+        comments: []
     },
-    education: [],
     isLoading: false,
     isError: false, 
 }
@@ -57,13 +66,22 @@ export const RecruiterDashReducer = (state=initState, action) => {
         case DASHBOARD_CANDIDATE_SUCCESS:{
             return{
                 ...state,
-                CandiData: action.payload,
-                CandiPersonal: {
-                    dob: action.payload.personal.dob,
-                    gender: action.payload.personal.gender,
-                    location: action.payload.personal.location,
+                CandiData: {
+                    userName: action.payload.name,
+                    call: action.payload.call,
+                    interview_status: action.payload.interview_status,
+                    gender: action.payload.gender,
+                    dob: action.payload.dob,
+                    email: action.payload.email,
+                    phone: action.payload.phone,
+                    applied_company: action.payload.applied_company,
+                    applied_position: action.payload.applied_position,
+                    location: action.payload.location,
+                    experience: action.payload.experience,
+                    qualification: action.payload.qualification,
+                    skills: action.payload.skills,
+                    comments: action.payload.comments
                 },
-                education: action.payload.education,
                 isLoading: false,
             }
         }

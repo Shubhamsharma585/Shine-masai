@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import styles from "../Navbar/NavBar.module.css"
 import styled from "styled-components"
 
@@ -39,6 +39,7 @@ const Navtitle = styled.p`
 `
 
 const NavBar = () => {
+
 
     return (
         <div className={styles.navContainer}>
@@ -98,9 +99,9 @@ const NavBar = () => {
                     <div>Walk-ins</div>
                 </Link>
             </div>
-            <button className={styles.navContainer_Jalert}>
-                <Link style={{textDecoration: "none", color: "white"}} to="/jobalert">Create job alert</Link>
-            </button>
+                <Link style={{textDecoration: "none", color: "white"}} to="/jobalert">
+                <button className={styles.navContainer_Jalert1}>Create job alert</button>
+                </Link>
             <button className={styles.navContainer_Jalert}>
                 Post a job
             </button>

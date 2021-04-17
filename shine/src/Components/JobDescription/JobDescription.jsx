@@ -227,7 +227,7 @@ const JobDescription = ({dis}) => {
     }
     
     const postUser = () => {
-        axios.post("https://fathomless-plains-83957.herokuapp.com/posts",{
+        axios.post("https://json-heroku-shubham.herokuapp.com/applications",{
             name: userData.name,
             call: false,
             interview_status: "Not_Submitted",
@@ -247,7 +247,7 @@ const JobDescription = ({dis}) => {
    
 
     return (
-        <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
+        // <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
         <MainContainer >
             <CompanyCard>
                 <JobTitle>
@@ -341,7 +341,7 @@ const JobDescription = ({dis}) => {
             </SelectTabs>
 
         </MainContainer>
-        </div>
+        // </div>
     )
 }
 

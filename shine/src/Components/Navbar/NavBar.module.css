@@ -47,16 +47,7 @@
     color: blue;
 }
 
-/* .navContainer_Jalert>a{
-    color: white;
-} */
-
-.navContainer_Jalert>a:hover{
-    color: black;
-    text-decoration: none;
-}
-
-.navContainer_Links>a:hover, .navContainer_Jalert:hover{
+.navContainer_Links>a:hover, .navContainer_Jalert:hover, .navContainer_Jalert1:hover{
     background-color: white;
     color: black;
 }
@@ -81,7 +72,7 @@
     height: 100%;
 }
 
-.navContainer_Jalert{
+.navContainer_Jalert, .navContainer_Jalert1{
     width: 10%;
     height: 35px;
     border: none;
@@ -93,6 +84,11 @@
     color: white;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.navContainer_Jalert1{
+    width: 100%;
+    margin-top: 10%;
 }
 
 .navContainer_Contact{
