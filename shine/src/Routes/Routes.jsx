@@ -12,7 +12,17 @@ import JobSearch from "../Components/JobSearch/JobSearch";
 import JobPost from "../Components/JobPost/JobPost";
 import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
 import { useSelector } from "react-redux";
+
+import AdvancedComponent from "../Components/Home/AdvancedComponent";
+import PageNotFound from "../Components/Home/PageNotFound";
+
+import Popouts from "../Components/Popouts/LoginFail"
+
+
+import { TransitionsModal } from "../Components/Modal/Modal";
+
 import LoginFail from "../Components/Popouts/LoginFail";
+
 
 
 
@@ -29,31 +39,53 @@ function Routes()
             <Route path="/" exact>
                <Home/>
             </Route>
-            <Route path="/myshine/login" exact>
+            <Route path="/myshine/login" >
                <Login/>
             </Route>
-            <Route path="/jobalert" exact>
+            <Route path="/jobalert" >
                <JobAlert />
             </Route>
-            <Route path="/registration" exact>
+            <Route path="/registration" >
                <Register/>
             </Route>
             <Route path="/jobdescription" exact>
                <JobSearch/>
             </Route>
 
-            <Route path="/jobdescription/:location" >
+
+            <Route path="/jobdescription/jobsearch/:location" >
+
                <JobDescriptionSidebar/>
+            </Route>
+            <Route path="/advancesearch"  >
+               <AdvancedComponent/>
             </Route>
             <Route path="/jobpost">
                <JobPost/>
             </Route>
-            <Route path="/recruiterdashboard" exact>
+
+            <Route path="/recruiter/dashboard" >
                <RecruiterDashboard />
             </Route>
+
+            <Route path="/modal">
+               <TransitionsModal />
+
+               </Route>
+
             <Route path="/loginfail">
                <LoginFail/>
-            </Route>
+
+               </Route>
+              
+            
+            <Route>
+               <PageNotFound/>
+
+            </Route> 
+
+            
+
          </Switch>
       </div>
    )

@@ -15,7 +15,6 @@ function ChatBot() {
     }
     return (
         <div>
-            <JobAlert/>
             <div className={!status ? Styles.conv:Styles.conv2}>
                 <div className={Styles.chatbothead}>
                    <p>Alisha</p> <button onClick={()=>{setReply(!reply);setChat([])}}>X</button>
