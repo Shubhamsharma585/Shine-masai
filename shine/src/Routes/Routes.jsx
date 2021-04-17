@@ -13,6 +13,11 @@ import JobPost from "../Components/JobPost/JobPost";
 import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
 import { useSelector } from "react-redux";
 
+import { TransitionsModal } from "../Components/Modal/Modal";
+
+import LoginFail from "../Components/Popouts/LoginFail";
+
+
 
 
 
@@ -49,6 +54,14 @@ function Routes()
             </Route>
             <Route path="/recruiter/dashboard" exact>
                <RecruiterDashboard />
+            </Route>
+
+            <Route path="/modal">
+               <TransitionsModal />
+
+            <Route path="/loginfail">
+               <LoginFail/>
+
             </Route>
          </Switch>
       </div>
