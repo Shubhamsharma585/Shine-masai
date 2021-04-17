@@ -18,8 +18,6 @@ import { useSelector } from "react-redux";
 
 
 
-
-
 function Routes()
 {
    const isAuth = useSelector((state) => state.logi.isauth)
@@ -40,7 +38,7 @@ function Routes()
                <Register/>
             </Route>
             <Route path="/jobdescription" exact>
-               <JobSearch />
+               <JobSearch/>
             </Route>
 
             <Route path="/jobdescription/:location" >
@@ -49,7 +47,7 @@ function Routes()
             <Route path="/jobpost">
                <JobPost/>
             </Route>
-            <Route to="/recruiterdashboard" exact>
+            <Route path="/recruiterdashboard" exact>
                <RecruiterDashboard />
             </Route>
          </Switch>
