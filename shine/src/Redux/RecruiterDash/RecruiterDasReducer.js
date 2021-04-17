@@ -4,13 +4,13 @@ import {
     RECRUITER_DASH_FAILURE,
     DASHBOARD_CANDIDATE_REQUEST,
     DASHBOARD_CANDIDATE_SUCCESS,
-    DASHBOARD_CANDIDATE_FAILURE
+    DASHBOARD_CANDIDATE_FAILURE,
 } from "./actionType"
 
 const initState = {
     data: [],
     CandiData: {
-        "userName": "",
+        userName: "",
         call: false,
         interview_status: "Not_Submitted",
         gender: "",
@@ -23,7 +23,8 @@ const initState = {
         experience: "",
         qualification: "",
         skills: [],
-        comments: []
+        comments: [],
+        id: ""
     },
     isLoading: false,
     isError: false, 
@@ -80,8 +81,10 @@ export const RecruiterDashReducer = (state=initState, action) => {
                     experience: action.payload.experience,
                     qualification: action.payload.qualification,
                     skills: action.payload.skills,
-                    comments: action.payload.comments
+                    comments: action.payload.comments,
+                    id: action.payload.id
                 },
+                // remark: action.payload.comments,
                 isLoading: false,
             }
         }

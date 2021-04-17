@@ -1,7 +1,7 @@
 import React from 'react'
 import Chatbox from "./Chatbox.png"
-import Send from "./send.png"
 import Styles from "./ChatBot.module.css"
+import JobAlert from '../CreateJobAlert/JobAlert'
 function ChatBot() {
     const [status, setStatus]=React.useState(false)
     const [hide, setHide]=React.useState("")

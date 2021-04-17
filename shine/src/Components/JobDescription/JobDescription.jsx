@@ -10,6 +10,10 @@ import { faBriefcase, faMapMarkerAlt, faUsers, faWallet } from '@fortawesome/fre
 import { useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom"
 import axios from "axios"
+import { makeStyles } from '@material-ui/core/styles';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 
 
 const MainContainer = styled.div`
@@ -45,6 +49,7 @@ const CompanyName = styled.p`
     width: 90%;
     height: auto;
     padding-left: 2%;
+    color: white;
 
 `
 
@@ -220,19 +225,52 @@ const TEXT_COLLAPSE_OPTIONS = {
     }
 }
 
+const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+
 const JobDescription = ({dis}) => {
+    //Modal UI
+    const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+  
+    const handleOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+
     const userData = useSelector((state) => state.logi.payload)
     const isAuth = useSelector((state)=> state.logi.isauth)
-    let payload = []
+
     const handleGetUser = () => {
-        !isAuth ? alert("Login") : postUser()
+        // !isAuth ? alert("Login") && <Redirect to={"/"} push/> : postUser()
+        if(!isAuth){
+            alert("login") 
+            return <Redirect to="/" push/>
+        }else{
+            postUser()
+        }
     }
     
     const postUser = () => {
         axios.post("https://json-heroku-shubham.herokuapp.com/applications",{
             name: userData.name,
             call: false,
-            interview_status: "Not_Submitted",
+            interview_status: "red",
             gender: userData.personal.gender,
             dob: userData.personal.dob,
             email: userData.personal.email,
@@ -244,7 +282,7 @@ const JobDescription = ({dis}) => {
             qualification: userData.education.title,
             skills: userData.skills,
             comments: []
-        }).then(resp => console.log(resp))
+        }).then(handleOpen())
     }
    
 
@@ -349,7 +387,27 @@ const JobDescription = ({dis}) => {
                     </TabPanel>
                 </Tabs>
             </SelectTabs>
-
+            <div>
+                <button type="button" onClick={handleOpen}></button>
+                <Modal
+                    aria-labelledby="transition-modal-title"
+                    aria-describedby="transition-modal-description"
+                    className={classes.modal}
+                    open={open}
+                    onClose={handleClose}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                    timeout: 500,
+                    }}
+                >
+                    <Fade in={open}>
+                        <div className={classes.paper}>
+                            <p id="transition-modal-description">Applied Successfully..</p>
+                        </div>
+                    </Fade>
+                </Modal>
+            </div>
         </MainContainer>
         </div>
     )

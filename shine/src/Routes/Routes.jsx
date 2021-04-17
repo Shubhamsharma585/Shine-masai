@@ -15,6 +15,9 @@ import { useSelector } from "react-redux";
 import AdvancedComponent from "../Components/Home/AdvancedComponent";
 import PageNotFound from "../Components/Home/PageNotFound";
 
+import { TransitionsModal } from "../Components/Modal/Modal";
+
+import LoginFail from "../Components/Popouts/LoginFail";
 
 
 
@@ -42,7 +45,7 @@ function Routes()
                <Register/>
             </Route>
             <Route path="/jobdescription" exact>
-               <JobSearch />
+               <JobSearch/>
             </Route>
 
             <Route path="/jobdescription/jobsearch/:location" >
@@ -54,9 +57,21 @@ function Routes()
             <Route path="/jobpost">
                <JobPost/>
             </Route>
-            <Route path="/recruiterdashboard" exact>
+
+            <Route path="/recruiter/dashboard" exact>
                <RecruiterDashboard />
             </Route>
+
+            <Route path="/modal">
+               <TransitionsModal />
+               </Route>
+
+            <Route path="/loginfail">
+               <LoginFail/>
+
+               </Route>
+            
+            
             <Route>
                <PageNotFound/>
             </Route>
