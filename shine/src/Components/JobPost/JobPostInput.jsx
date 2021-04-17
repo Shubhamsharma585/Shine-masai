@@ -7,7 +7,7 @@ const payload={
     id:uuid(),
     title:"",
     salary:"any",
-    qulification:"",
+    qulification:"BA",
     subtitle:"",
     department: "Audit",
     location:"Bangalore",
@@ -29,15 +29,17 @@ function JobPostInput() {
             setData({...data,[name]:value})
         }
     }
+   
     const handlearr=(skillData)=>{
        ( data.skills).push(skillData+" ")
        setSkillData("")
     }
+
     const handleSubmit=()=>{
        axios({
            method:"post",
            url:"https://json-heroku-shubham.herokuapp.com/jobDetails",
-           data:payload
+           data:data
        }).then(res=>{
            console.log(res)
        }).catch(err => {
@@ -171,7 +173,7 @@ function JobPostInput() {
             </div>
             </div>
             <div className={Styles.Register}>
-                <button onClick={()=>handleSubmit(title,subtitle,)}>Create job Alert</button>
+                <button onClick={()=>handleSubmit(title,subtitle,)}>Create job Post</button>
             </div>
             </div> 
             </div>
