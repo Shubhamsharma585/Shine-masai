@@ -140,16 +140,18 @@ const SkillsBody = styled.div`
 
 const SkillsDiv = styled.div`
     width: auto;
-    max-width: 10%;
+    padding:5px;
     height: auto;
     padding: 5px 2px;
     margin-top: 1%;
     margin-bottom: 1%;
     margin-right: 1%;
+    font-size:14px;
     text-align: center;
     border: 1px solid #e0e0e0;
     background-color: #FAFAFA;
     border-radius: 5px;
+
 `
 
 const TakeAsses = styled.button`
@@ -254,8 +256,13 @@ const JobDescription = ({dis}) => {
             <Skills>
                 <SkillsBody>
                     <h4>Key skills</h4>
-                    
-                    <SkillsDiv>{dis.skills}</SkillsDiv>
+                    <div style={{display:"flex",flexDirection:"Wrap"}}>
+                    {dis.skills?.map((el)=>(
+                        
+                             <SkillsDiv>{el}</SkillsDiv>
+                    ))}
+                    </div>
+                    {/* <SkillsDiv>{dis.skills}</SkillsDiv> */}
                     <TakeAsses>
                         <FontAwesomeIcon style={{color:"purple",marginLeft: 10, marginRight: 10}} icon={faClipboard} />
                         Take Assessments to stand out to recruiters
