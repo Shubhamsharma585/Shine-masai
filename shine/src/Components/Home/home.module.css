@@ -502,6 +502,12 @@ button:focus{
     border: solid 1px #5364c4;
     float: left;
 }
+.blacksearch{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_new.png?b11cffa1c046") -237px -403px #b1bac3;
+    width: 46px;
+    height: 39px;
+    float: right;
+}
 
 
 

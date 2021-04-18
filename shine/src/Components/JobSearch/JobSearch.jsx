@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../Home/Footer';
+import SearchBar from '../Home/SearchBar';
 import JobList from './JobList'
 
 function JobSearch() {
@@ -24,6 +25,7 @@ function JobSearch() {
 
     return (
         <div>
+            <SearchBar/>
             <div style={{margin:"auto",marginBottom:"120px",marginLeft:"45px"}}>
                 <JobList list={topCities} heading={"Jobs in Top Cities"}/>
                 <JobList list={cities2} heading={"Jobs in Andhra Pradesh"}/>
