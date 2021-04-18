@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../Home/Footer';
 import JobList from './JobList'
 
 function JobSearch() {
@@ -23,26 +24,30 @@ function JobSearch() {
 
     return (
         <div>
-            <JobList list={topCities} heading={"Jobs in Top Cities"}/>
-            <JobList list={cities2} heading={"Jobs in Andhra Pradesh"}/>
-            <JobList list={cities3} heading={"Jobs in ArunachalPradesh"}/>
-            <JobList list={cities4} heading={"Jobs in Assam"}/>
-            <JobList list={cities5} heading={"Jobs in Bihar"}/>
-            <JobList list={cities6} heading={"Jobs in Chandigarh Region"}/>
-            <JobList list={cities7} heading={"Jobs in Chattisgarh"}/>
-            <JobList list={cities8} heading={"Jobs in Dadar and Nagar Haveli"}/>
-            <JobList list={cities9} heading={"Jobs in Delhi-NCR Region"}/>
-            <JobList list={cities10} heading={"Jobs in Goa"}/>
-            <JobList list={cities11} heading={"Jobs in Gujarat"}/>
-            <JobList list={cities12} heading={"Jobs in Haryana"}/>
-            <JobList list={cities13} heading={"Jobs in Himachal Pradesh"}/>
-            <JobList list={cities14} heading={"Jobs in Mahahrashtra"}/>
-            <JobList list={cities15} heading={"Jobs in Uttar Pradesh"}/>
-            <JobList list={cities16} heading={"Jobs in UttarKhand"}/>
-            <JobList list={cities17} heading={"Jobs in West Bengal"}/>
+            <div style={{margin:"auto",marginBottom:"120px",marginLeft:"45px"}}>
+                <JobList list={topCities} heading={"Jobs in Top Cities"}/>
+                <JobList list={cities2} heading={"Jobs in Andhra Pradesh"}/>
+                <JobList list={cities3} heading={"Jobs in ArunachalPradesh"}/>
+                <JobList list={cities4} heading={"Jobs in Assam"}/>
+                <JobList list={cities5} heading={"Jobs in Bihar"}/>
+                <JobList list={cities6} heading={"Jobs in Chandigarh Region"}/>
+                <JobList list={cities7} heading={"Jobs in Chattisgarh"}/>
+                <JobList list={cities8} heading={"Jobs in Dadar and Nagar Haveli"}/>
+                <JobList list={cities9} heading={"Jobs in Delhi-NCR Region"}/>
+                <JobList list={cities10} heading={"Jobs in Goa"}/>
+                <JobList list={cities11} heading={"Jobs in Gujarat"}/>
+                <JobList list={cities12} heading={"Jobs in Haryana"}/>
+                <JobList list={cities13} heading={"Jobs in Himachal Pradesh"}/>
+                <JobList list={cities14} heading={"Jobs in Mahahrashtra"}/>
+                <JobList list={cities15} heading={"Jobs in Uttar Pradesh"}/>
+                <JobList list={cities16} heading={"Jobs in UttarKhand"}/>
+                <JobList list={cities17} heading={"Jobs in West Bengal"}/>
+
+            </div>
+    
            
             
-            
+            <Footer/>
         </div>
     )
 }
