@@ -17,7 +17,7 @@ import Fade from '@material-ui/core/Fade';
 
 
 const MainContainer = styled.div`
-    min-width: 1050px;
+    min-width: 1000px;
     height: auto;
     padding: 5px;
     /* border: 1px solid black; */
@@ -397,7 +397,7 @@ const JobDescription = ({dis}) => {
                 </Tabs>
             </SelectTabs>
             <div>
-                <button type="button" onClick={handleOpen}></button>
+                <div type="button" onClick={handleOpen}></div>
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"
@@ -418,7 +418,7 @@ const JobDescription = ({dis}) => {
                 </Modal>
             </div>
             <div>
-                <button type="button" onClick={handleOpenRed}></button>
+                <div type="button" onClick={handleOpenRed}></div>
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"
