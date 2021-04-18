@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import styles from "../Navbar/NavBar.module.css"
 import styled from "styled-components"
 import { useSelector } from "react-redux"
@@ -42,11 +42,12 @@ const Navtitle = styled.p`
 const NavBar = () => {
 
     const recAuth = useSelector(state => state.RecLogin.recAuth)
-    const isAuth = useSelector((state) => state.logi.isauth)
 
     return (
         <div className={styles.navContainer}>
-            <div className={styles.navContainer_Img}></div>
+            <div className={styles.navContainer_Img}>
+                <Link to=""><div className={styles.LogoBox}></div></Link>
+            </div>
             {!recAuth && <div className={styles.navContainer_Links}>
                 <Link to="">
                     <LinkContainer>

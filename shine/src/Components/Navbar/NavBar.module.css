@@ -13,6 +13,12 @@
     background: white;
 }
 
+.LogoBox{
+    width: 85px;
+    height: 60px;
+    /* border: 1px solid; */
+}
+
 .navContainer_Links, .navAfterContainer_Links{
     display: flex;
     text-decoration: none;
@@ -61,6 +67,7 @@
     width: 8%;
     height: 70px;
     /* border: 1px solid; */
+    cursor: pointer;
     margin-left: 2%;
     border-radius: 20px;
     background-image: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?6740b54474de");
