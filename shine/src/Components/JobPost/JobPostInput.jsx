@@ -165,7 +165,7 @@ function JobPostInput() {
             </select>
             <input value={email} onChange={handleChange} name="email" placeholder="Your Email Id" type="Email"/>
             <input value={telephone} onChange={handleChange} name="telephone" placeholder="Add Telephone" type="text"/>
-            <textarea value={description} onChange={handleChange} name="description" placeholder="Descriotion about job"></textarea>
+            <input value={description} onChange={handleChange} name="description" placeholder="Descriotion about job"type="text"/>
             <div style={{display:'flex'}}>
             <input value={skillData} onChange={(e)=>setSkillData(e.target.value)} name="skills" placeholder="Skills" type="text"/> 
             <button className={Styles.addbtn} onClick={()=>handlearr(skillData)}>Add</button>
