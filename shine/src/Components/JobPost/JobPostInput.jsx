@@ -45,6 +45,7 @@ function JobPostInput() {
            data:data
        }).then(res=>{
            console.log(res)
+           alert("Data Posted")
        }).catch(err => {
            alert("Sorry... Somthing Went Wrong")
        })
