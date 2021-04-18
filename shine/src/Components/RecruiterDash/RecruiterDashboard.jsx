@@ -205,7 +205,6 @@ const RecruiterDashboard = () => {
                     </div>
                 </div>
             </div>
-            <ChatBot />
         </div>
     )
 }

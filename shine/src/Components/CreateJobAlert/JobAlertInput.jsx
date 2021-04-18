@@ -129,8 +129,9 @@ function JobAlertInput() {
             </div>
             <div className={Styles.Register}>
                 <button>Create job Alert</button>
+                <p>or</p>
             </div>
-            or
+           
             <div className={Styles.registerbtn}>
                  <div>
                      <h3>Get calls from Recruiters</h3>

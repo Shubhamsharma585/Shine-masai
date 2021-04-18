@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom"
 import Login from "../Components/LogIn/Login"
 import Register from "../Components/Register/Register";
 import Home from "../Components/Home/Home"
-
 import NavBar from "../Components/Navbar/NavBar";
 import JobAlert from "../Components/CreateJobAlert/JobAlert";
 import { RecruiterDashboard } from "../Components/RecruiterDash/RecruiterDashboard";
@@ -12,23 +11,13 @@ import JobSearch from "../Components/JobSearch/JobSearch";
 import JobPost from "../Components/JobPost/JobPost";
 import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
 import { useSelector } from "react-redux";
-
 import AdvancedComponent from "../Components/Home/AdvancedComponent";
 import PageNotFound from "../Components/Home/PageNotFound";
-
 import Popouts from "../Components/Popouts/LoginFail"
-
-
 import { TransitionsModal } from "../Components/Modal/Modal";
 import RecruiterLogin from "../Components/RecruiterLogin/RecruiterLogin"
 import LoginFail from "../Components/Popouts/LoginFail";
-
-
-
-
-
-
-
+import {PrivateRoute} from "./PrivateRoutes"
 
 function Routes()
 {
@@ -52,40 +41,30 @@ function Routes()
             <Route path="/jobdescription" exact>
                <JobSearch/>
             </Route>
-
-
             <Route path="/jobdescription/jobsearch/:location" >
-
                <JobDescriptionSidebar/>
             </Route>
             <Route path="/advancesearch"  >
                <AdvancedComponent/>
             </Route>
-            <Route path="/jobpost">
+            <PrivateRoute path="/jobpost">
                <JobPost/>
-            </Route>
-
-            <Route path="/recruiter/dashboard" >
+            </PrivateRoute>
+            <PrivateRoute path="/recruiter/dashboard" exact>
                <RecruiterDashboard />
-            </Route>
-
+            </PrivateRoute>
             <Route path="/modal">
                <TransitionsModal />
-
-               </Route>
-
+            </Route>
             <Route path="/loginfail">
                <LoginFail/>
-               </Route> 
-            <Route path="/recruiter/login">
+            </Route> 
+            <Route path="/recruiter/login" exact>
               <RecruiterLogin/>
-            </Route>
-
-               
+            </Route>  
             <Route>
                <PageNotFound/>
-               </Route>
-         
+            </Route>
          </Switch>
       </div>
    )
