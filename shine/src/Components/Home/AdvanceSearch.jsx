@@ -8,7 +8,7 @@ const payload = {
     experience: ""
     
   };
-
+ 
 function AdvanceSearch({setIsAuth}) {
     const [userData, setUserData] = React.useState(payload);
     const {title,location,experience}=userData;
