@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from "../Navbar/NavBar.module.css"
 import styled from "styled-components"
+import { useSelector } from "react-redux"
 
 const LinkItems = styled.div`
     display: none;
@@ -40,11 +41,13 @@ const Navtitle = styled.p`
 
 const NavBar = () => {
 
+    const recAuth = useSelector(state => state.RecLogin.recAuth)
+    const isAuth = useSelector((state) => state.logi.isauth)
 
     return (
         <div className={styles.navContainer}>
             <div className={styles.navContainer_Img}></div>
-            <div className={styles.navContainer_Links}>
+            {!recAuth && <div className={styles.navContainer_Links}>
                 <Link to="">
                     <LinkContainer>
                     <div>Search Jobs</div>
@@ -98,17 +101,24 @@ const NavBar = () => {
                 <Link to="">
                     <div>Walk-ins</div>
                 </Link>
-            </div>
-                <Link style={{textDecoration: "none", color: "white"}} to="/jobalert">
+            </div>}
+            {!recAuth &&<Link style={{textDecoration: "none", color: "white"}} to="/jobalert">
                 <button className={styles.navContainer_Jalert1}>Create job alert</button>
-                </Link>
-            <button className={styles.navContainer_Jalert}>
-                Post a job
-            </button>
-            <div className={styles.navContainer_Contact}>
+            </Link>}
+            {recAuth && <Link to="/recruiter/dashboard">
+                <button className={styles.navContainer_Jalert1}>
+                    Dashboard
+                </button>
+            </Link>}
+            <Link style={{textDecoration: "none", color: "white"}} to="/jobpost">
+                <button className={styles.navContainer_Jalert}>
+                    Post a job
+                </button>
+            </Link>
+            {!recAuth &&<div className={styles.navContainer_Contact}>
                 <div>080-47105555</div>
                 <div style={{color: "white"}}>9am - 6pm, Mon to Sat</div>
-            </div>
+            </div>}
         </div>
     )
 }

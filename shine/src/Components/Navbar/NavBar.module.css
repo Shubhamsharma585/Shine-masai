@@ -88,7 +88,13 @@
 
 .navContainer_Jalert1{
     width: 100%;
-    margin-top: 10%;
+    margin-top: 12.5%;
+}
+
+.navContainer_Jalert{
+    width: 120%;
+    margin-top: 13.5%;
+    margin-left: 30%;
 }
 
 .navContainer_Contact{
@@ -97,7 +103,7 @@
     /* border: 1px solid; */
     text-align: center;
     margin-top: 0.8%;
-    margin-left: 1%;
+    margin-left: 5%;
 }
 
 .navContainer_Contact>div:nth-child(1){

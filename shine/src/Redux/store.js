@@ -5,11 +5,13 @@ import thunk from "redux-thunk"
 import loginreducer from "./Login/loginreducer"
 import regireducer from  "./Register/regireducer"
 import {RecruiterDashReducer} from "./RecruiterDash/RecruiterDasReducer"
+import {RecLoginReducer} from "./RecLogin/RecLoginReducer"
 
 const rootreducer = combineReducers({
     regi: regireducer,
     RecruiterDash: RecruiterDashReducer,
-    logi: loginreducer
+    logi: loginreducer,
+    RecLogin: RecLoginReducer,
 })
 
 
