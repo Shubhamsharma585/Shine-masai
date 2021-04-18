@@ -43,9 +43,9 @@ const NavBar = () => {
 
     return (
         <div className={styles.navContainer}>
-            <div className={styles.navContainer_Img}></div>
+            <Link to="/" className={styles.navContainer_Img}><div className={styles.navContainer_Img}>{""}</div></Link>
             <div className={styles.navContainer_Links}>
-                <Link to="">
+                <Link to="/">
                     <LinkContainer>
                     <div>Search Jobs</div>
                     <LinkItems>
