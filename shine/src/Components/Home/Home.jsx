@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AdvanceSearch from './AdvanceSearch';
 import CoolPlaces from './CoolPlaces';
 import Course from './Course';
+import Footer from './Footer';
 import GetJob from './GetJob';
 import styles from "./home.module.css";
 import Premium from './Premium';
@@ -43,6 +44,8 @@ function Home() {
             <Resume/>
 
             <Course/>
+
+            <Footer/>
         </div>
     )
 }

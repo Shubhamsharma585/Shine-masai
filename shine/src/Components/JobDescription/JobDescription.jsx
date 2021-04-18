@@ -267,9 +267,9 @@ const JobDescription = ({dis}) => {
     const handleGetUser = () => {
         // !isAuth ? alert("Login") && <Redirect to={"/"} push/> : postUser()
         if(!isAuth){
-            // alert("login") 
-            // return <Redirect to="/" push/>
+
             handleOpenRed()
+
         }else{
             postUser()
         }
@@ -439,7 +439,7 @@ const JobDescription = ({dis}) => {
                 </Modal>
             </div>
         </MainContainer>
-        // </div>
+       // </div>
     )
 }
 

@@ -66,11 +66,7 @@ function Login()
     
     ):(
         <div>
-
-         
-
- 
-           <div className={styles.top1}>          
+        <div className={styles.top1}>          
            </div>
 
            <div className={styles.cont}>
