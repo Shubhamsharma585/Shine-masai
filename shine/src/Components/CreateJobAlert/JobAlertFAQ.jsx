@@ -16,7 +16,7 @@ function JobAlertFAQ() {
             <div style={{width:"90%",textAlign:"center",fontSize:"25px", borderBottom:"1px solid black", margin:'auto'}}>
                 FAQs
             </div>
-            <div style={{width:'90%'}}>
+            <div style={{width:'90%', height:'auto'}}>
                 <button onClick={()=>{setPtag1(true); setPtag2(false);setPtag3(false)}}>Why set up a free job alert?</button><br/>
                 <p className={!ptag1?Styles.p_tag:Styles.p_tag2}>Our free job alert service helps you to get notified for jobs suiting your career goals and makes it easier for you to respond to job openings directly from your inbox. Besides, it helps you to stay updated with the current job market and career opportunities, along with information about salary trends. It is highly beneficial for active as well as passive job seekers. By opting for free job alert service, we make sure you do not miss any openings based on your highly targeted and specific job matches.</p><br/>
                 <button onClick={()=>{setPtag2(true);setPtag1(false);setPtag3(false)}}>How do I get a job alert on my email ID?</button><br/>

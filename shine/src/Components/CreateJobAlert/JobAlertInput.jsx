@@ -137,7 +137,7 @@ function JobAlertInput() {
                      <p>Show them your education, experience and skills</p>
                 </div>
                 <div>
-                    <button>Register</button>
+                    <button >Register</button>
                 </div>
                    
                 
