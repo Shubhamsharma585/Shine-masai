@@ -299,3 +299,11 @@ div {
     list-style: none;
     list-style-type: none;
 }
+.recruiterloginimg{
+    width: 70%;
+    background-image: url("https://cdn.dribbble.com/users/733072/screenshots/5548709/dribbble_hr.png");
+    background-position: 100% 89vh;
+    background-size: cover;
+    margin-left: 2%;
+
+}

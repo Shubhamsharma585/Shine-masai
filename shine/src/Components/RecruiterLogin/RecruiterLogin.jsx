@@ -47,9 +47,6 @@ function RecruiterLogin() {
      return <Popouts/>
   }
  
-
-
-
     return isauth?(
     
     <Redirect to={"/"} push/>
@@ -62,7 +59,7 @@ function RecruiterLogin() {
 
            <div className={styles.cont}>
              <div className={styles.cont1login}>
-               <h2>Login</h2>
+               <h2>Recruiter Login</h2>
                <input type="text" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} /><br/><br/>
                <input type="text" value={pass}  placeholder="Password" onChange={(e) => setPass(e.target.value)}/><br/><br/>
                 <div className={styles.login}>Login</div>
@@ -80,7 +77,7 @@ function RecruiterLogin() {
            </div>
            </div>
 
-           <div style={{background:"url()"}}>
+           <div className={styles.recruiterloginimg}>
 
            </div>
            </div>
