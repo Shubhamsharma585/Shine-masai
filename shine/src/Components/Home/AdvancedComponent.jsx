@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router'
 import { JobDescription } from '../JobDescription/JobDescription';
 
 import styles from "../JobDescription/Tabs.module.css"
+import SearchBar from './SearchBar';
 
 function AdvancedComponent() {
     const [datar,setDatar] =useState([]);
@@ -69,13 +70,15 @@ function AdvancedComponent() {
       console.log(data1)
 
     return (
+        <div>
+            <SearchBar/>
         <div style={{display:"flex"}}>
             {isLoading ? <div className={styles.loadingBox}>
                 <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt=""/>
             </div>
             :
             <div >
-                <div className={styles.right} style={{height:"80vh",position:'sticky',top:"0",overflow:"auto",overflow:"scroll"}}>
+                <div className={styles.right1} >
                     {data.map((el)=>(
                     <div key={el.id} onClick={()=>getData(el.id)} className={styles.box} style={{width:"300px", height:"100px",padding:"5px"}}>
                         <div>
@@ -84,7 +87,7 @@ function AdvancedComponent() {
                             <div style={{clear:"both"}}></div>
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}>{el.subTitle}</span>
                             <div style={{clear:"both"}}></div>
-                            <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> 0 to {el.Experience}Yrs</span>
+                            <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> 0 to {el.experience}Yrs</span>
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> {el.location}</span>
                         </div>
                     </div>))}
@@ -98,7 +101,7 @@ function AdvancedComponent() {
             </div>
 
             
-        </div>
+        </div></div>
     )
 }
 
