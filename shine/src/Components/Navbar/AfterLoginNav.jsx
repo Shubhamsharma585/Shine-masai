@@ -42,6 +42,10 @@ const Navtitle = styled.p`
 const AfterLoginNav = () => {
     const UserName = useSelector((state) => state.logi.payload.name)
 
+    const handleLogout = () => {
+        window.location.reload()
+    }
+
     return (
         <div className={styles.navAfterContainer}>
             <div className={styles.navContainer_Img}></div>
@@ -105,7 +109,7 @@ const AfterLoginNav = () => {
                 </button>
                     <LinkItems> 
                         <Navtitle>Account Settings</Navtitle>
-                        <Navtitle>Sign out</Navtitle>
+                        <Navtitle onClick={handleLogout}>Sign out</Navtitle>
                     </LinkItems>
                 </LinkContainer>
             </Link>
