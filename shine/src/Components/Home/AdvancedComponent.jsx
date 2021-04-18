@@ -65,7 +65,7 @@ function AdvancedComponent() {
          setData1(obj);
          handleSubmit();
 
-      },[])
+      },[parms])
       
       console.log(data1)
 
