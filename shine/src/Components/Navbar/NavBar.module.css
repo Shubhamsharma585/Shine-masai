@@ -79,7 +79,7 @@
     height: 100%;
 }
 
-.navContainer_Jalert, .navContainer_Jalert1{
+.navContainer_Jalert, .navContainer_Jalert1, .navContainer_Jalert2{
     width: 10%;
     height: 35px;
     border: none;
@@ -96,6 +96,12 @@
 .navContainer_Jalert1{
     width: 100%;
     margin-top: 12.5%;
+    margin-left: 2%;
+}
+.navContainer_Jalert2{
+    width: 100%;
+    margin-top: 18%;
+    margin-left: 20%;
 }
 
 .navContainer_Jalert{
