@@ -42,6 +42,11 @@
     width: 400px;
     border: rgb(55, 55, 55) solid 0px;
     border-bottom: rgb(125, 125, 125) solid 1px;
+    
+}
+
+input:focus{
+    outline: none;
 }
 
 .Register
