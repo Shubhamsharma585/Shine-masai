@@ -595,9 +595,9 @@ function Register()
                >→</button>
 
 
-    <div>      
-       {skills.map((itm) => {return  <button className={styles.identity_third}> 
-             <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey"}}>{itm}</h4> </button>})
+    <div style={{padding:"10px 10px 10px 10px"}}>       
+       {skills.map((itm) => {return  <button className={styles.identity_third} style={{float:"left", margin:"5px 5px 5px 5px"}}> 
+             <h4 style={{marginLeft:"5px",marginTop:"8px", width:"", color:"grey", float:"left"}}>{itm}</h4> </button>})
              }
      </div>        
 
