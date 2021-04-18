@@ -20,8 +20,9 @@ import Popouts from "../Components/Popouts/LoginFail"
 
 
 import { TransitionsModal } from "../Components/Modal/Modal";
-
+import RecruiterLogin from "../Components/RecruiterLogin/RecruiterLogin"
 import LoginFail from "../Components/Popouts/LoginFail";
+
 
 
 
@@ -75,17 +76,16 @@ function Routes()
 
             <Route path="/loginfail">
                <LoginFail/>
+               </Route> 
+            <Route path="/recruiterlogin">
+              <RecruiterLogin/>
+            </Route>
 
-               </Route>
-              
-            
+               
             <Route>
                <PageNotFound/>
-
-            </Route> 
-
-            
-
+               </Route>
+         
          </Switch>
       </div>
    )
