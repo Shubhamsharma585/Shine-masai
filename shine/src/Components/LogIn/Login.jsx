@@ -13,6 +13,7 @@ import { logingin } from "../../Redux/Login/action"
 import { Link, Redirect } from "react-router-dom"
 import SocialFollow from "./SocialFollow"
 import Popouts from "../Popouts/LoginFail"
+import SearchBar from "../Home/SearchBar"
 
 
 function Login()
@@ -66,7 +67,9 @@ function Login()
     
     ):(
         <div>
-        <div className={styles.top1}>          
+          
+        <div className={styles.top1}>   
+        <SearchBar/>       
            </div>
 
            <div className={styles.cont}>
