@@ -65,9 +65,19 @@
    
 }
 .right{
-    width: 150%;
+    width: 140%;
     /* min-height: 500px; */
-    max-height:96vh;
+    max-height:75vh;
+    /* border: 1px solid; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
+
+}
+.right1{
+    width: 90%;
+    /* min-height: 500px; */
+    max-height:75vh;
     /* border: 1px solid; */
     overflow-x: hidden;
     overflow-y: auto;

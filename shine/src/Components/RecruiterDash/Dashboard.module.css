@@ -1,9 +1,13 @@
+/* body{
+    background-color: #cfd8dc;
+} */
+
 .dash_MainContainer{
     width: 100%;
     height: auto;
     /* border-top: 1px solid;
     border-bottom: 1px solid; */
-    margin-top: 1%;
+    /* margin-top: 1%; */
     display: flex;
 }
 
@@ -14,6 +18,7 @@
     /* border: 1px solid; */
     overflow-x: hidden;
     overflow-y: auto;
+    background-color: whitesmoke;
 }
 
 .mainContainer_CandidateCard{
@@ -49,6 +54,7 @@
     width: 60%;
     height: auto;
     /* border: 1px solid; */
+    background-color: rgb(236, 236, 236);
 }
 
 .mainContainer_Name, .mainContainer_Email, .mainContainer_Phone,

@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useParams } from 'react-router'
 import { JobDescription } from './JobDescription';
-import styles from "../JobDescription/Tabs.module.css"
+import styles from "./Tabs.module.css"
+import SearchBar from '../Home/SearchBar';
 
 function JobDescriptionSidebar() {
     const [data,setData] =useState([]);
@@ -68,12 +69,16 @@ function JobDescriptionSidebar() {
       
 
     return (
+        <>
+        <div >
+            <SearchBar/>
+        </div>
         <div style={{display:"flex"}}>
             {isLoading ? <div className={styles.loadingBox}>
                 <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt=""/>
             </div>
             :
-            <div className={styles.right}>
+            <div className={styles.right} >
                 <div>
                     {data.map((el)=>(
                     <div key={el.id} onClick={()=>getData(el.id)} className={styles.box} style={{width:"300px", height:"100px",padding:"5px"}}>
@@ -83,19 +88,11 @@ function JobDescriptionSidebar() {
                             <div style={{clear:"both"}}></div>
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}>{el.subTitle}</span>
                             <div style={{clear:"both"}}></div>
-                            <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> 0 to {el.Experience}Yrs</span>
+                            <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> 0 to {el.experience}Yrs</span>
                             <span style={{color:"#505E6B",fontSize:"14px",float:"left",marginLeft:"25px"}}><div className={styles.point}></div> {el.location}</span>
                         </div>
                     </div>))}
-                    {<div style={{margin:"auto"}}>
-                    <button style={{backgroundColor:"transparent",color:"#5364C4",marginTop:"15px",border:"0"}} disabled={page === 1} onClick={() => setPage(page - 1)}>
-                    {"<<prev"}
-                    </button>
-                    <strong style={{color:"#5364C4",fontSize:"14px"}}> {page}</strong>
-                    <button style={{backgroundColor:"transparent",color:"#5364C4",marginTop:"15px",border:"0"}} disabled={data.length>5} onClick={() => setPage(page + 1)}>
-                    {"next>>"}
-                    </button>
-                    </div>}
+                    
                 </div>
 
             </div>}
@@ -106,6 +103,7 @@ function JobDescriptionSidebar() {
 
             
         </div>
+      </>  
     )
 }
 

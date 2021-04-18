@@ -17,7 +17,7 @@ import Fade from '@material-ui/core/Fade';
 
 
 const MainContainer = styled.div`
-    min-width: 1050px;
+    min-width: 1000px;
     height: auto;
     padding: 5px;
     /* border: 1px solid black; */
@@ -252,6 +252,14 @@ const JobDescription = ({dis}) => {
       setOpen(false);
     };
 
+    const handleOpenRed = () => {
+        setOpen(true);
+    };
+    
+    const handleCloseRed = () => {
+        setOpen(false);
+    };
+  
 
     const userData = useSelector((state) => state.logi.payload)
     const isAuth = useSelector((state)=> state.logi.isauth)
@@ -259,10 +267,9 @@ const JobDescription = ({dis}) => {
     const handleGetUser = () => {
         // !isAuth ? alert("Login") && <Redirect to={"/"} push/> : postUser()
         if(!isAuth){
-            // alert("login") ;
-            
-           return <Redirect to="/myshine/login" push />
-          
+
+            handleOpenRed()
+
         }else{
             postUser()
         }
@@ -390,7 +397,7 @@ const JobDescription = ({dis}) => {
                 </Tabs>
             </SelectTabs>
             <div>
-                <button type="button" onClick={handleOpen}></button>
+                <div type="button" onClick={handleOpen}></div>
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"
@@ -406,6 +413,27 @@ const JobDescription = ({dis}) => {
                     <Fade in={open}>
                         <div className={classes.paper}>
                             <p id="transition-modal-description">Applied Successfully..</p>
+                        </div>
+                    </Fade>
+                </Modal>
+            </div>
+            <div>
+                <div type="button" onClick={handleOpenRed}></div>
+                <Modal
+                    aria-labelledby="transition-modal-title"
+                    aria-describedby="transition-modal-description"
+                    className={classes.modal}
+                    open={open}
+                    onClose={handleCloseRed}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                    timeout: 500,
+                    }}
+                >
+                    <Fade in={open}>
+                        <div className={classes.paper}>
+                            <p id="transition-modal-description">Please <Link to="/myshine/login">login</Link> to continue</p>
                         </div>
                     </Fade>
                 </Modal>

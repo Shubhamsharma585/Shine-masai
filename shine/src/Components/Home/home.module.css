@@ -14,7 +14,7 @@
     text-align: left;
 }
 .found{
-    -webkit-user-select: none;
+    /* -webkit-user-select: none; */
     margin: auto;
     cursor: zoom-in;
     background-color: hsl(0, 0%, 90%);
@@ -428,7 +428,7 @@ button:focus{
 
 .course{
     background: url("https://static1.shine.com/c/s1/images/candidate/new/purple_base_new.png?af2426e6d054") left top repeat-x #f5f9fb;
-    margin-top: -61px;
+    margin-top: -41px;
 
 }
 .courselearning{
@@ -449,7 +449,65 @@ button:focus{
     text-align: center;
 
 }
+/*-----footer-----*/
 
+
+.footer{
+    width: 355px;
+    text-align: left;
+}
+.footer>strong{
+    width: 350px;
+}
+.footer>a{
+    width: 350px;
+    text-decoration: none !important;
+}
+.footer>a>div{
+    color: #4456BB;
+    font-size: 13px;
+}
+.linkdin{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?b11cffa1c046");
+    background-position: 1px -343px;
+    width:29px;
+    height: 27px;
+    float: left;
+}
+.facebook{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?b11cffa1c046");
+    background-position: -33px -343px;
+    width:29px;
+    height: 27px;
+    float: left;
+
+}
+.twitter{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_2019.png?b11cffa1c046");
+    background-position: -354px -162px;
+    width:29px;
+    height: 27px;
+    float: left;
+
+}
+.buttonf{
+    background: #fff;
+    box-shadow: 0px 4px 12px 0px rgb(0 0 0 / 20%);
+    width: 170px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #5364c4;
+    text-align: center;
+    padding: 5px;
+    border: solid 1px #5364c4;
+    float: left;
+}
+.blacksearch{
+    background: url("https://static1.shine.com/c/s1/images/candidate/new/home_new.png?b11cffa1c046") -237px -403px #b1bac3;
+    width: 46px;
+    height: 39px;
+    float: right;
+}
 
 
 
