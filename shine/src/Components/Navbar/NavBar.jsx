@@ -45,11 +45,13 @@ const NavBar = () => {
 
     return (
         <div className={styles.navContainer}>
+
             <div className={styles.navContainer_Img}>
                 <Link to=""><div className={styles.LogoBox}></div></Link>
             </div>
             {!recAuth && <div className={styles.navContainer_Links}>
                 <Link to="">
+
                     <LinkContainer>
                     <div>Search Jobs</div>
                     <LinkItems>
