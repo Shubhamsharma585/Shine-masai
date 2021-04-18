@@ -64,6 +64,21 @@
     
    
 }
-.right::-webkit-scrollbar{
-    visibility: hidden;
+.right{
+    width: 150%;
+    /* min-height: 500px; */
+    max-height:96vh;
+    /* border: 1px solid; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
+}
+.right1{
+    width: 90%;
+    /* min-height: 500px; */
+    max-height:96vh;
+    /* border: 1px solid; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
 }

@@ -9,7 +9,7 @@ const payload = {
     
   };
 
-function AdvanceSearch({setIsAuth}) {
+function AdvanceSearch1({setIsAuth}) {
     const [userData, setUserData] = React.useState(payload);
     const {title,location,experience}=userData;
     
@@ -52,10 +52,10 @@ function AdvanceSearch({setIsAuth}) {
     return (
  
             <div>
-                <h1 className={styles.ah1 }>Growth on your mind? <button  style={{float:"right",backgroundColor:"transparent",border:"none"}} onClick={()=>{setIsAuth(false);}} ><div className={styles.cross}></div></button></h1>
+               <button  style={{float:"right",backgroundColor:"transparent",border:"none",marginRight:"195px"}} onClick={()=>{setIsAuth(false);}} ><div className={styles.cross}></div></button>
 
                 
-                <div style={{display:'flex',marginTop:"25px"}}>
+                <div style={{display:'flex',marginTop:"25px",marginLeft:"45px"}}>
                     <div className={styles.searchInput}>
                         <label></label>
                         <input type="text" placeholder="Job title,skills" name="title" value={title} onChange={handleUserData}/>
@@ -75,7 +75,7 @@ function AdvanceSearch({setIsAuth}) {
                         </select>
                     </div>
     
-                   <div  style={{width:"109px",fontSize:"10px",color:"#fff",marginLeft:"15px", textAlign:"center"}}><button  className={styles.searchInput} style={{marginBottom:"10px",width:"109px",textAlign:"center",backgroundColor:"#f7a400",color:"#fff"}} onClick={handleSubmit} >Submit</button> Advanced search</div>
+                   <div  style={{width:"109px",fontSize:"10px",color:"#cecece",marginLeft:"15px", textAlign:"center"}}><button  className={styles.searchInput} style={{marginBottom:"10px",width:"109px",textAlign:"center",backgroundColor:"#f7a400",color:"#fff"}} onClick={handleSubmit} >Submit</button> Advanced search</div>
 
                 </div>
                
@@ -86,4 +86,4 @@ function AdvanceSearch({setIsAuth}) {
     )
 }
 
-export default AdvanceSearch
+export default AdvanceSearch1
