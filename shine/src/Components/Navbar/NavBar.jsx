@@ -92,7 +92,7 @@ const NavBar = () => {
                     </LinkItems>
                     </LinkContainer>
                 </Link>
-                <Link to="/recruiter/dashboard">
+                <Link to="/recruiter/login">
                     <div>Recruiter</div>
                 </Link>
                 <Link to="">

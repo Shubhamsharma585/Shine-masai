@@ -14,7 +14,7 @@
     text-align: left;
 }
 .found{
-    -webkit-user-select: none;
+    /* -webkit-user-select: none; */
     margin: auto;
     cursor: zoom-in;
     background-color: hsl(0, 0%, 90%);

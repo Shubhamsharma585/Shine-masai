@@ -77,7 +77,7 @@ function Routes()
             <Route path="/loginfail">
                <LoginFail/>
                </Route> 
-            <Route path="/recruiterlogin">
+            <Route path="/recruiter/login">
               <RecruiterLogin/>
             </Route>
 
