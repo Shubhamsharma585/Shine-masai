@@ -300,10 +300,30 @@ div {
     list-style-type: none;
 }
 .recruiterloginimg{
-    width: 70%;
+    width: 100%;
+    height: 98vh;
     background-image: url("https://cdn.dribbble.com/users/733072/screenshots/5548709/dribbble_hr.png");
     background-position: 100% 89vh;
     background-size: cover;
     margin-left: 2%;
+    border: 1px solid white;
 
+}
+.contrecruiter
+{
+    border: rgb(215, 215, 215) solid 0px; 
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 80px 30px 80px 30px;
+    justify-content:space-between;
+    padding-right: 45px;
+
+}
+.cont1loginrecruiter > input
+{
+    width: 350px;
+    border: rgb(55, 55, 55) solid 0px;
+    border-bottom: rgb(125, 125, 125) solid 1px;
 }
