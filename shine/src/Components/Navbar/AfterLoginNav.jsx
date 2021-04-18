@@ -48,7 +48,9 @@ const AfterLoginNav = () => {
 
     return (
         <div className={styles.navAfterContainer}>
-            <div className={styles.navContainer_Img}></div>
+            <div className={styles.navContainer_Img}>
+                <Link to=""><div className={styles.LogoBox}></div></Link>
+            </div>
             <div className={styles.navAfterContainer_Links}>
                 <Link to="">
                     <LinkContainer>

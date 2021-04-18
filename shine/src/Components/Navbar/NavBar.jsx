@@ -43,6 +43,10 @@ const NavBar = () => {
 
     const recAuth = useSelector(state => state.RecLogin.recAuth)
 
+    const handleRecLogout = () => {
+        window.location.reload()
+    }
+
     return (
         <div className={styles.navContainer}>
 
@@ -111,6 +115,11 @@ const NavBar = () => {
             {recAuth && <Link to="/recruiter/dashboard">
                 <button className={styles.navContainer_Jalert1}>
                     Dashboard
+                </button>
+            </Link>}
+            {recAuth && <Link style={{textDecoration: "none", color: "white"}} to="/jobalert">
+                <button onClick={handleRecLogout} className={styles.navContainer_Jalert2}>
+                    Logout
                 </button>
             </Link>}
             <Link style={{textDecoration: "none", color: "white"}} to="/jobpost">
