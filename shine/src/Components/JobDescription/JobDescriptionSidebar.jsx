@@ -69,14 +69,16 @@ function JobDescriptionSidebar() {
       
 
     return (
-        <div>
+        <>
+        <div >
             <SearchBar/>
+        </div>
         <div style={{display:"flex"}}>
             {isLoading ? <div className={styles.loadingBox}>
                 <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt=""/>
             </div>
             :
-            <div className={styles.right}>
+            <div className={styles.right} >
                 <div>
                     {data.map((el)=>(
                     <div key={el.id} onClick={()=>getData(el.id)} className={styles.box} style={{width:"300px", height:"100px",padding:"5px"}}>
@@ -101,7 +103,7 @@ function JobDescriptionSidebar() {
 
             
         </div>
-        </div>
+      </>  
     )
 }
 
