@@ -4,11 +4,35 @@
 
 Sources:
 
+- React: [React](https://www.npmjs.com/package/react)
+
+- Redux: [Redux](https://www.npmjs.com/package/redux) 
+
+- React-Redux: [React-Redux](https://www.npmjs.com/package/react-redux)
+
+- Redux-thunks: [Redux-thunks](https://www.npmjs.com/package/thunks) 
+
+- Custom UI: [Custom UI](https://www.npmjs.com/package/@shubhamsharma585/custom-ui-shinemasai)
+
 - Images: [Shine](https://www.shine.com/)
 
 - Fonts: [Google Fonts](https://fonts.google.com/)  
 
 - Icons:[Awesome Icon](https://www.w3schools.com/icons/fontawesome5_intro.asp)
+
+- Icons: [Font Awesome](https://fontawesome.com/)
+
+- Material UI: [Material UI](https://material-ui.com/) 
+
+- Firebase: [Firebase](https://firebase.google.com/) 
+
+- Axios: [Axios](https://www.npmjs.com/package/axios)
+
+- Styled Components: [Styled Components](https://styled-components.com/)  
+
+- React Tabs: [React Tabs](https://www.npmjs.com/package/react-tabs)
+
+- React Text Collapse: [React Text Collapse](https://www.npmjs.com/package/react-text-collapse)  
 
 ### Members and their Responsibility
 
@@ -18,7 +42,7 @@ Sources:
 
 3. Deepak Hegde (sm2_052) - **Job Alert Page**, **Recuriter Login Page**, **Job Post Page**, **DataBase**, **Chat Bot**.
 
-4. Vinesh Nair (ti_146) - **Navigation Bar**, **Recuriter Dashboard**, **Job Description Page**, **FireBase Authentication**.
+4. Vinesh Nair (ti_146) - **Navigation Bar**, **Recuriter Dashboard**, **Job Description Page**, **Firebase Authentication**.
 
 ## Shine.com is the most innovative and second largest online job portal in India. Founded in 2008, over the past decade, Shine.com has become a prominent name in the recruitment industry. The popularity of the portal is evident from the fact that it has crossed 3.90 crore candidate landmark and has more than 3 lakh latest job vacancies from leading companies on site.
 
