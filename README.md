@@ -38,11 +38,11 @@ Sources:
 
 1. Ankit Bajpai (sm2_021) - **Landing Page**, **Search Jobs**, **Advanced Search**, **Side Bar**,**Git Merging**.
 
-2. Shubham Sharma (sm2_170) - **Login Page**, **Regesiter Page**, **Heroku Server Maintainance**, **UI Liberary**.
+2. Shubham Sharma (sm2_170) - **Login Page**, **Register Page**, **Heroku Server Maintainance**, **UI Library**.
 
 3. Deepak Hegde (sm2_052) - **Job Alert Page**, **Recuriter Login Page**, **Job Post Page**, **DataBase**, **Chat Bot**.
 
-4. Vinesh Nair (ti_146) - **Navigation Bar**, **Recuriter Dashboard**, **Job Description Page**, **Firebase Authentication**.
+4. Vinesh Nair (ti_146) - **Navigation Bar**, **Recruiter Dashboard**, **Job Description Page**, **Firebase Authentication**.
 
 ## Shine.com is the most innovative and second largest online job portal in India. Founded in 2008, over the past decade, Shine.com has become a prominent name in the recruitment industry. The popularity of the portal is evident from the fact that it has crossed 3.90 crore candidate landmark and has more than 3 lakh latest job vacancies from leading companies on site.
 
