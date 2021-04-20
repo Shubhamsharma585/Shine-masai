@@ -40,7 +40,7 @@ Sources:
 
 2. Shubham Sharma (sm2_170) - **Login Page**, **Register Page**, **Heroku Server Maintainance**, **UI Library**.
 
-3. Deepak Hegde (sm2_052) - **Job Alert Page**, **Recuriter Login Page**, **Job Post Page**, **DataBase**, **Chat Bot**.
+3. Deepak Hegde (sm2_052) - **Job Alert Page**, **Recruiter Login Page**, **Job Post Page**, **Database**, **Chat Bot**.
 
 4. Vinesh Nair (ti_146) - **Navigation Bar**, **Recruiter Dashboard**, **Job Description Page**, **Firebase Authentication**.
 
