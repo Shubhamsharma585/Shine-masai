@@ -1,0 +1,136 @@
+.main_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: whitesmoke;
+}
+.main_input{
+    width: 40%;
+}
+.sub1{
+    width: 100%;
+    margin: 100px;
+}
+.sub2{
+    width:80%;
+    margin-left: 100px;
+}
+.sub1 label{
+    align-items: left;
+    width: 100%;
+    margin: 30px;
+    margin-left: 0px;
+}
+
+.sub_div1{
+    margin-top: 100px;
+    width: 40%;
+    margin-left: 100px;
+   border: 1px solid black;
+   border-radius: 10px;
+   background-color: white;
+   padding: 25px;
+  text-align: left;
+}
+.sub_div1 button{
+    width: 75px;
+    height: 3vh;
+   background-color:  rgb(211, 180, 5);
+   color:  white;
+   border:none;
+}
+.sub_div1 button:hover{
+   background-color:  rgb(240, 205, 6);
+}
+.input{
+    padding: 40px;
+    border:1px solid black;
+    background-color: white;
+    border-radius: 10px;
+}
+.input input{
+    width: 80%;
+    height: 4vh;
+    margin:40px;
+   
+}
+.input select{
+    width: 80%;
+    height: 4vh;
+    margin:50px;
+}
+.sub_div2{
+    width: 60%;
+    height: 120vh;
+    margin-top: 100px;
+    margin-left: 80px;
+   border: 1px solid black;
+   border-radius: 10px;
+   background-color: white;
+}
+.p_tag{
+display: none;
+ 
+}
+.p_tag2{
+    text-align: center;
+}
+.sub_div2 button{
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 5vh;
+    font-size: 20px;
+    background-color: white;
+}
+.Register{
+    text-align: center;
+}
+.Register button{
+    width: 150px;
+    height: 5vh;
+    background-image: linear-gradient(136deg,#a296d9 0%,#7faee0 100%);
+    color:  white;
+    font-size: 18px;
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+}
+.registerbtn{
+    width: 90%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    border:1px solid black;
+    border-radius: 10px;
+    text-align: left; 
+}
+.registerbtn h3{
+   margin-left: 50px;
+}
+.registerbtn p{
+    margin-left: 50px;
+ }
+.registerbtn button{
+    margin-top: 15px;
+    width: 125px;
+    height: 6vh;
+    font-size: 20px;
+    margin-left: 200px;
+    padding: 10px;
+    background-color: white;
+    color:  blue;
+    outline: none;
+    cursor: pointer;
+}
+.JobAlertFooter{
+    width: 55%;
+    padding: 1%;
+    margin: 100px;
+    border:1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}

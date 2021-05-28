@@ -1,0 +1,60 @@
+.sub1{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 125px;
+}
+.sub1 label{
+    align-items: left;
+    width: 100%;
+    margin: 40px;
+    margin-left: 0px;
+}
+
+.input{
+    width: 60%;
+    padding: 40px;
+   box-shadow: 5px 10px 10px #cecece;
+   border: 1px solid black;
+    background-color: #cecece;
+    border-radius: 10px;
+    
+}
+.input input{
+    width: 80%;
+    height: 4vh;
+    margin:40px;  
+}
+.input select{
+    width: 80%;
+    height: 6vh;
+    margin:40px;
+}
+
+.Register button{
+    width: 150px;
+    height: 5vh;
+    background-image: linear-gradient(136deg,#a296d9 0%,#7faee0 100%);
+    color:  white;
+    font-size: 18px;
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 40%;
+}
+.addbtn{
+    margin-top: 40px;
+    width: 50px;
+    height: 30px;
+    background-image: linear-gradient(136deg,#a296d9 0%,#7faee0 100%);
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.outetpostdiv{
+    background-image: url("https://cdn.dribbble.com/users/729161/screenshots/13876818/media/8b3b975a8f4d695cbae3efeda5d01971.png");
+    background-position: 100% 0vh;
+    background-size: cover;
+    margin-top: -25px;
+}
