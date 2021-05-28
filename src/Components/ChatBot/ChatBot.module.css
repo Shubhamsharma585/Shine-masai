@@ -1,0 +1,81 @@
+.chatbotbutton{
+    width: 60px;
+    height: 60px;
+    bottom: 50px;
+    position: fixed;
+    right: 50px;
+    background-color:rgb(86,81,199);
+    border-radius: 50px;
+    align-items: center;
+}
+.chatbotimg{
+    width: 40px;
+    height: 40px;
+    padding-left: 10px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.conv{
+    width: 300px;
+    height: 300px;
+    right: 50px;
+    bottom: 150px;
+    background-color: rgb(242, 247, 247);
+    position: fixed;
+    transition: ease-in-out 1s;
+    border-radius: 20px;
+    border:1px solid rgb(86,81,199);
+}
+.conv2{
+    display: none;
+}
+.chatbothead{
+    display: flex;
+    flex-direction: row;
+    background-color:rgb(86,81,199) ;
+    width: 100%;
+    height: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+   
+}
+.chatbothead p{
+    width: 100px;
+   color: white;
+   font-size: 30px;
+   margin: 0%;
+   padding: 0%;
+   margin-left: 25px;
+}
+.chatbothead button{
+    width: 50px;
+    height: 50px;
+   color:white;
+   background-color:rgb(86,81,199) ;
+   font-size: 30px;
+   margin: 0%;
+   padding: 0%;
+   margin-left: 100px;
+   border-radius: 25px;
+   outline: none;
+   border:none;
+}
+.Selectbtn{
+    width: 120px;
+    height: 5vh;
+    margin: 10px;
+    border:1px solid rgb(86,81,199);
+    border-radius:10px;
+}
+.Selectbtn2{
+    width: 120px;
+    height: 5vh;
+    margin-left: 140px;
+    border:1px solid rgb(86,81,199);
+    border-radius:10px;
+}
+.rply{
+    background-color: whitesmoke;
+    padding: 8px;
+}
