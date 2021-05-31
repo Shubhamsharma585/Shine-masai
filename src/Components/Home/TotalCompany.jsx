@@ -22,7 +22,7 @@ function TotalCompany() {
             <h2>Top companies hiring now</h2>
             <div style={{margin:"auto",marginBottom:"25px"}}>
                 {image.map(el=>
-                <div className={styles.topBox}>
+                <div key={el} className={styles.topBox}>
                     <img src={el} alt="Companies logo"/>
                 </div>)}
             </div>

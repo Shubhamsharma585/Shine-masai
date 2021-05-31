@@ -15,7 +15,7 @@ import Why from './Why';
 function Home() {
     const [isAuth,setIsAuth] = useState(false);
     const newAuth = useSelector((state)=>state.logi.isauth);
-    console.log(newAuth)
+    
     return (
         <div className={styles.home }>
             <div className={styles.a1background }>

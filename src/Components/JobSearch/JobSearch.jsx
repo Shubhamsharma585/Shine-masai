@@ -29,7 +29,7 @@ function JobSearch() {
            
             <div style={{margin:"auto",marginBottom:"120px",marginLeft:"75px",paddingTop:"20px"}}>
             <div style={{float:"right",marginRight:"100px"}}></div>
-                <div style={{float:"right",marginRight:"100px"}}><img style={{width:"300px",height:"250px"}} src="https://tpc.googlesyndication.com/simgad/2454703844150116203"/> </div>
+                <div style={{float:"right",marginRight:"100px"}}><img style={{width:"300px",height:"250px"}} src="https://tpc.googlesyndication.com/simgad/2454703844150116203" alt="img"/> </div>
             <div><img style={{width:"728px",height:"90px"}} src="https://tpc.googlesyndication.com/simgad/1237474675117557188" alt="img"/></div>
                 <JobList list={topCities} heading={"Jobs in Top Cities"}/>
                 <JobList list={cities2} heading={"Jobs in Andhra Pradesh"}/>

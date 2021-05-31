@@ -1,6 +1,5 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import React, { useEffect} from 'react'
+import {useHistory } from 'react-router-dom';
 import styles from "./home.module.css";
 const payload = {
     title: "",
@@ -12,17 +11,13 @@ const payload = {
 function AdvanceSearch({setIsAuth}) {
     const [userData, setUserData] = React.useState(payload);
     const {title,location,experience}=userData;
-    
-    const [loc,setLoc] = useState("");
+
     let parm = new URLSearchParams();
     let history = useHistory();
 
     const handleSubmit =() =>{
     history.push("/advancesearch?"+parm.toString());
     }
-
-
-
 
     useEffect(()=>{
         for(let key in userData){
@@ -31,7 +26,7 @@ function AdvanceSearch({setIsAuth}) {
             }
         }
         
-    },[userData])
+    },[userData,parm])
     
     
     const exp = ["Experience","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25+"];
@@ -43,12 +38,7 @@ function AdvanceSearch({setIsAuth}) {
        
     }
 
-   
 
-  
-
-
-    console.log(userData)
     return (
  
             <div>

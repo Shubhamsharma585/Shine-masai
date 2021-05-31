@@ -9,18 +9,8 @@ function JobDescriptionSidebar() {
     const [data,setData] =useState([]);
     const [page, setPage] = React.useState(1);
     const [limit, setLimit]=useState(5);
-    
-    const [data1,setData1]=useState({});
-
-
-   
     const [isLoading, setIsloading] = React.useState(false)
-
     const [dis, setDis]=useState({});
-
-    
-    
-    
 
     const {location} =useParams(); 
    
@@ -43,13 +33,9 @@ function JobDescriptionSidebar() {
           .then((res) =>{
             setData(res.data);
 
-            setIsloading(false)
-
-            
-            
+            setIsloading(false);
 
         })
-        
           .catch((err) => console.log("err"));
       };
 
@@ -58,13 +44,11 @@ function JobDescriptionSidebar() {
           axios.get(`https://json-heroku-shubham.herokuapp.com/jobDetails/${id}`)
           .then(res=>{setDis(res.data)})
           .catch((err) => console.log("err"));
-         
 
       }
-      console.log(dis)
     
-      React.useEffect(handleSearch, [page]);
-      React.useEffect(()=>{setDis(data[0])}, [data]);
+      React.useEffect(handleSearch, [page,limit]);
+      React.useEffect(()=>{setDis(data[0])}, [data,location]);
       
       
 

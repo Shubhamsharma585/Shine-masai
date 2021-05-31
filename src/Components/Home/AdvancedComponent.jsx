@@ -1,6 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router'
+import React, { useEffect, useState } from 'react';
 import { JobDescription } from '../JobDescription/JobDescription';
 
 import styles from "../JobDescription/Tabs.module.css"
@@ -29,9 +28,6 @@ function AdvancedComponent() {
             })
           
             .catch((err) => console.log("err"));
-
-       
-
             
     };
     const results =()=>{

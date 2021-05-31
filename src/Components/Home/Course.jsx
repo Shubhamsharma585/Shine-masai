@@ -9,7 +9,7 @@ function Course() {
             <h2 style={{textAlign:"left",marginLeft:"-42px",color:"#fff",fontWeight:"600",fontSize:"30px"}}>Want to make your career future ready?</h2>
             <h3 style={{textAlign:"left",marginLeft:"-42px",color:"#fff",fontSize:"20px",fontWeight:"500px"}}>Upgrade your skills, give your career a boost</h3>
 
-            <button className={styles.learnbutton} style={{textAlign:"left",marginLeft:"-1072px",textAlign: "center"}}>Explore courses</button>
+            <button className={styles.learnbutton} style={{marginLeft:"-1072px",textAlign: "center"}}>Explore courses</button>
 
             </div>
            
