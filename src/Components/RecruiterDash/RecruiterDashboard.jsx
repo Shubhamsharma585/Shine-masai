@@ -57,10 +57,10 @@ const RecruiterDashboard = () => {
                 <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt="loding-gif"/>
             </div>:
             <div className={styles.mainContainer_CandidateCard_Container}>
-                {data.map(el=> 
+                {data?.map(el=> 
                     <div key={el.id} onClick={()=> handleShow(el.id)} className={styles.mainContainer_CandidateCard}>
                         <div className={styles.mainContainer_CandidateCard_Info}>
-                            <p><strong>Name: </strong>{`${el.name}`}</p>
+                            <p><strong>Name: </strong>{`${el?.name}`}</p>
                             <p><strong>Email: </strong> {`${el.email}`}</p>
                             <p><strong>Location: </strong>{`${el.location}`}</p>
                             <p><strong>Mobile: </strong>{`${el.phone}`}</p>

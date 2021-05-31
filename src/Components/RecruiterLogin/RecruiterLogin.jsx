@@ -3,7 +3,7 @@ import styles from "../LogIn/Login.module.css"
 import { useDispatch, useSelector } from "react-redux"
 import { Redirect } from "react-router-dom"
 import ChatBot from "../ChatBot/ChatBot"
-import {logingin} from "../../Redux/RecLogin/action"
+import {recauth} from "../../Redux/RecLogin/action"
 
 function RecruiterLogin() {
     
@@ -14,12 +14,7 @@ function RecruiterLogin() {
   const [pass, setPass] = useState("");
 
   const handleLogin = () => {
-    if(email === "recruiter@shine.com" && pass === "shine123"){
-      dispatch(logingin())
-    }
-    else{
-      alert("Incorrect Email or Password")
-    }
+    dispatch(recauth(email, pass))
   }
 
   if(recAuth){
@@ -27,7 +22,7 @@ function RecruiterLogin() {
   }
   
   return(
-    <div style={{display:'flex'}}>
+    <div className={styles.mainbox}>
       <div className={styles.recruiterloginimg}></div>
       <div className={styles.contrecruiter}>
         <div className={styles.cont1loginrecruiter}>
@@ -35,7 +30,7 @@ function RecruiterLogin() {
           <input type="text" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} /><br/><br/>
           <input type="password" value={pass}  placeholder="Password" onChange={(e) => setPass(e.target.value)}/><br/><br/>
           <div onClick={handleLogin} className={styles.login}>Login</div>
-          <p style={{fontSize:"10px", color:"rgb(112, 82, 82)"}}>By syncing your social media account, you agree to shine <span style={{color:"blue"}}>terms and conditions</span></p>
+          <p className={styles.recloginptage}>By syncing your social media account, you agree to shine <span className={styles.recloginspantage}>terms and conditions</span></p>
         </div>
       </div>
       <ChatBot/>

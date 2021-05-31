@@ -22,9 +22,11 @@ import {PrivateRoute} from "./PrivateRoutes"
 function Routes()
 {
    const isAuth = useSelector((state) => state.logi.isauth)
+
    return(
       <div>
-         {isAuth ? <AfterLoginNav /> : <NavBar />}
+         {isAuth? <AfterLoginNav /> : <NavBar />}
+         {console.log(isAuth)}
          <Switch>
             <Route path="/" exact>
                <Home/>
