@@ -1,11 +1,11 @@
-import { REC_LOGIN_REQUEST, REC_LOGIN_SUCCESS, REC_LOGIN_FAILURE } from "./actionType"
+import {  REC_LOGIN_SUCCESS, REC_LOGIN_FAILURE } from "./actionType"
 import axios from "axios"
 
 const recauth = (email, pass) => (dispatch) =>{
     console.log(email, pass)
     axios.get(`https://json-heroku-shubham.herokuapp.com/rec_login?email=${email}&password=${pass}`)
     .then(resp => {
-        if(resp.data.length == 0){
+        if(resp.data.length === 0){
             alert("Invalid Email or Password, Pleasde try again")
             dispatch(loginfailure())
         }
@@ -29,12 +29,6 @@ const recauth = (email, pass) => (dispatch) =>{
 // }  
 
 
-
-const loginrequest = () => {
-    return {
-        type: REC_LOGIN_REQUEST,
-    }
-}
 
 const loginsuccess = () => {
     return {

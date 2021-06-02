@@ -21,7 +21,7 @@ export const logingin = (payload) => dispatch => {
     .then((res) => {
         console.log(res.data)
         //console.log(res.data.length)
-        if(res.data.length == 0)
+        if(res.data.length === 0)
         {
             dispatch(loginfailure(res.data))
         }
