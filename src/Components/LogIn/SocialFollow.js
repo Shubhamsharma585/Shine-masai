@@ -6,10 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../LogIn/Login.module.css"
 
 import {
-    faYoutube,
     faFacebook,
     faTwitter,
-    faInstagram,
     faLinkedin
   } from "@fortawesome/free-brands-svg-icons";
 

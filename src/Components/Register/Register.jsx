@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import styles from "../Register/Register.module.css"
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect, Link } from "react-router-dom";
-import logo1 from "../../Images/logo1.png"
+import { useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
 import google1 from "../../Images/google1.png"
 import ld from "../../Images/ld.png"
 import fb from "../../Images/fb.png"
@@ -18,8 +17,7 @@ function Register()
 {
  
       const dispatch = useDispatch();
-      const isauth = useSelector(state => state.regi.isauth)
-
+  
 
       const [page1, setPage1] = useState(true)
       const [page2, setPage2] = useState(true)
@@ -33,7 +31,6 @@ function Register()
       const [isyear, setIsyear] = useState(false)
       const [isworked, setIsworked] = useState(false)
 
-      const [ iscompany ,setIscompany] = useState(false)
       const [ istitle ,setIstitle] = useState(false)
       const [ isindustry , setIsindustry] = useState(false)
       const [ isfunctionalarea ,setIsfunctionalarea] = useState(false)
@@ -127,9 +124,9 @@ function Register()
      {
       auth.signInWithPopup(google)
       .then(resp => 
-      {return  console.log(resp.user.displayName),
+      {return  (console.log(resp.user.displayName),
         setName(resp.user.displayName),
-        setEmail(resp.user.email)
+        setEmail(resp.user.email))
       }
         )
       .catch((err) => console.log(err)); 
@@ -177,7 +174,7 @@ function Register()
      
              <div className={styles.cont1}>
                  <br/>
-               <h2></h2>
+             
                <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}  /><br/><br/>
                <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/><br/>
                <input type="text" placeholder="Mobile Number" value={mobile}  onChange={(e) => setMobile(e.target.value)} /><br/><br/>
@@ -333,13 +330,13 @@ function Register()
              </div> 
 
              {istitle?(
-                 <div className={styles.commoncont2} style={{marginTop:"30px", transition:"ease-in-out",transition:"300ms"}}> 
+                 <div className={styles.commoncont2} style={{marginTop:"30px" ,transition:"300ms"}}> 
                  <p style={{marginRight:"350px"}}> What was your Job Title?</p>  
                    <input 
                 style={{marginRight:"", height:"40px", width:"500px", borderRadius:"5px", border:"gray 1px solid" }}
                type="text" 
                placeholder="Enter Title"
-               value={title}
+               value={title} 
                onChange={(e) => setTitle(e.target.value)}
                />
                <button
