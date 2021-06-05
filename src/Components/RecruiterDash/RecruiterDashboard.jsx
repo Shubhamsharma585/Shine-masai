@@ -2,7 +2,6 @@ import React from 'react'
 import styles from "../RecruiterDash/Dashboard.module.css"
 import {getUserData, singleUserData} from '../../Redux/RecruiterDash/action'
 import { useDispatch, useSelector } from "react-redux";
-import ChatBot from '../ChatBot/ChatBot';
 import axios from "axios"
 
 const RecruiterDashboard = () => {
@@ -15,7 +14,7 @@ const RecruiterDashboard = () => {
     const isLoading = useSelector((state) => state.RecruiterDash.isLoading)
 
     const commentData =  useSelector((state) => state.RecruiterDash.CandiData.comments)
-    const [comments, setComments] = React.useState([])
+    // const [comments, setComments] = React.useState([])
     const [text, setText] = React.useState("")
 
     const handleChange = (e) => {

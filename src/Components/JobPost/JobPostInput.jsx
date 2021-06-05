@@ -2,8 +2,8 @@ import React from 'react'
 import Styles from "./JobPost.module.css"
 import {v4 as uuid} from "uuid"
 import axios from 'axios'
-import styles from "../LogIn/Login.module.css"
-import SocialFollow from '../LogIn/SocialFollow'
+// import styles from "../LogIn/Login.module.css"
+// import SocialFollow from '../LogIn/SocialFollow'
 import Footer from '../Home/Footer'
 
 const payload={
