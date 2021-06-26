@@ -49,7 +49,7 @@ You can also take the glimpse of our Project,just follow the below steps:
 ## Snapshots 📷
 
 1. Shine Page
-   ![shine](.public/Snapshots/landingPage.jpg)
+   ![shine]( process.env.PUBLIC_URL +"/Snapshots/landingPage.jpg")
 
 2. Advanced Search Page
    ![shine](.public/Snapshots/advanceSearch.jpg)
