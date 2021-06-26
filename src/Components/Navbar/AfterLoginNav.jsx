@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from "../Navbar/NavBar.module.css"
 import styled from "styled-components"
 import { useSelector } from "react-redux";
@@ -40,7 +40,7 @@ const Navtitle = styled.p`
 `
 
 const AfterLoginNav = () => {
-    const UserName = useSelector((state) => state.logi.payload.name)
+    const UserName = useSelector((state) => state.logi.payload?.name)
 
     const handleLogout = () => {
         window.location.reload()
@@ -56,7 +56,7 @@ const AfterLoginNav = () => {
                     <LinkContainer>
                     <div>Search Jobs</div>
                     <LinkItems>
-                        <Navtitle><Link to="/jobdescription" style={{textDecoration:"none",color:""}}>Jobs in Top Cities</Link></Navtitle>
+                        <Navtitle><Link to="/jobdescription" className={styles.navtitle1}>Jobs in Top Cities</Link></Navtitle>
                         <Navtitle>Jobs by Skills</Navtitle>
                         <Navtitle>Jobs by Courses</Navtitle>
                         <Navtitle>Jobs by Education</Navtitle>

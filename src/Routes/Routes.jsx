@@ -13,7 +13,6 @@ import { AfterLoginNav } from "../Components/Navbar/AfterLoginNav";
 import { useSelector } from "react-redux";
 import AdvancedComponent from "../Components/Home/AdvancedComponent";
 import PageNotFound from "../Components/Home/PageNotFound";
-import Popouts from "../Components/Popouts/LoginFail"
 import { TransitionsModal } from "../Components/Modal/Modal";
 import RecruiterLogin from "../Components/RecruiterLogin/RecruiterLogin"
 import LoginFail from "../Components/Popouts/LoginFail";
@@ -22,9 +21,11 @@ import {PrivateRoute} from "./PrivateRoutes"
 function Routes()
 {
    const isAuth = useSelector((state) => state.logi.isauth)
+
    return(
       <div>
-         {isAuth ? <AfterLoginNav /> : <NavBar />}
+         {isAuth? <AfterLoginNav /> : <NavBar />}
+         {console.log(isAuth)}
          <Switch>
             <Route path="/" exact>
                <Home/>

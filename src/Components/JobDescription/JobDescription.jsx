@@ -5,10 +5,10 @@ import 'react-tabs/style/react-tabs.css'
 import styles from "../JobDescription/Tabs.module.css"
 import ReactTextCollapse from 'react-text-collapse' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClipboard, faStar, faUser } from '@fortawesome/free-regular-svg-icons'
+import { faClipboard, faStar } from '@fortawesome/free-regular-svg-icons'
 import { faBriefcase, faMapMarkerAlt, faUsers, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom"
+import { Link } from "react-router-dom"
 import axios from "axios"
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';

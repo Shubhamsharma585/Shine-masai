@@ -2,7 +2,6 @@ import React from 'react'
 import styles from "../RecruiterDash/Dashboard.module.css"
 import {getUserData, singleUserData} from '../../Redux/RecruiterDash/action'
 import { useDispatch, useSelector } from "react-redux";
-import ChatBot from '../ChatBot/ChatBot';
 import axios from "axios"
 
 const RecruiterDashboard = () => {
@@ -15,7 +14,7 @@ const RecruiterDashboard = () => {
     const isLoading = useSelector((state) => state.RecruiterDash.isLoading)
 
     const commentData =  useSelector((state) => state.RecruiterDash.CandiData.comments)
-    const [comments, setComments] = React.useState([])
+    // const [comments, setComments] = React.useState([])
     const [text, setText] = React.useState("")
 
     const handleChange = (e) => {
@@ -57,10 +56,10 @@ const RecruiterDashboard = () => {
                 <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" className={styles.img} alt="loding-gif"/>
             </div>:
             <div className={styles.mainContainer_CandidateCard_Container}>
-                {data.map(el=> 
+                {data?.map(el=> 
                     <div key={el.id} onClick={()=> handleShow(el.id)} className={styles.mainContainer_CandidateCard}>
                         <div className={styles.mainContainer_CandidateCard_Info}>
-                            <p><strong>Name: </strong>{`${el.name}`}</p>
+                            <p><strong>Name: </strong>{`${el?.name}`}</p>
                             <p><strong>Email: </strong> {`${el.email}`}</p>
                             <p><strong>Location: </strong>{`${el.location}`}</p>
                             <p><strong>Mobile: </strong>{`${el.phone}`}</p>

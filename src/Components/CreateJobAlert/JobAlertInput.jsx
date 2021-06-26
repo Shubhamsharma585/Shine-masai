@@ -1,17 +1,17 @@
 import React from 'react'
 import Styles from "./JobAlert.module.css"
-const payload={
-    title:"",
-    salary:"",
-    department:"",
-    location:"",
-    experience:"",
-    email:"",
-    alert:""
-}
+// const payload={
+//     title:"",
+//     salary:"",
+//     department:"",
+//     location:"",
+//     experience:"",
+//     email:"",
+//     alert:""
+// }
 
 function JobAlertInput() {
-    const [data, setData]=React.useState(payload)
+    //const [data, setData]=React.useState(payload)
     return (
         <div className={Styles.sub1}>
              <div style={{textAlign:"left"}}>

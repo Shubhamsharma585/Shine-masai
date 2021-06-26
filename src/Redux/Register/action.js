@@ -8,8 +8,8 @@ import Axios from "axios"
 export const registering = (payload) => dispatch => {
     console.log("registering")
     console.log(payload)
-    const {name, email, mobile, pass, gender, location, degree,
-        college, year, course, skills, title, 
+    const {name, email, mobile, gender, location, degree,
+        college, course, skills, title, 
         company, industry, functionalarea } = payload
 
     dispatch(registerrequest())

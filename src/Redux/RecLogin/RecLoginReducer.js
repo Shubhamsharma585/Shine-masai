@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from "./actionType"
+import { REC_LOGIN_REQUEST, REC_LOGIN_SUCCESS, REC_LOGIN_FAILURE } from "./actionType"
 
 const initState = {
     recAuth: false,
@@ -8,21 +8,21 @@ const initState = {
 
 export const RecLoginReducer = (state=initState, action) => {
     switch(action.type){
-        case LOGIN_REQUEST:{
+        case REC_LOGIN_REQUEST:{
             return{
                 ...state,
                 isLoading: true,
                 isError: false,
             }
         }
-        case LOGIN_SUCCESS:{
+        case REC_LOGIN_SUCCESS:{
             return{
                 ...state,
                 recAuth: true,
                 isLoading: false,
             }
         }
-        case LOGIN_FAILURE:{
+        case REC_LOGIN_FAILURE:{
             return{
                 ...state,
                 isLoading: false,

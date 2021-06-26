@@ -306,7 +306,7 @@ div {
 }
 .recruiterloginimg{
     width: 100%;
-    height: 98vh;
+    height: 90vh;
     background-image: url("https://cdn.dribbble.com/users/733072/screenshots/5548709/dribbble_hr.png");
     background-position: 100% 89vh;
     background-size: cover;
@@ -331,4 +331,17 @@ div {
     width: 350px;
     border: rgb(55, 55, 55) solid 0px;
     border-bottom: rgb(125, 125, 125) solid 1px;
+}
+/* recruiter login page css */
+.mainbox{
+    display: flex;
+}
+
+.recloginptage{
+    font-size: 10px;
+    color: rgb(112, 82, 82);
+}
+
+.recloginspantage{
+    color: blue;
 }

@@ -13,7 +13,7 @@ function JobDescriptionSidebar() {
     const [dis, setDis]=useState({});
 
     const {location} =useParams(); 
-   
+    
 
      
     const handleSearch = () => {

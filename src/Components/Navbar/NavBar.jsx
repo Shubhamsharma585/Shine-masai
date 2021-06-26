@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from "../Navbar/NavBar.module.css"
 import styled from "styled-components"
 import { useSelector } from "react-redux"
@@ -59,7 +59,7 @@ const NavBar = () => {
                     <LinkContainer>
                     <div>Search Jobs</div>
                     <LinkItems>
-                        <Navtitle><Link to="/jobdescription" style={{textDecoration:"none",color:""}}>Jobs in Top Cities</Link></Navtitle>
+                        <Navtitle><Link to="/jobdescription" className={styles.navtitle1}>Jobs in Top Cities</Link></Navtitle>
                         <Navtitle>Jobs by Skills</Navtitle>
                         <Navtitle>Jobs by Courses</Navtitle>
                         <Navtitle>Jobs by Education</Navtitle>
@@ -109,7 +109,7 @@ const NavBar = () => {
                     <div>Walk-ins</div>
                 </Link>
             </div>}
-            {!recAuth &&<Link style={{textDecoration: "none", color: "white"}} to="/jobalert">
+            {!recAuth &&<Link className={styles.navLink2} to="/jobalert">
                 <button className={styles.navContainer_Jalert1}>Create job alert</button>
             </Link>}
             {recAuth && <Link to="/recruiter/dashboard">
@@ -117,12 +117,12 @@ const NavBar = () => {
                     Dashboard
                 </button>
             </Link>}
-            {recAuth && <Link style={{textDecoration: "none", color: "white"}} to="/jobalert">
+            {recAuth && <Link className={styles.navLink2} to="/jobalert">
                 <button onClick={handleRecLogout} className={styles.navContainer_Jalert2}>
                     Logout
                 </button>
             </Link>}
-            <Link style={{textDecoration: "none", color: "white"}} to="/jobpost">
+            <Link className={styles.navLink2} to="/jobpost">
                 <button className={styles.navContainer_Jalert}>
                     Post a job
                 </button>
