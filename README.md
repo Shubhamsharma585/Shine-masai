@@ -24,7 +24,6 @@ In this project we have used the following tech stack.
 6. Icons:[Awesome Icon](https://www.w3schools.com/icons/fontawesome5_intro.asp)
 7. Axios: [Axios](https://www.npmjs.com/package/axios)
 8. Material UI: [Material UI](https://material-ui.com/)
-
 9. Firebase: [Firebase](https://firebase.google.com/)
 10. React Tabs: [React Tabs](https://www.npmjs.com/package/react-tabs)
 11. React Text Collapse: [React Text Collapse](https://www.npmjs.com/package/react-text-collapse)
@@ -49,7 +48,7 @@ You can also take the glimpse of our Project,just follow the below steps:
 ## Snapshots 📷
 
 1. Shine Page
-   ![shine]( process.env.PUBLIC_URL +"/Snapshots/landingPage.jpg")
+   ![shine]( .public/Snapshots/landingPage.jpg?raw=true)
 
 2. Advanced Search Page
    ![shine](.public/Snapshots/advanceSearch.jpg)
