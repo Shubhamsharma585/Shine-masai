@@ -88,16 +88,16 @@ You can also take the glimpse of our Project,just follow the below steps:
 
 👤 **Ankit Bajpai**
 
-- Github: [Ankit Bajpai](https://github.com/iharshgaur)
+- Github: [Ankit Bajpai](https://github.com/ankitbajpai1607)
 
 👤 **Shubham Sharma**
 
-- Github: [Shubham Sharma](hkghimanshu@gmail.com)
+- Github: [Shubham Sharma](https://github.com/Shubhamsharma585)
 
 👤 **Deepak Hegde**
 
-- Github: [Deepak Hegde](manish.mahendran9499@gmail.com)
+- Github: [Deepak Hegde](https://github.com/Dee-Hegde)
 
 👤 **Vinesh Nair**
 
-- Github: [Vinesh Nair](manish.mahendran9499@gmail.com)
+- Github: [Vinesh Nair](https://github.com/Vinesh3124)
