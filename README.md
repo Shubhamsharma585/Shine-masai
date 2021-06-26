@@ -1,56 +1,103 @@
-# Shine Clone By Team Lithium
-[Masai School](www.masaischool.com) 
-> Batch :Samurai 2
+# Shine (clone) 🌐
 
-Sources:
+**Shine.com** is the most innovative and second largest online job portal in India. Founded in 2008, over the past decade, Shine.com has become a prominent name in the recruitment industry. The popularity of the portal is evident from the fact that it has crossed 3.90 crore candidate landmark and has more than 3 lakh latest job vacancies from leading companies on site.
+
+In this project we have tried to make a look alike clone of **Shine.com**. With our efforts and the technology stack, that we have learned so far in the masai school, we were able to clone the front end with high precision and quality.
+
+# Technology Stack Used 💻
+
+In this project we have used the following tech stack.
 
 - React: [React](https://www.npmjs.com/package/react)
+- Redux: [Redux](https://www.npmjs.com/package/redux)
+- CSS: [CSS](https://styled-components.com/)
 
-- Redux: [Redux](https://www.npmjs.com/package/redux) 
+<br>
 
-- React-Redux: [React-Redux](https://www.npmjs.com/package/react-redux)
+## Libraries Used 🌟
 
-- Redux-thunks: [Redux-thunks](https://www.npmjs.com/package/thunks) 
+1. Custom UI: [Custom UI](https://www.npmjs.com/package/@shubhamsharma585/custom-ui-shinemasai)
+2. React-Redux: [React-Redux](https://www.npmjs.com/package/react-redux)
+3. Redux-thunks: [Redux-thunks](https://www.npmjs.com/package/thunks)
+4. Images: [Shine](https://www.shine.com/)
+5. Fonts: [Google Fonts](https://fonts.google.com/)
+6. Icons:[Awesome Icon](https://www.w3schools.com/icons/fontawesome5_intro.asp)
+7. Axios: [Axios](https://www.npmjs.com/package/axios)
+8. Material UI: [Material UI](https://material-ui.com/)
 
-- Custom UI: [Custom UI](https://www.npmjs.com/package/@shubhamsharma585/custom-ui-shinemasai)
+9. Firebase: [Firebase](https://firebase.google.com/)
+10. React Tabs: [React Tabs](https://www.npmjs.com/package/react-tabs)
+11. React Text Collapse: [React Text Collapse](https://www.npmjs.com/package/react-text-collapse)
 
-- Images: [Shine](https://www.shine.com/)
+You can install the libraries using the "**npm install**" command
+<br>
 
-- Fonts: [Google Fonts](https://fonts.google.com/)  
+## How to run the project 📑
 
-- Icons:[Awesome Icon](https://www.w3schools.com/icons/fontawesome5_intro.asp)
+In this project we were able to achieve a near to perfect clone of the original website. As we do not want to overwhelm you, we haven't shared all the pages here.Please fork the repository and then use it on your own. If you want to collaborate with us on this project then please feel free to reach out to us.
 
-- Icons: [Font Awesome](https://fontawesome.com/)
+You can also take the glimpse of our Project,just follow the below steps:
 
-- Material UI: [Material UI](https://material-ui.com/) 
+    1.run the command npm run start in terminal to start the app at port 3000.
 
-- Firebase: [Firebase](https://firebase.google.com/) 
+    2.Go to the browser you will land in the landing page just Register and login if you have signed up before or do the signup.
 
-- Axios: [Axios](https://www.npmjs.com/package/axios)
+    3.Our website had 2 things User can apply for post and company can post jobs.
 
-- Styled Components: [Styled Components](https://styled-components.com/)  
+<br>
 
-- React Tabs: [React Tabs](https://www.npmjs.com/package/react-tabs)
+## Snapshots 📷
 
-- React Text Collapse: [React Text Collapse](https://www.npmjs.com/package/react-text-collapse)  
+1. Shine Page
+   ![shine](.public/Snapshots/landingPage.jpg)
 
-### Members and their Responsibility
+2. Advanced Search Page
+   ![shine](.public/Snapshots/advanceSearch.jpg)
 
-1. Ankit Bajpai (sm2_021) - **Landing Page**, **Search Jobs**, **Advanced Search**, **Side Bar**,**Git Merging**.
+3. Login Page
+   ![shine](.public/Snapshots/loginPage.jpg)
 
-2. Shubham Sharma (sm2_170) - **Login Page**, **Register Page**, **Heroku Server Maintainance**, **UI Library**.
+4. Landing Page After Login
+   ![shine](.public/Snapshots/afterLogin.jpg)
 
-3. Deepak Hegde (sm2_052) - **Job Alert Page**, **Recruiter Login Page**, **Job Post Page**, **Database**, **Chat Bot**.
+5. Job Details Page
+   ![shine](.public/Snapshots/jobDetails.jpg)
 
-4. Vinesh Nair (ti_146) - **Navigation Bar**, **Recruiter Dashboard**, **Job Description Page**, **Firebase Authentication**.
+6. Search By Cities Page
+   ![shine](.public/Snapshots/searchByCities.jpg)
 
-## Shine.com is the most innovative and second largest online job portal in India. Founded in 2008, over the past decade, Shine.com has become a prominent name in the recruitment industry. The popularity of the portal is evident from the fact that it has crossed 3.90 crore candidate landmark and has more than 3 lakh latest job vacancies from leading companies on site.
+7. Dashboard for Recruiter
+   ![shine](.public/Snapshots/recuriterDasboard.jpg)
 
-### Shine.com connects jobseekers and recruiters by accurately matching candidate profiles to the relevant job openings through an advanced 2-way matching technology. While most job portals only focus on getting candidates the next job, Shine.com focuses on the entire career growth of candidates. To this end, Shine.com has launched Shine Learning - India’s largest career skills site for working professionals with over 500+ courses & certifications.
+<br>
 
-### As the industry shifts towards mobile, Shine.com is leading the transition and is the fastest growing job portal on mobile devices, witnessing a 100% YOY growth in mobile traffic and also offers on-the-go jobs through the Shine Job Search App.
+## Features
 
-### Shine.com works closely to bridge the gap between talent & opportunities and offers end-to-end recruitment solutions. Shine Job Fair brings candidates and top employers under one roof. While Shine HR Conclave brings top HR leaders to share insights on latest trends, innovations & best practices in the HR industry. Shine.com also has a large reach through its print product, Shine Jobs – the Tuesday Job supplement of Hindustan Times– making it the only job portal with an integrated print and online offering.
+1. User can apply for the post accordingly to their skills.
+2. User can post candidates requirement easily.
 
+<br>
 
+## Limitations
 
+1. Not responsive yet and might not be properly visible on small screen devices
+
+<br>
+
+## Team Members and Contributors 😇
+
+👤 **Ankit Bajpai**
+
+- Github: [Ankit Bajpai](https://github.com/iharshgaur)
+
+👤 **Shubham Sharma**
+
+- Github: [Shubham Sharma](hkghimanshu@gmail.com)
+
+👤 **Deepak Hegde**
+
+- Github: [Deepak Hegde](manish.mahendran9499@gmail.com)
+
+👤 **Vinesh Nair**
+
+- Github: [Vinesh Nair](manish.mahendran9499@gmail.com)
