@@ -53,11 +53,11 @@ You can also take the glimpse of our Project,just follow the below steps:
 
 2. Advanced Search Page
 
-   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots//advanceSearch.jpg)
+   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots/advanceSearch.jpg)
 
 3. Login Page
 
-   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots//loginPage.jpg)
+   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots/loginPage.jpg)
 
 4. Landing Page After Login
 
@@ -65,15 +65,15 @@ You can also take the glimpse of our Project,just follow the below steps:
 
 5. Job Details Page
 
-   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots//jobDetails.jpg)
+   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots/jobDetails.jpg)
 
 6. Search By Cities Page
 
-   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots//searchByCities.jpg)
+   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots/searchByCities.jpg)
 
 7. Dashboard for Recruiter
 
-   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots//recuriterDasboard.jpg)
+   ![shine](https://github.com/Shubhamsharma585/Shine-masai/blob/main/public/Snapshots/recuriterDasboard.jpg)
 
 <br>
 
