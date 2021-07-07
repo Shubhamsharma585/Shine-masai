@@ -1,16 +1,13 @@
 import React, { useState } from "react"
 import styles from "../LogIn/Login.module.css"
-import man from "../../Images/man.png"
-import doc from "../../Images/doc.png"
-import search from "../../Images/search.png"
-import google1 from "../../Images/google1.png"
-import ld from "../../Images/ld.png"
-import fb from "../../Images/fb.png"
 import {auth, google} from "../FireAuth/auth"  
 import { useDispatch, useSelector } from "react-redux"
 import { logingin } from "../../Redux/Login/action"
 import { Link, Redirect } from "react-router-dom"
 import SocialFollow from "./SocialFollow"
+import fb from "./images/fb.png"
+import google1 from "./images/google1.png"
+import ld from "./images/ld.png"
 import Popouts from "../Popouts/LoginFail"
 import SearchBar from "../Home/SearchBar"
 
@@ -100,7 +97,7 @@ function Login()
               <p className={styles.jobs}> 300,000 jobs from 15,000 companies</p>
              <ul >
                <li>
-                 <div><img src={man} alt=""/></div>
+                 <div><img src={process.env.PUBLIC_URL +"Snapshots/man.png"} alt=""/></div>
                  <div><strong>Create your account and receive matching jobs automatically </strong><br/>
              Fill in your profile details and let our unique matching technology bring you the most relevant job
          opportunities.</div>
@@ -108,14 +105,14 @@ function Login()
                
 
              <li>
-               <div><img src={doc} alt=""/></div>
+               <div><img src={process.env.PUBLIC_URL +"Snapshots/doc.png"} alt=""/></div>
                <div><strong>Be completely anonymous</strong><br/>
       You choose which recruiters see your personal and contact detail     </div>
              </li>
 
             
             <li>
-              <div><img src={search} alt=""/></div>
+              <div><img src={process.env.PUBLIC_URL +"Snapshots/search.png"} alt=""/></div>
               <div><strong>Equip yourself for a great career</strong> <br/>
     Research industries and employ our career services to be better equipped for your professional life.</div>
             </li>

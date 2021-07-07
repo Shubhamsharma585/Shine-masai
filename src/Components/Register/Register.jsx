@@ -2,15 +2,11 @@ import React, { useState } from "react"
 import styles from "../Register/Register.module.css"
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
-import google1 from "../../Images/google1.png"
-import ld from "../../Images/ld.png"
-import fb from "../../Images/fb.png"
-import regi from "../../Images/regi.png"
 import Regifooter from "./Regifooter"
 import {auth, google} from "../FireAuth/auth"
 import { registering } from "../../Redux/Register/action"
 
-
+ 
 
 
 function Register()
@@ -169,7 +165,7 @@ function Register()
 
    <div className={styles.mid}>
                <div className={styles.contimg}>
-                  <img src={regi} alt=""/>
+                  <img src={process.env.PUBLIC_URL +"Snapshots/regi.png"} alt=""/>
                </div>
      
              <div className={styles.cont1}>
@@ -191,14 +187,14 @@ function Register()
             <p style={{display:"flex", flexDirection:"row"}}><span><hr width="185px"/></span><span style={{width:"10px"}}></span> <span style={{color:"gray"}}>or</span> <span style={{width:"10px"}}></span> <span><hr width="185px"/></span></p>    
           
             <div className={styles.social}>
-              <div onClick={() => handlesignup()}><img src={google1} alt=""/> <p>Google</p></div>
-              <div><img src={ld} alt=""/> <p>Linkedin</p></div>
-              <div><img src={fb} alt=""/> <p>Facebook</p></div>
+              <div onClick={() => handlesignup()}><img src={process.env.PUBLIC_URL +"Snapshots/google1.png"} alt=""/> <p>Google</p></div>
+              <div><img src={process.env.PUBLIC_URL +"Snapshots/ld.png"} alt=""/> <p>Linkedin</p></div>
+              <div><img src={process.env.PUBLIC_URL +"Snapshots/fb.png"} alt=""/> <p>Facebook</p></div>
 
             </div>
             <p style={{fontSize:"10px", color:"rgb(112, 82, 82)"}}>By syncing your social media account, you agree to shine <span style={{color:"blue"}}>terms and conditions</span></p>
 
-        
+         
            </div>
 
 
