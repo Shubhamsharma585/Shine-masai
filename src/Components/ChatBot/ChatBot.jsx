@@ -36,7 +36,7 @@ function ChatBot() {
 
             </div>
             <div>
-            <div onClick={()=>setStatus(!status)} className={Styles.chatbotbutton}><img className={Styles.chatbotimg} src={Chatbox} alt="image"/></div>
+            <div onClick={()=>setStatus(!status)} className={Styles.chatbotbutton}><img className={Styles.chatbotimg} src={Chatbox} alt=""/></div>
             </div>
         </div>
 

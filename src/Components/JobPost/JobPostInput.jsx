@@ -28,7 +28,7 @@ function JobPostInput() {
 
     const handleChange=(e)=>{
         const {value,name}=e.target;
-        if(name != 'skills'){
+        if(name !== 'skills'){
             setData({...data,[name]:value})
         }
     }
