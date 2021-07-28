@@ -29,7 +29,7 @@ const RecruiterDashboard = () => {
     }
 
     const handlePatch = (id) => {
-        // console.log(id)
+        console.log(id)
         axios.patch(`https://json-heroku-shubham.herokuapp.com/applications/${id}`,{
             comments: commentData,
             call: call,
@@ -47,7 +47,8 @@ const RecruiterDashboard = () => {
     }
 
     const handleShow = (id) =>{
-        dispatch(singleUserData(id))
+        console.log(id)
+        // dispatch(singleUserData(id))
     }
     console.log(data)
     return (

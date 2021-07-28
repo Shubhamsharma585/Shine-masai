@@ -239,6 +239,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const JobDescription = ({ dis }) => {
+
+  console.log(dis)
+
   //Modal UI
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -281,8 +284,8 @@ const JobDescription = ({ dis }) => {
         dob: userData.personal.dob,
         email: userData.personal.email,
         phone: userData.personal.mobile,
-        applied_company: dis.subtitle,
-        applied_position: dis.title,
+        applied_company: dis?.subtitle,
+        applied_position: dis?.title,
         location: userData.personal.location,
         experience: userData.worksummary.experience,
         qualification: userData.education.title,
@@ -295,29 +298,29 @@ const JobDescription = ({ dis }) => {
   return (
     <MainContainer>
       <CompanyCard>
-        <JobTitle>{dis.title}</JobTitle>
-        <CompanyName>{dis.subtitle}</CompanyName>
+        <JobTitle>{dis?.title}</JobTitle>
+        <CompanyName>{dis?.subtitle}</CompanyName>
         <JobInfo>
           <ExperienceYr>
             <FontAwesomeIcon
               style={{ color: "white", marginRight: 10 }}
               icon={faBriefcase}
             />
-            <span style={{ color: "white" }}>0 to {dis.experience} yrs</span>
+            <span style={{ color: "white" }}>0 to {dis?.experience} yrs</span>
           </ExperienceYr>
           <SalaryPerYr>
             <FontAwesomeIcon
               style={{ color: "white", marginRight: 10 }}
               icon={faWallet}
             />
-            <span style={{ color: "white" }}>Rs {dis.salary} Lakhs/Yr</span>
+            <span style={{ color: "white" }}>Rs {dis?.salary} Lakhs/Yr</span>
           </SalaryPerYr>
           <FontAwesomeIcon
             style={{ color: "white", marginLeft: 10, marginRight: 10 }}
             icon={faMapMarkerAlt}
           />
           <JobLocation>
-            <span style={{ color: "white" }}>{dis.location}</span>
+            <span style={{ color: "white" }}>{dis?.location}</span>
           </JobLocation>
         </JobInfo>
         <ButtonBox>
@@ -339,9 +342,7 @@ const JobDescription = ({ dis }) => {
           <h4>Key skills</h4>
 
           <div style={{ display: "flex", flexDirection: "Wrap" }}>
-            {dis.skills?.map((el) => (
-              <SkillsDiv>{el}</SkillsDiv>
-            ))}
+              <SkillsDiv>{dis?.skills}</SkillsDiv>
           </div>
 
           <TakeAsses>
@@ -362,7 +363,7 @@ const JobDescription = ({ dis }) => {
           </TabList>
           <TabPanel>
             <ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS}>
-              <p>{dis.description}</p>
+              <p>{dis?.description}</p>
             </ReactTextCollapse>
           </TabPanel>
           <TabPanel>
@@ -372,7 +373,7 @@ const JobDescription = ({ dis }) => {
                   <strong>Company Name</strong>
                 </TabItemsTitle>
                 <TabItemsInfo>
-                  <span>{dis.subtitle}</span>
+                  <span>{dis?.subtitle}</span>
                 </TabItemsInfo>
               </TabItems>
               <TabItems>
@@ -380,7 +381,7 @@ const JobDescription = ({ dis }) => {
                   <strong>Position Description</strong>
                 </TabItemsTitle>
                 <TabItemsInfo>
-                  <span>{dis.title}</span>
+                  <span>{dis?.title}</span>
                 </TabItemsInfo>
               </TabItems>
               <TabItems>
@@ -388,7 +389,7 @@ const JobDescription = ({ dis }) => {
                   <strong>Email</strong>
                 </TabItemsTitle>
                 <TabItemsInfo>
-                  <span>{dis.email}</span>
+                  <span>{dis?.email}</span>
                 </TabItemsInfo>
               </TabItems>
               <TabItems>
@@ -396,7 +397,7 @@ const JobDescription = ({ dis }) => {
                   <strong>Telephone</strong>
                 </TabItemsTitle>
                 <TabItemsInfo>
-                  <span>{dis.telephone}</span>
+                  <span>{dis?.telephone}</span>
                 </TabItemsInfo>
               </TabItems>
             </CompanyShortInfo>
